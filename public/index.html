@@ -3,12 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="MI CLEAN GROUP MMC — 5 Ulduzlu Otel Sektoru Kataloq 2025">
-<title>MI CLEAN GROUP MMC — Kataloq 2025</title>
+<meta name="description" content="MI CLEAN GROUP MMC — 5 ulduzlu otel sektoru üçün sertifikatlı kimyəvi məhsullar, premium amenity xətti və professional texniki xidmətlər. Bakı, Azərbaycan.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#07111C">
+<link rel="canonical" href="https://micleangroup.az/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://micleangroup.az/">
+<meta property="og:title" content="MI CLEAN GROUP MMC — Otel Sektoru Kataloq">
+<meta property="og:description" content="5 ulduzlu otellərin hər zonası üçün sertifikatlı kimyəvi məhsullar, premium amenity xətti və professional texniki xidmətlər. Bir mənbədən — tam həll.">
+<meta property="og:site_name" content="MI CLEAN GROUP MMC">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MI CLEAN GROUP MMC — Otel Sektoru Kataloq">
+<meta name="twitter:description" content="5 ulduzlu otellərin hər zonası üçün sertifikatlı kimyəvi məhsullar, premium amenity xətti. Bakı, Azərbaycan.">
+<title>MI CLEAN GROUP MMC — Otel Sektoru Kataloq</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MI CLEAN GROUP MMC",
+  "url": "https://micleangroup.az",
+  "description": "5 ulduzlu otel sektoru üçün kimyəvi məhsullar, amenity xətti və texniki xidmətlər",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bakı",
+    "addressCountry": "AZ"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "email": "info@micleangroup.az"
+  }
+}
+</script>
 <style>
 
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+/* Visible focus ring for keyboard navigation */
+:focus-visible{outline:2px solid #C9A96E;outline-offset:2px}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid #C9A96E;outline-offset:2px}
 :root{
   --bg:#07111C;--bg2:#0D1E2E;--bg3:#152538;
   --gold:#C9A96E;--gold2:#E8C98A;
@@ -231,6 +266,7 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
 </head>
 <body>
 
+<a href="#overview" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--gold);color:var(--bg);padding:8px 16px;z-index:10000;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:0 0 4px 0;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Əsas məzmuna keç</a>
 
 <!-- NAV -->
 <nav id="nav">
@@ -253,14 +289,14 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
   <a href="#contact" class="n-cta" onclick="openM('quote');return false;">Sifariş Ver</a>
 </nav>
 <div id="sbar">
-  <input id="sinput" type="text" placeholder="Məhsul axtar... (məs: dezenfektan, xlor, mop)" autocomplete="off">
+  <label for="sinput" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Məhsul axtar</label><input id="sinput" type="text" placeholder="Məhsul axtar... (məs: dezenfektan, xlor, mop)" autocomplete="off" aria-label="Məhsul axtar" aria-haspopup="listbox" aria-autocomplete="list" role="combobox" aria-expanded="false" aria-controls="sres">
   <button class="fbtn active" onclick="setF('all',this)">Hamısı</button>
   <button class="fbtn" onclick="setF('kimyevi',this)">Kimyəvi</button>
   <button class="fbtn" onclick="setF('camasirxana',this)">Camaşırxana</button>
   <button class="fbtn" onclick="setF('metbex',this)">Mətbəx</button>
   <button class="fbtn" onclick="setF('amenity',this)">Amenity</button>
   <button class="fbtn" onclick="setF('istehlak',this)">İstehlak</button>
-  <div id="sres"></div>
+  <div id="sres" role="listbox" aria-label="Axtarış nəticələri"></div>
 </div>
 
 <!-- COVER -->
@@ -650,7 +686,7 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
 </section>
 
 <footer>
-  <span class="ft-c">© 2025 MI CLEAN GROUP MMC — Bütün hüquqlar qorunur.</span>
+  <span class="ft-c">© <span id="footer-year">2025</span> MI CLEAN GROUP MMC — Bütün hüquqlar qorunur.</span>
   <span class="ft-b">MI CLEAN GROUP</span>
 </footer>
 
@@ -658,9 +694,9 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
 <button id="qfloat" onclick="openM('quote')">
 <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M2 2h12v10H9l-4 3v-3H2V2z" stroke="currentColor" stroke-width="1.5"/></svg>
 <span>Qiymət Sorğusu</span></button>
-<div class="modal-overlay" id="modal-quote">
+<div class="modal-overlay" id="modal-quote" aria-labelledby="modal-quote-title">
 <div class="modal">
-<div class="modal-head"><div class="modal-title">Qiymət Sorğusu</div><button class="modal-close" onclick="closeM('quote')">&#215;</button></div>
+<div class="modal-head"><div class="modal-title" id="modal-quote-title">Qiymət Sorğusu</div><button class="modal-close" onclick="closeM('quote')" aria-label="Bağla">&#215;</button></div>
 <div class="modal-body">
 <p style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.7">24 saat &#601;rzind&#601; sizi&#351;l&#601; &#601;laq&#601; saxlayaca&#287;&#305;q.</p>
 <form id="qform">
@@ -683,6 +719,10 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
 <button type="button" class="btn-sub" id="qbtn" onclick="subQ()">Sor&#287;u G&#246;nd&#601;r</button>
 </form></div></div></div>
 <script>
+// ── Dynamic footer year ──────────────────────────────────────────────────────
+var fyEl = document.getElementById('footer-year');
+if (fyEl) fyEl.textContent = new Date().getFullYear();
+
 // ── Nav scroll effect ────────────────────────────────────────────────────────
 var nav = document.getElementById('nav');
 window.addEventListener('scroll', function() {
@@ -737,18 +777,52 @@ function toast(msg, tp) {
 }
 
 // ── Modal helpers ────────────────────────────────────────────────────────────
-function openM(n) { document.getElementById('modal-' + n).classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeM(n) { document.getElementById('modal-' + n).classList.remove('open'); document.body.style.overflow = ''; }
+var _prevFocus = null;
+function openM(n) {
+  _prevFocus = document.activeElement;
+  var overlay = document.getElementById('modal-' + n);
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  // Move focus to first focusable element inside modal
+  setTimeout(function() {
+    var first = overlay.querySelector('input,select,textarea,button,[tabindex]:not([tabindex="-1"])');
+    if (first) first.focus();
+  }, 50);
+}
+function closeM(n) {
+  var overlay = document.getElementById('modal-' + n);
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (_prevFocus) { _prevFocus.focus(); _prevFocus = null; }
+}
 document.querySelectorAll('.modal-overlay').forEach(function(m) {
-  m.addEventListener('click', function(e) { if (e.target === m) { m.classList.remove('open'); document.body.style.overflow = ''; } });
+  m.setAttribute('role', 'dialog');
+  m.setAttribute('aria-modal', 'true');
+  m.setAttribute('aria-hidden', 'true');
+  m.addEventListener('click', function(e) { if (e.target === m) { m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; } });
+  // Focus trap: keep Tab/Shift+Tab inside modal
+  m.addEventListener('keydown', function(e) {
+    if (!m.classList.contains('open')) return;
+    if (e.key !== 'Tab') return;
+    var focusable = Array.from(m.querySelectorAll('input,select,textarea,button,a[href],[tabindex]:not([tabindex="-1"])')).filter(function(el) { return !el.disabled; });
+    if (!focusable.length) return;
+    var first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
+  });
 });
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(function(m) { m.classList.remove('open'); document.body.style.overflow = ''; });
+  if (e.key === 'Escape') document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+    var id = m.id.replace('modal-', '');
+    closeM(id);
+  });
 });
 
 // ── Product search ───────────────────────────────────────────────────────────
 var sdata = null, cfilter = 'all', stimer = null;
-fetch('/api/products?limit=500').then(function(r) { return r.json(); }).then(function(d) { sdata = d.products; }).catch(function() {});
+fetch('/api/products?limit=1000').then(function(r) { return r.json(); }).then(function(d) { sdata = d.products; }).catch(function() {});
 
 function setF(c, btn) {
   cfilter = c;
@@ -774,16 +848,21 @@ function doS(q) {
     var m = (cfilter === 'all' || p.category === cfilter);
     return m && (p.name.toLowerCase().indexOf(ql) > -1 || (p.id && p.id.toLowerCase().indexOf(ql) > -1) || (p.formula && p.formula.toLowerCase().indexOf(ql) > -1));
   }).slice(0, 8);
-  if (!f.length) { r.style.display = 'block'; r.innerHTML = '<div class="sri-none">Nəticə tapılmadı: "' + q + '"</div>'; return; }
+  if (!f.length) { r.style.display = 'block'; r.innerHTML = '<div class="sri-none">Nəticə tapılmadı: "' + q.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '"</div>'; document.getElementById('sinput').setAttribute('aria-expanded', 'true'); return; }
   var h = f.map(function(p) {
     var ig = p.image ? ('<img class="sri-img" src="' + p.image + '" alt="" onerror="this.style.display=\'none\'">') : '';
     return '<div class="sri" onclick="goS(\'' + p.category + '\')">' + ig + '<div><div class="sri-name">' + p.name + '</div><div class="sri-cat">' + (CATS[p.category] || p.category) + '</div>' + (p.id ? '<div class="sri-id">' + p.id + '</div>' : '') + '</div></div>';
   }).join('');
   r.style.display = 'block';
   r.innerHTML = h;
+  document.getElementById('sinput').setAttribute('aria-expanded', 'true');
 }
 function goS(cat) { hideS(); document.getElementById('sinput').value = ''; var el = document.getElementById(cat); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
-function hideS() { document.getElementById('sres').style.display = 'none'; }
+function hideS() {
+  var sr = document.getElementById('sres');
+  sr.style.display = 'none';
+  document.getElementById('sinput').setAttribute('aria-expanded', 'false');
+}
 
 // ── Contact form ─────────────────────────────────────────────────────────────
 function subC() {

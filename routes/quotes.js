@@ -4,6 +4,7 @@ const { body, validationResult } = require('express-validator');
 const db = require('../db');
 const logger = require('../utils/logger');
 const { sendMail } = require('../utils/mailer');
+const { escapeHtml } = require('../utils/escapeHtml');
 
 const validators = [
   body('name').trim().isLength({ min: 2, max: 100 }).withMessage('Ad 2-100 simvol arasında olmalıdır.'),
@@ -50,20 +51,20 @@ router.post('/', validators, async (req, res, next) => {
     });
 
     sendMail({
-      subject: `Qiymət Sorğusu: ${name} — ${hotel} (${hotel_stars || '?'} ulduz)`,
+      subject: `Qiymət Sorğusu: ${escapeHtml(name)} — ${escapeHtml(hotel)} (${escapeHtml(hotel_stars || '?')} ulduz)`,
       html: `
         <h2 style="color:#C9A96E">Yeni Qiymət Sorğusu</h2>
         <table style="border-collapse:collapse;width:100%">
-          <tr><td style="padding:8px;font-weight:bold">ID:</td><td style="padding:8px">${id}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Ad:</td><td style="padding:8px">${name}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Email:</td><td style="padding:8px">${email}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Telefon:</td><td style="padding:8px">${phone || '—'}</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Otel/Şirkət:</td><td style="padding:8px">${hotel} (${hotel_stars || '?'} ulduz)</td></tr>
-          <tr><td style="padding:8px;font-weight:bold">Kateqoriyalar:</td><td style="padding:8px">${categories.join(', ')}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">ID:</td><td style="padding:8px">${escapeHtml(id)}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Ad:</td><td style="padding:8px">${escapeHtml(name)}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Email:</td><td style="padding:8px">${escapeHtml(email)}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Telefon:</td><td style="padding:8px">${escapeHtml(phone || '—')}</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Otel/Şirkət:</td><td style="padding:8px">${escapeHtml(hotel)} (${escapeHtml(hotel_stars || '?')} ulduz)</td></tr>
+          <tr><td style="padding:8px;font-weight:bold">Kateqoriyalar:</td><td style="padding:8px">${categories.map(escapeHtml).join(', ')}</td></tr>
           <tr><td style="padding:8px;font-weight:bold">Pilot:</td><td style="padding:8px">${(pilot === true || pilot === 'true') ? 'Bəli' : 'Xeyr'}</td></tr>
-          ${notes ? `<tr><td style="padding:8px;font-weight:bold;vertical-align:top">Qeydlər:</td><td style="padding:8px">${notes}</td></tr>` : ''}
+          ${notes ? `<tr><td style="padding:8px;font-weight:bold;vertical-align:top">Qeydlər:</td><td style="padding:8px">${escapeHtml(notes)}</td></tr>` : ''}
         </table>
-        <p style="color:#999;font-size:12px">ID: ${id}</p>
+        <p style="color:#999;font-size:12px">ID: ${escapeHtml(id)}</p>
       `,
     });
 
@@ -82,7 +83,9 @@ router.post('/', validators, async (req, res, next) => {
 // GET /api/quotes — admin only
 router.get('/', async (req, res, next) => {
   try {
-    if (process.env.NODE_ENV === 'production' && req.headers['x-admin-key'] !== process.env.ADMIN_KEY) {
+    // Always enforce ADMIN_KEY when it is configured (not just in production).
+    // In development without ADMIN_KEY set, access is allowed for convenience.
+    if (process.env.ADMIN_KEY && req.headers['x-admin-key'] !== process.env.ADMIN_KEY) {
       return res.status(401).json({ success: false, message: 'İcazəsiz giriş.' });
     }
 
