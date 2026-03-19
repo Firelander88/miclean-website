@@ -15,7 +15,17 @@
       "Bash(npm install:*)",
       "Bash(npx knex:*)",
       "Bash(powershell -Command \":*)",
-      "Bash(powershell -Command \"netstat -ano | Select-String '':300[01]''\")"
+      "Bash(powershell -Command \"netstat -ano | Select-String '':300[01]''\")",
+      "Bash(gh auth:*)",
+      "Bash(powershell -Command \"winget install --id GitHub.cli --silent 2>&1\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' auth status 2>&1\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' repo create miclean-website --public --source=''C:\\\\Users\\\\Farzali Valiyev\\\\Desktop\\\\miclean-website'' --remote=origin --push 2>&1\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' repo view Firelander88/miclean-website 2>&1\")",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" audit)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" install --save-dev jest supertest)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" test)",
+      "Bash(\"/c/Program Files/nodejs/npm.cmd\" install --save-dev cross-env)",
+      "Bash(npm test:*)"
     ]
   }
 }
