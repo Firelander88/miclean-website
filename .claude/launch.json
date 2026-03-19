@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Dev Server (nodemon)",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["node_modules/nodemon/bin/nodemon.js", "server.js"],
+      "port": 3000
+    },
+    {
+      "name": "Production Server (node)",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["server.js"],
+      "port": 3001
+    }
+  ],
+  "autoVerify": true
+}

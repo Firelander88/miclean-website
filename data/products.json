@@ -1,0 +1,203 @@
+{
+  "meta": {
+    "total": 538,
+    "categories": 7,
+    "subcategories": 109,
+    "services": 15,
+    "currency": "AZN",
+    "usd_rate": 1.70,
+    "updated": "2025-01-01"
+  },
+  "categories": [
+    {
+      "id": "kimyevi",
+      "code": "KT",
+      "name": "Kimyəvi Təmizlik Vasitələri",
+      "name_en": "Chemical Cleaning Products",
+      "product_count": 127,
+      "subcategory_count": 25,
+      "image": "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=75",
+      "tags": ["haccp", "eco", "sds"],
+      "subcategories": [
+        { "id": "ktumt", "name": "Ümumi Təmizləyicilər", "count": 8 },
+        { "id": "ktdt", "name": "Döşəmə Təmizləyiciləri", "count": 7 },
+        { "id": "ktst", "name": "Şüşə & Güzgü Təmizləyiciləri", "count": 5 },
+        { "id": "ktd", "name": "Dezenfektanlar", "count": 14 },
+        { "id": "ktsq", "name": "Sanitar Qovşağı Məhsulları", "count": 9 },
+        { "id": "ktqt", "name": "HACCP Qida Təhlükəsizliyi", "count": 6 },
+        { "id": "ktxal", "name": "Xalça & Döşəmə Xüsusi", "count": 8 },
+        { "id": "ktmeb", "name": "Mebel & Ekran Məhsulları", "count": 7 },
+        { "id": "ktqox", "name": "Qoxu & Hava Keyfiyyəti", "count": 9 },
+        { "id": "ktblc", "name": "Bleach & Oksidləşdirici", "count": 8 },
+        { "id": "ktmet", "name": "Metal & Paslanmaz Polad", "count": 5 },
+        { "id": "ktsolv", "name": "Solvent & Xüsusi", "count": 6 },
+        { "id": "ktfrost", "name": "Frost & Boru Açıcı", "count": 4 }
+      ]
+    },
+    {
+      "id": "camasirxana",
+      "code": "CAM",
+      "name": "Camaşırxana Məhsulları",
+      "name_en": "Laundry Products",
+      "product_count": 58,
+      "subcategory_count": 9,
+      "image": "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=600&q=75",
+      "tags": ["eco", "low-temp", "sds"],
+      "subcategories": [
+        { "id": "camtoz", "name": "Sənaye Yuyucu Toz", "count": 8 },
+        { "id": "cammaye", "name": "Sənaye Yuyucu Maye", "count": 7 },
+        { "id": "camyum", "name": "Tekstil Yumşaldıcı", "count": 6 },
+        { "id": "camblc", "name": "Oksigen Bleach", "count": 5 },
+        { "id": "campH", "name": "pH Neutralizer", "count": 5 },
+        { "id": "camnish", "name": "Nişasta (Starch)", "count": 4 },
+        { "id": "camaf", "name": "Anti-Foam", "count": 4 },
+        { "id": "camdis", "name": "Dezinfeksiya Əlavəsi", "count": 6 },
+        { "id": "camdoz", "name": "Dozaj Sistemləri", "count": 13 }
+      ]
+    },
+    {
+      "id": "metbex",
+      "code": "MTB",
+      "name": "Mətbəx Gigiyena Məhsulları",
+      "name_en": "Kitchen Hygiene Products",
+      "product_count": 36,
+      "subcategory_count": 5,
+      "image": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=75",
+      "tags": ["haccp", "food-grade", "sds"],
+      "subcategories": [
+        { "id": "mtboven", "name": "Oven & Grill Təmizleyici", "count": 7 },
+        { "id": "mtbdeg", "name": "Kitchen Degreaser", "count": 8 },
+        { "id": "mtbss", "name": "Stainless Steel Məhsullar", "count": 5 },
+        { "id": "mtbqab", "name": "Qab Yuyucu & Dishwasher", "count": 9 },
+        { "id": "mtbsan", "name": "Food-Grade Sanitizer", "count": 7 }
+      ]
+    },
+    {
+      "id": "amenity",
+      "code": "AMN",
+      "name": "Hotel Amenity",
+      "name_en": "Hotel Amenity Products",
+      "product_count": 62,
+      "subcategory_count": 14,
+      "image": "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&q=75",
+      "tags": ["inci", "logo-print", "premium"],
+      "subcategories": [
+        { "id": "amnshm", "name": "Şampun", "count": 5 },
+        { "id": "amndus", "name": "Duş Geli", "count": 5 },
+        { "id": "amnsab", "name": "Sabun Bar", "count": 5 },
+        { "id": "amnlos", "name": "Losyon", "count": 5 },
+        { "id": "amndnt", "name": "Dental Kit", "count": 4 },
+        { "id": "amnvan", "name": "Vanity Kit", "count": 4 },
+        { "id": "amnter", "name": "Otel Terliyi", "count": 4 },
+        { "id": "amndus2", "name": "Duş Papağı", "count": 3 },
+        { "id": "amnulg", "name": "Ülgüc Seti", "count": 4 },
+        { "id": "amncot", "name": "Cotton Buds", "count": 3 },
+        { "id": "amnmsk", "name": "Maska & PPE Mini", "count": 3 },
+        { "id": "amnhsn", "name": "Hand Sanitizer Mini", "count": 4 },
+        { "id": "amnshv", "name": "Shaving Cream", "count": 3 },
+        { "id": "amnpkg", "name": "Qablaşdırma & Çap", "count": 10 }
+      ]
+    },
+    {
+      "id": "istehlak",
+      "code": "IST",
+      "name": "İstehlak Materialları",
+      "name_en": "Consumable Materials",
+      "product_count": 234,
+      "subcategory_count": 48,
+      "image": "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=600&q=75",
+      "tags": ["bio", "recycled", "branded"],
+      "subcategories": [
+        { "id": "istkag", "name": "Kağız Məhsullar", "count": 20 },
+        { "id": "istalm", "name": "Alüminium Qablar", "count": 12 },
+        { "id": "istmkd", "name": "Mikrodalğalı Qablar", "count": 8 },
+        { "id": "istktk", "name": "Karton Stəkan", "count": 10 },
+        { "id": "istbio", "name": "Bio & Compostable", "count": 12 },
+        { "id": "istpzz", "name": "Pizza & Pide Qutuları", "count": 8 },
+        { "id": "istsous", "name": "Sous Qabları", "count": 7 },
+        { "id": "istdsp", "name": "Dispenser Sistemləri", "count": 18 },
+        { "id": "istzib", "name": "Zibil Qabları & Torbalar", "count": 22 },
+        { "id": "istppe", "name": "PPE & Qoruyucu Geyim", "count": 14 },
+        { "id": "istdgr", "name": "Digər İstehlak", "count": 103 }
+      ]
+    },
+    {
+      "id": "housekeeping",
+      "code": "HK",
+      "name": "Housekeeping Alətləri",
+      "name_en": "Housekeeping Tools",
+      "product_count": 13,
+      "subcategory_count": 7,
+      "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=75",
+      "tags": ["ceymop", "color-coded"],
+      "subcategories": [
+        { "id": "hkmkf", "name": "Mikrofiber Parça", "count": 3 },
+        { "id": "hkmop", "name": "Mop Sistemləri", "count": 4 },
+        { "id": "hkfrc", "name": "Fırça & Süpürgə", "count": 2 },
+        { "id": "hksap", "name": "Teleskop Saplar", "count": 2 },
+        { "id": "hkarb", "name": "Təmizlik Arabaları", "count": 3 },
+        { "id": "hkskr", "name": "Kazıma Alətləri", "count": 2 },
+        { "id": "hkznk", "name": "Xəbərdarlıq Lövhəsi", "count": 1 }
+      ]
+    },
+    {
+      "id": "hovuz",
+      "code": "HOV",
+      "name": "Hovuz & SPA Kimyəvi",
+      "name_en": "Pool & SPA Chemicals",
+      "product_count": 8,
+      "subcategory_count": 1,
+      "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=75",
+      "tags": ["spa", "chlorine-free"],
+      "subcategories": [
+        { "id": "hovkm", "name": "Hovuz & SPA Kimyəvi", "count": 8 }
+      ]
+    }
+  ],
+  "products": [
+    { "id": "KTUMT-001", "category": "kimyevi", "subcategory": "ktumt", "name": "Ümumi Səth Təmizləyici — Konsentrat", "formula": "Nonion/anionic surfaktant + builders", "zones": ["Otaq","Lobby","Back Office"], "variants": ["adi","ətirsiz","eco"], "sizes": ["1kg","5kg","10kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=75" },
+    { "id": "KTDT-002", "category": "kimyevi", "subcategory": "ktdt", "name": "Döşəmə Təmizləyici — Neytral pH", "formula": "Surfactants + su + chelator", "zones": ["Lobby","Konfrans","Restoran"], "variants": ["neytral","alkalin","eco"], "sizes": ["1kg","5kg","10kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=75" },
+    { "id": "KTST-003", "category": "kimyevi", "subcategory": "ktst", "name": "Şüşə & Güzgü Təmizləyici", "formula": "Isopropanol + su + surfaktant", "zones": ["Otaq","Lobby","Konfrans"], "variants": ["adi","ammonyaklı","eco"], "sizes": ["500ml","1kg","5kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
+    { "id": "KTD-005A", "category": "kimyevi", "subcategory": "ktd", "name": "Alkoqollu Dezinfektan Spray", "formula": "Ethanol 70%", "zones": ["Ümumi sahə","Sanitar qovşağı"], "variants": ["adi","ətirsiz"], "sizes": ["500ml","1kg","5kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1584744982491-665216d95f8b?w=600&q=75" },
+    { "id": "KTD-005B", "category": "kimyevi", "subcategory": "ktd", "name": "Əl Dezinfektantı 95% Spirt", "formula": "Spirt 95%", "zones": ["Lobby","Ümumi sahələr"], "variants": ["adi","ətirsiz"], "sizes": ["500ml","1L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&q=75" },
+    { "id": "KTD-005C", "category": "kimyevi", "subcategory": "ktd", "name": "QAC Dezinfektan Konsentrat", "formula": "Benzalkonium chloride + su + surfaktant", "zones": ["Texniki otaqlar","Ümumi sahələr"], "variants": ["adi","ətirsiz","eco"], "sizes": ["1kg","5kg","10kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&q=75" },
+    { "id": "KTSQ-007", "category": "kimyevi", "subcategory": "ktsq", "name": "Tualet Təmizləyici — Turş Əsaslı ECO", "formula": "Citric/Lactic acid + eco surfaktantlar", "zones": ["Sanitar qovşağı"], "variants": ["adi","ətirsiz","eco","RTU"], "sizes": ["750ml","1kg","5kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=75" },
+    { "id": "KTQT-006", "category": "kimyevi", "subcategory": "ktqt", "name": "Food-Grade Sanitizer — No-Rinse HACCP", "formula": "QAC / peracetic acid + su", "zones": ["Mətbəx","Restoran","Bar"], "variants": ["ətirsiz","eco"], "sizes": ["1kg","5kg","10kg"], "delivery_days": "5-7", "haccp": true, "image": "https://images.unsplash.com/photo-1576867757603-05b134ebc379?w=600&q=75" },
+    { "id": "CAM-001", "category": "camasirxana", "subcategory": "camtoz", "name": "Sənaye Yuyucu Toz — Yüksək Aktivlik", "formula": "Surfactants + sodium carbonate + enzymes", "temp_range": "40-95°C", "variants": ["adi","ətirsiz","eco"], "sizes": ["10kg","25kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=600&q=75" },
+    { "id": "CAM-002", "category": "camasirxana", "subcategory": "cammaye", "name": "Sənaye Yuyucu Maye — Low-Temp", "formula": "Surfactants + enzymes", "temp_range": "30-60°C", "variants": ["adi","ətirsiz","eco"], "sizes": ["5L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=600&q=75" },
+    { "id": "CAM-003", "category": "camasirxana", "subcategory": "camyum", "name": "Tekstil Yumşaldıcı Konsentrat", "formula": "Cationic surfactants — industrial grade", "variants": ["adi","ətirsiz","eco"], "sizes": ["5L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=600&q=75" },
+    { "id": "MTB-001", "category": "metbex", "subcategory": "mtboven", "name": "Oven / Grill Cleaner — Heavy-Duty", "formula": "Sodium hydroxide + solvents", "variants": ["adi","ətirsiz","eco"], "sizes": ["1L","5L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=75" },
+    { "id": "MTB-002", "category": "metbex", "subcategory": "mtbdeg", "name": "Kitchen Degreaser Konsentrat", "formula": "Alkalin + surfactant — dilutable", "variants": ["adi","ətirsiz","eco"], "sizes": ["1L","5L","10L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75" },
+    { "id": "MTB-003", "category": "metbex", "subcategory": "mtbss", "name": "Stainless Steel Cleaner", "formula": "Solvent + mineral oil", "variants": ["adi"], "sizes": ["500ml","1L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=75" },
+    { "id": "MTB-004", "category": "metbex", "subcategory": "mtbqab", "name": "Manual Dishwashing Liquid", "formula": "Surfactants + glycerin", "variants": ["adi","ətirsiz","eco"], "sizes": ["500ml","1L","5L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=75" },
+    { "id": "MTB-005", "category": "metbex", "subcategory": "mtbsan", "name": "Food-Grade Sanitizer RTU", "formula": "QAC + water — no-rinse", "variants": ["ətirsiz","eco"], "sizes": ["500ml","1L"], "delivery_days": "5-7", "haccp": true, "image": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=75" },
+    { "id": "MTB-006", "category": "metbex", "subcategory": "mtbqab", "name": "Avtomatik Qabyuyan Deterjanı", "formula": "Alkalin builders + chelators", "variants": ["adi"], "sizes": ["5L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
+    { "id": "AMN-STD-001", "category": "amenity", "subcategory": "amnshm", "name": "Şampun — Standard Seriya", "sizes": ["20ml","30ml","50ml","300ml"], "series": "standard", "logo_print": true, "inci": true, "delivery_days": "7-14", "image": "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&q=75" },
+    { "id": "IST-ALM-001", "category": "istehlak", "subcategory": "istalm", "name": "Alüminium Qablar + Qapaq", "sizes": ["250gr","350gr","500gr","750gr","1000gr","1500gr"], "variants": ["tək göz","iki göz","üç göz"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&q=75" },
+    { "id": "IST-KTK-001", "category": "istehlak", "subcategory": "istktk", "name": "Karton Stəkan — 8 OZ / 12 OZ", "sizes": ["8oz","12oz"], "variants": ["sadə","double","ripple"], "colors": ["ağ","qara","kraft"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=75" },
+    { "id": "IST-BIO-001", "category": "istehlak", "subcategory": "istbio", "name": "Bio Çəngəl / Qaşıq / Bıçaq Seti", "standard": "EN13432", "compostable": true, "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&q=75" },
+    { "id": "IST-PZZ-001", "category": "istehlak", "subcategory": "istpzz", "name": "Pizza Qutusu", "sizes": ["25x25","30x30","33x33"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=600&q=75" },
+    { "id": "HK-MKF-001", "category": "housekeeping", "subcategory": "hkmkf", "name": "Mikrofiber Parça — Color-Coded", "gsm": "300-350", "colors": ["ağ","qırmızı","mavi","yaşıl","sarı"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=75" },
+    { "id": "HK-MOP-001", "category": "housekeeping", "subcategory": "hkmop", "name": "Yaş Mop — Replaceable Head", "material": "cotton/polyester", "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=75" },
+    { "id": "HOV-XLR-001", "category": "hovuz", "subcategory": "hovkm", "name": "Qranul Xlor 56% & 90%", "formula": "Trichloroisocyanuric acid", "variants": ["56%","90%","maye 15%"], "sizes": ["1kg","5kg","25kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&q=75" },
+    { "id": "HOV-OXY-001", "category": "hovuz", "subcategory": "hovkm", "name": "OXY POOL — Xlorsuz Dezenfektan", "formula": "Active oxygen", "suitable_for": ["SPA","uşaq hovuzu"], "sizes": ["5kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=75" },
+    { "id": "HOV-PH-001", "category": "hovuz", "subcategory": "hovkm", "name": "pH Düşürücü · Algisid · Parladıcı", "ph_range": "7.2-7.6", "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=75" }
+  ],
+  "services": [
+    { "id": "SVC-001", "name": "Texniki Konsultasiya", "duration": "1-3 gün", "price_type": "Pulsuz", "description": "Otelin tam ehtiyac analizi, məhsul seçimi, uyğunluq matrisası" },
+    { "id": "SVC-002", "name": "Dozaj Sistemi Quraşdırma", "duration": "1 gün", "price_type": "Layihə üzrə", "description": "Camaşırxana & mətbəx dozaj pompası quraşdırılması, kalibrasiya" },
+    { "id": "SVC-003", "name": "Housekeeping Təlimi", "duration": "2-4 saat", "price_type": "Per session", "description": "Kimyəvi təhlükəsizlik, düzgün istifadə, zona rəng kodlama, sertifikat" },
+    { "id": "SVC-004", "name": "SDS / Etiket Paketi", "duration": "3-7 gün", "price_type": "Layihə üzrə", "description": "Safety Data Sheet toplanması, etiketlər, piktogramlar" },
+    { "id": "SVC-005", "name": "HACCP Gigiyena Planı", "duration": "5-10 gün", "price_type": "Layihə üzrə", "description": "Mətbəx sanitizasiya planı, yoxlama checklistləri, SOP sənədi" },
+    { "id": "SVC-006", "name": "Camaşırxana Kimyəvi Audit", "duration": "3-5 gün", "price_type": "Layihə üzrə", "description": "Su sərtliyi, dozaj, yuma keyfiyyəti analizi, optimizasiya planı" },
+    { "id": "SVC-007", "name": "Pilot / Trial Proqramı", "duration": "2-4 həftə", "price_type": "Paket", "description": "2-4 həftəlik sınaq tətbiqi, test protokolu, hesabat" },
+    { "id": "SVC-008", "name": "Eco Alternativlər Seçimi", "duration": "3-5 gün", "price_type": "Paket", "description": "Safer Choice/eco variantların seçimi, uyğunluq matrisası" },
+    { "id": "SVC-009", "name": "Anbar Optimallaşdırma", "duration": "3-7 gün", "price_type": "Layihə üzrə", "description": "MOQ, təhlükəsizlik stok, sifariş dövrü qurulması, min-max plan" },
+    { "id": "SVC-010", "name": "Çatdırılma & Logistika", "duration": "Daimi", "price_type": "Aylıq", "description": "Çatdırılma qrafiki, bölünmüş çatdırılma, qəbul protokolu" },
+    { "id": "SVC-011", "name": "Keyfiyyət Zəmanəti & SLA", "duration": "1-2 gün SLA", "price_type": "Daxildir", "description": "Məhsul qüsurları SLA, dəyişmə qaydası, reklamasiya forması" },
+    { "id": "SVC-012", "name": "Logo Çap & Dizayn", "duration": "7-20 gün", "price_type": "Layihə üzrə", "description": "Salfet, amenities, qablaşdırma brend çapı, print-ready fayl" },
+    { "id": "SVC-013", "name": "Dispenser / Bathroom Setup", "duration": "1-2 gün", "price_type": "Layihə üzrə", "description": "Dispenser quraşdırma, optimum yerləşdirmə, rəhbərlik" },
+    { "id": "SVC-014", "name": "PPE Təlimi", "duration": "2-3 saat", "price_type": "Per session", "description": "Qoruyucu geyimin düzgün istifadəsi, kimyəvi təhlükəsizlik" },
+    { "id": "SVC-015", "name": "Spill Kit Hazırlığı", "duration": "1 gün", "price_type": "Layihə üzrə", "description": "Kimyəvi tökülmə əleyhinə hazırlıq, avadanlıq, prosedur" }
+  ]
+}
