@@ -1,0 +1,752 @@
+[
+  {
+    "data": {
+      "title": "Süpürgə (soft) – Qutu",
+      "kod": "HAS2-048",
+      "kateqoriya": "Housekeeping Alətləri",
+      "altKateqoriya": "Süpürgə",
+      "terkib": "Synthetic bristles",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Süpürmə",
+      "texnikiTesivr": "Soft",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "Qutu",
+      "minSifaris": "10 ədəd"
+    }
+  },
+  {
+    "data": {
+      "title": "Yaş mop (wet mop) – 1 ədəd",
+      "kod": "HAWM-049",
+      "kateqoriya": "Housekeeping Alətləri",
+      "altKateqoriya": "Wet mop",
+      "terkib": "Cotton/polyester strands",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Döşəmə yuma",
+      "texnikiTesivr": "Replaceable head",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "10 ədəd"
+    }
+  },
+  {
+    "data": {
+      "title": "Yaş mop (wet mop) – Qutu",
+      "kod": "HAWM-049",
+      "kateqoriya": "Housekeeping Alətləri",
+      "altKateqoriya": "Wet mop",
+      "terkib": "Cotton/polyester strands",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Döşəmə yuma",
+      "texnikiTesivr": "Replaceable head",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "Qutu",
+      "minSifaris": "10 ədəd"
+    }
+  },
+  {
+    "data": {
+      "title": "Tualet fırçası – 1 ədəd",
+      "kod": "HATB-050",
+      "kateqoriya": "Housekeeping Alətləri",
+      "altKateqoriya": "Toilet brush",
+      "terkib": "Plastic + bristles",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "WC təmizliyi",
+      "texnikiTesivr": "Holder option",
+      "istifadeSahesi": "Sanitar qovşağı",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "10 ədəd"
+    }
+  },
+  {
+    "data": {
+      "title": "Tualet fırçası – Qutu",
+      "kod": "HATB-050",
+      "kateqoriya": "Housekeeping Alətləri",
+      "altKateqoriya": "Toilet brush",
+      "terkib": "Plastic + bristles",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "WC təmizliyi",
+      "texnikiTesivr": "Holder option",
+      "istifadeSahesi": "Sanitar qovşağı",
+      "qablasdirma": "Qutu",
+      "minSifaris": "10 ədəd"
+    }
+  },
+  {
+    "data": {
+      "title": "Floor finish applicator – 1 ədəd",
+      "kod": "HAFF-051",
+      "kateqoriya": "Housekeeping Alətləri",
+      "altKateqoriya": "Floor finish applicator",
+      "terkib": "Frame + pad",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Floor finish tətbiqi",
+      "texnikiTesivr": "Applicator",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "5 ədəd"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) – 20 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) – 30 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) – 50 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) – 300 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "300 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) (premium) – 20 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) (premium) – 30 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) (premium) – 50 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Şampun (otel mini) (premium) – 300 ml",
+      "kod": "HAŞ-052",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Şampun",
+      "terkib": "Surfactants; conditioners; fragrance; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "INCI təmin edilir",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "300 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) – 20 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) – 30 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) – 50 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) – 300 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "300 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) (premium) – 20 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) (premium) – 30 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) (premium) – 50 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş geli (otel mini) (premium) – 300 ml",
+      "kod": "HADG-053",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Duş geli",
+      "terkib": "Surfactants; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "pH balanced",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "300 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) – 20 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) – 30 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) – 50 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) – 100 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "100 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) (premium) – 20 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) (premium) – 30 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) (premium) – 50 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Sabun bar (otel mini) (premium) – 100 g",
+      "kod": "HASB-054",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Sabun",
+      "terkib": "Soap base; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually wrapped",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "100 g",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Bədən losyonu (otel mini) – 20 ml",
+      "kod": "HAL-055",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Losyon",
+      "terkib": "Emollients; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Nəmləndirmə",
+      "texnikiTesivr": "Fast-absorbing",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Bədən losyonu (otel mini) – 30 ml",
+      "kod": "HAL-055",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Losyon",
+      "terkib": "Emollients; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Nəmləndirmə",
+      "texnikiTesivr": "Fast-absorbing",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Bədən losyonu (otel mini) – 50 ml",
+      "kod": "HAL-055",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Losyon",
+      "terkib": "Emollients; glycerin",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Nəmləndirmə",
+      "texnikiTesivr": "Fast-absorbing",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Bədən losyonu (otel mini) (premium) – 20 ml",
+      "kod": "HAL-055",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Losyon",
+      "terkib": "Emollients; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Nəmləndirmə",
+      "texnikiTesivr": "Fast-absorbing",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Bədən losyonu (otel mini) (premium) – 30 ml",
+      "kod": "HAL-055",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Losyon",
+      "terkib": "Emollients; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Nəmləndirmə",
+      "texnikiTesivr": "Fast-absorbing",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "30 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Bədən losyonu (otel mini) (premium) – 50 ml",
+      "kod": "HAL-055",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Losyon",
+      "terkib": "Emollients; glycerin; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Nəmləndirmə",
+      "texnikiTesivr": "Fast-absorbing",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Üz qırxma kremi (mini) – 20 ml",
+      "kod": "HASC-056",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shaving cream",
+      "terkib": "Shaving cream",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Mini can/tube",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Üz qırxma kremi (mini) – 50 ml",
+      "kod": "HASC-056",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shaving cream",
+      "terkib": "Shaving cream",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Mini can/tube",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Üz qırxma kremi (mini) (premium) – 20 ml",
+      "kod": "HASC-056",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shaving cream",
+      "terkib": "Shaving cream; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Mini can/tube",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Üz qırxma kremi (mini) (premium) – 50 ml",
+      "kod": "HASC-056",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shaving cream",
+      "terkib": "Shaving cream; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Mini can/tube",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "50 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Birdəfəlik ülgüc – 1 ədəd",
+      "kod": "HAR-057",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Razor",
+      "terkib": "Disposable razor",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Twin blade option",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Birdəfəlik ülgüc (premium) – 1 ədəd",
+      "kod": "HAR-057",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Razor",
+      "terkib": "Disposable razor; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Twin blade option",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş papağı – 1 ədəd",
+      "kod": "HASC-058",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shower cap",
+      "terkib": "PE plastic",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Elastic band",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş papağı – Paket",
+      "kod": "HASC-058",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shower cap",
+      "terkib": "PE plastic",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Elastic band",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Paket",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş papağı (premium) – 1 ədəd",
+      "kod": "HASC-058",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shower cap",
+      "terkib": "PE plastic; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Elastic band",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Duş papağı (premium) – Paket",
+      "kod": "HASC-058",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Shower cap",
+      "terkib": "PE plastic; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Elastic band",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Paket",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Vanity kit (cotton pads, buds, file) – Set",
+      "kod": "HAVK-059",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Vanity kit",
+      "terkib": "Mixed kit",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually packed",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Set",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Vanity kit (cotton pads, buds, file) (premium) – Set",
+      "kod": "HAVK-059",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Vanity kit",
+      "terkib": "Mixed kit; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually packed",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Set",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Dental kit (toothbrush+toothpaste) – Set",
+      "kod": "HADK-060",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Dental kit",
+      "terkib": "Mixed kit",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually packed",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Set",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Dental kit (toothbrush+toothpaste) (premium) – Set",
+      "kod": "HADK-060",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Dental kit",
+      "terkib": "Mixed kit; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Individually packed",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Set",
+      "minSifaris": "300 ədəd+"
+    }
+  }
+]

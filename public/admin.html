@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — MI CLEAN GROUP</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9A96E;--gold2:#b8935a;--bg:#07111C;--bg2:#0d1f30;--bg3:#112333;--border:rgba(255,255,255,.09);--border2:rgba(201,169,110,.25);--white:#F5F0E8;--muted:rgba(245,240,232,.45);--red:#f87171;--green:#4ade80;--blue:#60a5fa;--yellow:#fbbf24}
+html,body{height:100%;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--white);font-size:14px}
+
+/* ── Auth screen ── */
+#auth-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.auth-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:40px;max-width:380px;width:100%;text-align:center}
+.auth-logo{font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.auth-title{font-size:22px;font-weight:700;color:var(--white);margin-bottom:6px}
+.auth-sub{font-size:12px;color:var(--muted);margin-bottom:28px}
+.auth-input{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--white);padding:13px 16px;border-radius:4px;font-size:14px;font-family:inherit;margin-bottom:12px;transition:border-color .2s;outline:none;letter-spacing:.05em}
+.auth-input:focus{border-color:var(--gold)}
+.auth-btn{width:100%;background:var(--gold);color:var(--bg);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:14px;border:none;border-radius:4px;cursor:pointer;font-family:inherit;transition:background .2s}
+.auth-btn:hover{background:var(--gold2)}
+.auth-err{font-size:12px;color:var(--red);margin-top:10px;min-height:18px}
+
+/* ── Main layout ── */
+#main-screen{display:none;min-height:100vh;flex-direction:column}
+header{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 28px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.hdr-brand{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.hdr-right{display:flex;align-items:center;gap:16px}
+.hdr-tag{font-size:10px;color:var(--muted)}
+.hdr-logout{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 12px;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .2s}
+.hdr-logout:hover{border-color:var(--red);color:var(--red)}
+
+/* ── Tabs ── */
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);padding:0 28px;background:var(--bg2)}
+.tab{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px 20px;border-bottom:2px solid transparent;cursor:pointer;color:var(--muted);transition:all .2s;background:none;border-top:none;border-left:none;border-right:none;font-family:inherit}
+.tab:hover{color:var(--white)}
+.tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.tab-badge{display:inline-block;background:rgba(201,169,110,.15);color:var(--gold);font-size:8px;padding:2px 6px;border-radius:10px;margin-left:6px}
+
+/* ── Content ── */
+.content{padding:24px 28px;flex:1}
+.panel{display:none}
+.panel.active{display:block}
+
+/* ── Stats row ── */
+.stats-row{display:flex;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:16px 20px;flex:1;min-width:140px}
+.stat-n{font-size:24px;font-weight:700;color:var(--gold)}
+.stat-l{font-size:9px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+
+/* ── Toolbar ── */
+.toolbar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+.toolbar-title{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);flex:1}
+.filter-select{background:var(--bg3);border:1px solid var(--border);color:var(--white);padding:7px 10px;border-radius:3px;font-size:11px;font-family:inherit;cursor:pointer;outline:none}
+.filter-select:focus{border-color:var(--gold)}
+.refresh-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:7px 12px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:all .2s}
+.refresh-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── Table ── */
+.tbl-wrap{overflow-x:auto;border-radius:4px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse}
+thead tr{background:var(--bg3)}
+th{font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:10px 14px;text-align:left;border-bottom:1px solid var(--border);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.04);font-size:12px;color:rgba(245,240,232,.8);vertical-align:top}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:rgba(255,255,255,.015)}
+.td-id{font-size:10px;color:var(--muted);font-family:monospace;white-space:nowrap}
+.td-date{font-size:10px;color:var(--muted);white-space:nowrap}
+.td-name{font-weight:600;color:var(--white)}
+.td-hotel{font-size:11px;color:var(--muted)}
+.td-note{font-size:11px;color:var(--muted);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.td-cats{font-size:10px;color:var(--muted);max-width:180px}
+.cat-chip{display:inline-block;background:rgba(201,169,110,.1);color:var(--gold);border:1px solid rgba(201,169,110,.2);font-size:9px;padding:2px 6px;border-radius:10px;margin:1px 2px 1px 0;white-space:nowrap}
+
+/* ── Status badge + select ── */
+.status-sel{background:transparent;border:1px solid var(--border);color:var(--muted);padding:4px 6px;border-radius:3px;font-size:10px;font-family:inherit;cursor:pointer;outline:none;transition:all .2s}
+.status-sel:hover,.status-sel:focus{border-color:var(--gold)}
+.status-sel.s-pending,.status-sel.s-new{border-color:rgba(251,191,36,.4);color:var(--yellow)}
+.status-sel.s-contacted,.status-sel.s-read{border-color:rgba(96,165,250,.4);color:var(--blue)}
+.status-sel.s-quoted,.status-sel.s-replied{border-color:rgba(74,222,128,.4);color:var(--green)}
+.status-sel.s-closed,.status-sel.s-archived{border-color:rgba(255,255,255,.15);color:var(--muted);opacity:.6}
+.pilot-yes{color:var(--gold);font-size:10px;font-weight:700}
+.pilot-no{color:var(--muted);font-size:10px}
+
+/* ── Empty / loading ── */
+.empty-row td{text-align:center;color:var(--muted);font-size:12px;padding:40px}
+.loading-row td{text-align:center;color:var(--muted);font-size:12px;padding:32px}
+
+/* ── Toast ── */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg3);border:1px solid var(--border2);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.12em;padding:10px 20px;border-radius:3px;opacity:0;transition:all .25s;pointer-events:none;z-index:9999;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- Auth screen -->
+<div id="auth-screen">
+  <div class="auth-box">
+    <div class="auth-logo">MI CLEAN GROUP</div>
+    <div class="auth-title">Admin Panel</div>
+    <div class="auth-sub">Daxil olmaq üçün admin açarını daxil edin</div>
+    <input class="auth-input" id="key-input" type="password" placeholder="Admin açarı" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()">
+    <button class="auth-btn" onclick="login()">Daxil ol</button>
+    <div class="auth-err" id="auth-err"></div>
+  </div>
+</div>
+
+<!-- Main screen -->
+<div id="main-screen">
+  <header>
+    <div class="hdr-brand">MI CLEAN GROUP — Admin</div>
+    <div class="hdr-right">
+      <span class="hdr-tag" id="hdr-tag"></span>
+      <button class="hdr-logout" onclick="logout()">Çıxış</button>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('quotes',this)">Qiymət Sorğuları <span class="tab-badge" id="badge-quotes">0</span></button>
+    <button class="tab" onclick="switchTab('messages',this)">Mesajlar <span class="tab-badge" id="badge-messages">0</span></button>
+  </div>
+
+  <div class="content">
+
+    <!-- Quotes panel -->
+    <div class="panel active" id="panel-quotes">
+      <div class="stats-row" id="qstats"></div>
+      <div class="toolbar">
+        <span class="toolbar-title">Qiymət Sorğuları</span>
+        <select class="filter-select" id="qfilter" onchange="renderQuotes()">
+          <option value="">Hamısı</option>
+          <option value="pending">Gözləyir</option>
+          <option value="contacted">Əlaqə saxlanıldı</option>
+          <option value="quoted">Qiymət verildi</option>
+          <option value="closed">Bağlandı</option>
+        </select>
+        <button class="refresh-btn" onclick="loadQuotes()">↻ Yenilə</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th>ID</th><th>Tarix</th><th>Ad</th><th>Otel</th><th>Ulduz</th>
+            <th>Kateqoriyalar</th><th>Pilot</th><th>Qeyd</th><th>Status</th>
+          </tr></thead>
+          <tbody id="qtbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Messages panel -->
+    <div class="panel" id="panel-messages">
+      <div class="stats-row" id="mstats"></div>
+      <div class="toolbar">
+        <span class="toolbar-title">Əlaqə Mesajları</span>
+        <select class="filter-select" id="mfilter" onchange="renderMessages()">
+          <option value="">Hamısı</option>
+          <option value="new">Yeni</option>
+          <option value="read">Oxundu</option>
+          <option value="replied">Cavablandı</option>
+          <option value="archived">Arxiv</option>
+        </select>
+        <button class="refresh-btn" onclick="loadMessages()">↻ Yenilə</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr>
+            <th>ID</th><th>Tarix</th><th>Ad</th><th>Email</th><th>Otel</th>
+            <th>Mesaj</th><th>Status</th>
+          </tr></thead>
+          <tbody id="mtbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+var KEY_STORE = 'mcg_admin_key';
+var adminKey = '';
+var allQuotes = [];
+var allMessages = [];
+
+// ── Auth ──────────────────────────────────────────────────────────────────────
+function login() {
+  var k = document.getElementById('key-input').value.trim();
+  if (!k) { showErr('Admin açarını daxil edin.'); return; }
+  adminKey = k;
+  // Try fetching quotes to verify key
+  fetch('/api/quotes', { headers: { 'x-admin-key': k } })
+    .then(function(r) {
+      if (r.status === 401) { showErr('Açar yanlışdır.'); adminKey = ''; return; }
+      sessionStorage.setItem(KEY_STORE, k);
+      showMain();
+    })
+    .catch(function() { showErr('Server əlaqəsi yoxdur.'); adminKey = ''; });
+}
+
+function showErr(msg) {
+  document.getElementById('auth-err').textContent = msg;
+}
+
+function logout() {
+  sessionStorage.removeItem(KEY_STORE);
+  adminKey = '';
+  document.getElementById('main-screen').style.display = 'none';
+  document.getElementById('auth-screen').style.display = 'flex';
+  document.getElementById('key-input').value = '';
+  document.getElementById('auth-err').textContent = '';
+}
+
+function showMain() {
+  document.getElementById('auth-screen').style.display = 'none';
+  document.getElementById('main-screen').style.display = 'flex';
+  var tag = document.getElementById('hdr-tag');
+  if (tag) tag.textContent = new Date().toLocaleString('az-AZ');
+  loadAll();
+}
+
+// Auto-login if key stored
+(function() {
+  var stored = sessionStorage.getItem(KEY_STORE);
+  if (stored) { adminKey = stored; document.getElementById('key-input').value = stored; login(); }
+})();
+
+// ── Data loading ──────────────────────────────────────────────────────────────
+function loadAll() { loadQuotes(); loadMessages(); }
+
+function loadQuotes() {
+  var tbody = document.getElementById('qtbody');
+  tbody.innerHTML = '<tr class="loading-row"><td colspan="9">Yüklənir…</td></tr>';
+  fetch('/api/quotes', { headers: { 'x-admin-key': adminKey } })
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      allQuotes = d.quotes || [];
+      updateQuoteStats();
+      renderQuotes();
+    })
+    .catch(function() {
+      tbody.innerHTML = '<tr class="empty-row"><td colspan="9">Xəta baş verdi.</td></tr>';
+    });
+}
+
+function loadMessages() {
+  var tbody = document.getElementById('mtbody');
+  tbody.innerHTML = '<tr class="loading-row"><td colspan="7">Yüklənir…</td></tr>';
+  fetch('/api/contact', { headers: { 'x-admin-key': adminKey } })
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      allMessages = d.messages || [];
+      updateMessageStats();
+      renderMessages();
+    })
+    .catch(function() {
+      tbody.innerHTML = '<tr class="empty-row"><td colspan="7">Xəta baş verdi.</td></tr>';
+    });
+}
+
+// ── Stats ─────────────────────────────────────────────────────────────────────
+function updateQuoteStats() {
+  var counts = { pending:0, contacted:0, quoted:0, closed:0 };
+  allQuotes.forEach(function(q) { if (counts[q.status] !== undefined) counts[q.status]++; });
+  document.getElementById('qstats').innerHTML =
+    stat(allQuotes.length, 'Cəmi') +
+    stat(counts.pending, 'Gözləyir', '--yellow') +
+    stat(counts.contacted, 'Əlaqə', '--blue') +
+    stat(counts.quoted, 'Qiymətləndirildi', '--green') +
+    stat(counts.closed, 'Bağlandı', '--muted');
+  document.getElementById('badge-quotes').textContent = allQuotes.length;
+}
+
+function updateMessageStats() {
+  var counts = { 'new':0, read:0, replied:0, archived:0 };
+  allMessages.forEach(function(m) { if (counts[m.status] !== undefined) counts[m.status]++; });
+  document.getElementById('mstats').innerHTML =
+    stat(allMessages.length, 'Cəmi') +
+    stat(counts['new'], 'Yeni', '--yellow') +
+    stat(counts.read, 'Oxundu', '--blue') +
+    stat(counts.replied, 'Cavablandı', '--green') +
+    stat(counts.archived, 'Arxiv', '--muted');
+  document.getElementById('badge-messages').textContent = allMessages.length;
+}
+
+function stat(n, label, color) {
+  return '<div class="stat-card"><div class="stat-n"' + (color ? ' style="color:var(' + color + ')"' : '') + '>' + n + '</div><div class="stat-l">' + label + '</div></div>';
+}
+
+// ── Render tables ─────────────────────────────────────────────────────────────
+function renderQuotes() {
+  var filter = document.getElementById('qfilter').value;
+  var rows = allQuotes.filter(function(q) { return !filter || q.status === filter; });
+  var tbody = document.getElementById('qtbody');
+  if (!rows.length) { tbody.innerHTML = '<tr class="empty-row"><td colspan="9">Sorğu tapılmadı.</td></tr>'; return; }
+  tbody.innerHTML = rows.map(function(q) {
+    var cats = (q.categories || []).map(function(c) { return '<span class="cat-chip">' + esc(c) + '</span>'; }).join('');
+    return '<tr>' +
+      '<td class="td-id">' + esc(q.id) + '</td>' +
+      '<td class="td-date">' + fmtDate(q.created_at) + '</td>' +
+      '<td><div class="td-name">' + esc(q.name) + '</div><div style="font-size:10px;color:var(--muted)">' + esc(q.email) + (q.phone ? ' · ' + esc(q.phone) : '') + '</div></td>' +
+      '<td class="td-hotel">' + esc(q.hotel) + '</td>' +
+      '<td style="text-align:center">' + (q.hotel_stars ? esc(q.hotel_stars) + '★' : '—') + '</td>' +
+      '<td class="td-cats">' + (cats || '—') + '</td>' +
+      '<td style="text-align:center">' + (q.pilot ? '<span class="pilot-yes">Bəli</span>' : '<span class="pilot-no">Xeyr</span>') + '</td>' +
+      '<td class="td-note">' + (q.notes ? esc(q.notes) : '—') + '</td>' +
+      '<td><select class="status-sel s-' + q.status + '" onchange="updateStatus(\'quotes\',\'' + esc(q.id) + '\',this)">' + quoteStatusOpts(q.status) + '</select></td>' +
+    '</tr>';
+  }).join('');
+}
+
+function renderMessages() {
+  var filter = document.getElementById('mfilter').value;
+  var rows = allMessages.filter(function(m) { return !filter || m.status === filter; });
+  var tbody = document.getElementById('mtbody');
+  if (!rows.length) { tbody.innerHTML = '<tr class="empty-row"><td colspan="7">Mesaj tapılmadı.</td></tr>'; return; }
+  tbody.innerHTML = rows.map(function(m) {
+    return '<tr>' +
+      '<td class="td-id">' + esc(m.id) + '</td>' +
+      '<td class="td-date">' + fmtDate(m.created_at) + '</td>' +
+      '<td class="td-name">' + esc(m.name) + '</td>' +
+      '<td style="font-size:11px">' + esc(m.email) + (m.phone ? '<br><span style="color:var(--muted)">' + esc(m.phone) + '</span>' : '') + '</td>' +
+      '<td class="td-hotel">' + esc(m.hotel) + '</td>' +
+      '<td class="td-note" title="' + esc(m.message) + '">' + esc(m.message) + '</td>' +
+      '<td><select class="status-sel s-' + m.status + '" onchange="updateStatus(\'contact\',\'' + esc(m.id) + '\',this)">' + msgStatusOpts(m.status) + '</select></td>' +
+    '</tr>';
+  }).join('');
+}
+
+function quoteStatusOpts(cur) {
+  return [['pending','Gözləyir'],['contacted','Əlaqə saxlanıldı'],['quoted','Qiymət verildi'],['closed','Bağlandı']]
+    .map(function(o) { return '<option value="' + o[0] + '"' + (o[0]===cur?' selected':'') + '>' + o[1] + '</option>'; }).join('');
+}
+function msgStatusOpts(cur) {
+  return [['new','Yeni'],['read','Oxundu'],['replied','Cavablandı'],['archived','Arxiv']]
+    .map(function(o) { return '<option value="' + o[0] + '"' + (o[0]===cur?' selected':'') + '>' + o[1] + '</option>'; }).join('');
+}
+
+// ── Status update ─────────────────────────────────────────────────────────────
+function updateStatus(type, id, sel) {
+  var status = sel.value;
+  var url = '/api/' + (type === 'quotes' ? 'quotes' : 'contact') + '/' + encodeURIComponent(id);
+  sel.disabled = true;
+  fetch(url, {
+    method: 'PATCH',
+    headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey },
+    body: JSON.stringify({ status: status }),
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(d) {
+    sel.disabled = false;
+    if (d.success) {
+      // Update local data
+      if (type === 'quotes') {
+        var q = allQuotes.find(function(x) { return x.id === id; });
+        if (q) q.status = status;
+        updateQuoteStats();
+      } else {
+        var m = allMessages.find(function(x) { return x.id === id; });
+        if (m) m.status = status;
+        updateMessageStats();
+      }
+      // Update row class
+      sel.className = 'status-sel s-' + status;
+      showToast('Status yeniləndi');
+    } else {
+      showToast('Xəta: ' + (d.message || 'bilinməyən'));
+    }
+  })
+  .catch(function() { sel.disabled = false; showToast('Şəbəkə xətası'); });
+}
+
+// ── UI helpers ────────────────────────────────────────────────────────────────
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.panel').forEach(function(p) { p.classList.remove('active'); });
+  btn.classList.add('active');
+  document.getElementById('panel-' + name).classList.add('active');
+}
+
+var _toastTimer;
+function showToast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(function() { t.classList.remove('show'); }, 2200);
+}
+
+function esc(s) {
+  if (s == null) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function fmtDate(str) {
+  if (!str) return '—';
+  var d = new Date(str);
+  if (isNaN(d)) return str;
+  var months = ['Yan','Fev','Mar','Apr','May','İyn','İyl','Avq','Sen','Okt','Noy','Dek'];
+  return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear() +
+    '<br><span style="font-size:9px;color:var(--muted)">' +
+    String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0') + '</span>';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,752 @@
+[
+  {
+    "data": {
+      "title": "Avtomatik qabyuyan deterjanı (maye) (ətirsiz)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Alkalin builders; chelators; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qabyuyan maşın",
+      "texnikiTesivr": "Auto dosing",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Avtomatik qabyuyan deterjanı (maye) (eco)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Alkalin builders; chelators; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qabyuyan maşın",
+      "texnikiTesivr": "Auto dosing",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Avtomatik qabyuyan deterjanı (maye) (eco)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Alkalin builders; chelators; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qabyuyan maşın",
+      "texnikiTesivr": "Auto dosing",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Tuz ruhu (NET)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Toz format;chelators; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qabyuyan",
+      "texnikiTesivr": "Auto dosing",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Qabyuyan parladıcı (rinse aid)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Nonion surfaktant; acidifier",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qurumanı sürətləndirir",
+      "texnikiTesivr": "Low spotting",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Qabyuyan parladıcı (rinse aid)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Nonion surfaktant; acidifier",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qurumanı sürətləndirir",
+      "texnikiTesivr": "Low spotting",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Qabyuyan parladıcı (rinse aid) (ətirsiz)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Nonion surfaktant; acidifier; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qurumanı sürətləndirir",
+      "texnikiTesivr": "Low spotting",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Qabyuyan parladıcı (rinse aid) (ətirsiz)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Nonion surfaktant; acidifier; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qurumanı sürətləndirir",
+      "texnikiTesivr": "Low spotting",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Qabyuyan parladıcı (rinse aid) (eco)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Nonion surfaktant; acidifier; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qurumanı sürətləndirir",
+      "texnikiTesivr": "Low spotting",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Qabyuyan parladıcı (rinse aid) (eco)",
+      "kod": "KTDP-009",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Dishwashing products",
+      "terkib": "Nonion surfaktant; acidifier; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qurumanı sürətləndirir",
+      "texnikiTesivr": "Low spotting",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Kanal açıcı (gel)",
+      "kod": "KTDK-010",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Drenaj və kanal açıcılar",
+      "terkib": "Sodium hydroxide; thickener",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tıxanıqların açılması",
+      "texnikiTesivr": "Gel, heavy-duty",
+      "istifadeSahesi": "Mətbəx; Sanitar qovşağı",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Kanal açıcı (gel)",
+      "kod": "KTDK-010",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Drenaj və kanal açıcılar",
+      "terkib": "Sodium hydroxide; thickener",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tıxanıqların açılması",
+      "texnikiTesivr": "Gel, heavy-duty",
+      "istifadeSahesi": "Mətbəx; Sanitar qovşağı",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Kanal açıcı (gel) (ətirsiz)",
+      "kod": "KTDK-010",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Drenaj və kanal açıcılar",
+      "terkib": "Sodium hydroxide; thickener; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tıxanıqların açılması",
+      "texnikiTesivr": "Gel, heavy-duty",
+      "istifadeSahesi": "Mətbəx; Sanitar qovşağı",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Kanal açıcı (gel) (ətirsiz)",
+      "kod": "KTDK-010",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Drenaj və kanal açıcılar",
+      "terkib": "Sodium hydroxide; thickener; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tıxanıqların açılması",
+      "texnikiTesivr": "Gel, heavy-duty",
+      "istifadeSahesi": "Mətbəx; Sanitar qovşağı",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Kanal açıcı (gel) (eco)",
+      "kod": "KTDK-010",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Drenaj və kanal açıcılar",
+      "terkib": "Sodium hydroxide; thickener; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tıxanıqların açılması",
+      "texnikiTesivr": "Gel, heavy-duty",
+      "istifadeSahesi": "Mətbəx; Sanitar qovşağı",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Kanal açıcı (gel) (eco)",
+      "kod": "KTDK-010",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Drenaj və kanal açıcılar",
+      "terkib": "Sodium hydroxide; thickener; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tıxanıqların açılması",
+      "texnikiTesivr": "Gel, heavy-duty",
+      "istifadeSahesi": "Mətbəx; Sanitar qovşağı",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "10 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor) (ətirsiz)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor) (ətirsiz)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor) (ətirsiz)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "10 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor) (eco)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor) (eco)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Xalça şampunu (ekstraktor) (eco)",
+      "kod": "KTCU-011",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Carpet & Upholstery",
+      "terkib": "Surfactant; anti-foam; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Xalça/örtük təmizliyi",
+      "texnikiTesivr": "Low-foam",
+      "istifadeSahesi": "Otaq; Konfrans",
+      "qablasdirma": "10 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı) (ətirsiz)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı) (ətirsiz)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı) (ətirsiz)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı) (eco)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı) (eco)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ləkə çıxarıcı (oksigen əsaslı) (eco)",
+      "kod": "KTLÇ-012",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ləkə çıxarıcılar",
+      "terkib": "Sodium percarbonate; builders; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Ləkələrin çıxarılması",
+      "texnikiTesivr": "Oxygen bleach",
+      "istifadeSahesi": "Otaq; Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel təmizləyici (spray)",
+      "kod": "KTMT-013",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel təmizləyici",
+      "terkib": "Surfactant; solvent; anti-static",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Mebel səthləri",
+      "texnikiTesivr": "Anti-static",
+      "istifadeSahesi": "Back Office; Ümumi sahələr",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel təmizləyici (spray)",
+      "kod": "KTMT-013",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel təmizləyici",
+      "terkib": "Surfactant; solvent; anti-static",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Mebel səthləri",
+      "texnikiTesivr": "Anti-static",
+      "istifadeSahesi": "Back Office; Ümumi sahələr",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel təmizləyici (spray) (ətirsiz)",
+      "kod": "KTMT-013",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel təmizləyici",
+      "terkib": "Surfactant; solvent; anti-static; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Mebel səthləri",
+      "texnikiTesivr": "Anti-static",
+      "istifadeSahesi": "Back Office; Ümumi sahələr",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel təmizləyici (spray) (ətirsiz)",
+      "kod": "KTMT-013",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel təmizləyici",
+      "terkib": "Surfactant; solvent; anti-static; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Mebel səthləri",
+      "texnikiTesivr": "Anti-static",
+      "istifadeSahesi": "Back Office; Ümumi sahələr",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel təmizləyici (spray) (eco)",
+      "kod": "KTMT-013",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel təmizləyici",
+      "terkib": "Surfactant; solvent; anti-static; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Mebel səthləri",
+      "texnikiTesivr": "Anti-static",
+      "istifadeSahesi": "Back Office; Ümumi sahələr",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel təmizləyici (spray) (eco)",
+      "kod": "KTMT-013",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel təmizləyici",
+      "terkib": "Surfactant; solvent; anti-static; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Mebel səthləri",
+      "texnikiTesivr": "Anti-static",
+      "istifadeSahesi": "Back Office; Ümumi sahələr",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel cilası / wax (wood)",
+      "kod": "KTMC-014",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel cilası",
+      "terkib": "Polish/wax preparation",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Taxta mebel və parket baxımı",
+      "texnikiTesivr": "Shine & protection",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel cilası / wax (wood)",
+      "kod": "KTMC-014",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel cilası",
+      "terkib": "Polish/wax preparation",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Taxta mebel və parket baxımı",
+      "texnikiTesivr": "Shine & protection",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel cilası / wax (wood) (ətirsiz)",
+      "kod": "KTMC-014",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel cilası",
+      "terkib": "Polish/wax preparation; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Taxta mebel və parket baxımı",
+      "texnikiTesivr": "Shine & protection",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel cilası / wax (wood) (ətirsiz)",
+      "kod": "KTMC-014",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel cilası",
+      "terkib": "Polish/wax preparation; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Taxta mebel və parket baxımı",
+      "texnikiTesivr": "Shine & protection",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel cilası / wax (wood) (eco)",
+      "kod": "KTMC-014",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel cilası",
+      "terkib": "Polish/wax preparation; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Taxta mebel və parket baxımı",
+      "texnikiTesivr": "Shine & protection",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Mebel cilası / wax (wood) (eco)",
+      "kod": "KTMC-014",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Mebel cilası",
+      "terkib": "Polish/wax preparation; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Taxta mebel və parket baxımı",
+      "texnikiTesivr": "Shine & protection",
+      "istifadeSahesi": "Ümumi sahələr",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ekran təmizləyici (screen cleaner)",
+      "kod": "KTET-015",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ekran təmizləyici",
+      "terkib": "Anti-static cleaner",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Monitor/TV ekran",
+      "texnikiTesivr": "Non-streak",
+      "istifadeSahesi": "Back Office; Otaq",
+      "qablasdirma": "250 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ekran təmizləyici (screen cleaner)",
+      "kod": "KTET-015",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ekran təmizləyici",
+      "terkib": "Anti-static cleaner",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Monitor/TV ekran",
+      "texnikiTesivr": "Non-streak",
+      "istifadeSahesi": "Back Office; Otaq",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ekran təmizləyici (screen cleaner) (ətirsiz)",
+      "kod": "KTET-015",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ekran təmizləyici",
+      "terkib": "Anti-static cleaner; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Monitor/TV ekran",
+      "texnikiTesivr": "Non-streak",
+      "istifadeSahesi": "Back Office; Otaq",
+      "qablasdirma": "250 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Ekran təmizləyici (screen cleaner) (ətirsiz)",
+      "kod": "KTET-015",
+      "kateqoriya": "Kimyəvi Təmizlik Vasitələri",
+      "altKateqoriya": "Ekran təmizləyici",
+      "terkib": "Anti-static cleaner; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Monitor/TV ekran",
+      "texnikiTesivr": "Non-streak",
+      "istifadeSahesi": "Back Office; Otaq",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  }
+]

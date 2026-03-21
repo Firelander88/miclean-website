@@ -43,4 +43,27 @@ async function sendMail({ subject, html }) {
   }
 }
 
-module.exports = { sendMail };
+/**
+ * Send an email to a specific recipient (e.g. customer confirmation).
+ * @param {{ to: string, subject: string, html: string }} opts
+ * @returns {Promise<boolean>}
+ */
+async function sendMailTo({ to, subject, html }) {
+  const transporter = getTransporter();
+  if (!transporter) return false;
+
+  try {
+    await transporter.sendMail({
+      from: `"MI CLEAN GROUP" <${process.env.SMTP_USER}>`,
+      to,
+      subject,
+      html,
+    });
+    return true;
+  } catch (err) {
+    logger.error('Müştəriyə email göndərmə xətası', { message: err.message, to });
+    return false;
+  }
+}
+
+module.exports = { sendMail, sendMailTo };

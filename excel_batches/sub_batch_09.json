@@ -1,0 +1,752 @@
+[
+  {
+    "data": {
+      "title": "Diş pastası (mini) – 10 ml",
+      "kod": "HAT-061",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Toothpaste",
+      "terkib": "Fluoride toothpaste",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Tube 5–15 ml",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "10 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Diş pastası (mini) – 20 ml",
+      "kod": "HAT-061",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Toothpaste",
+      "terkib": "Fluoride toothpaste",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Tube 5–15 ml",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Diş pastası (mini) (premium) – 10 ml",
+      "kod": "HAT-061",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Toothpaste",
+      "terkib": "Fluoride toothpaste; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Tube 5–15 ml",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "10 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Diş pastası (mini) (premium) – 20 ml",
+      "kod": "HAT-061",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Toothpaste",
+      "terkib": "Fluoride toothpaste; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Tube 5–15 ml",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "20 ml",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Diş fırçası – 1 ədəd",
+      "kod": "HAT-061",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Toothbrush",
+      "terkib": "Plastic + nylon bristles",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Soft/medium",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Diş fırçası (premium) – 1 ədəd",
+      "kod": "HAT-061",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Toothbrush",
+      "terkib": "Plastic + nylon bristles; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Soft/medium",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 ədəd",
+      "minSifaris": "500 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Pambıq çubuqlar (cotton buds) – 100 ədəd/qutu",
+      "kod": "HACB-062",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Cotton buds",
+      "terkib": "Cotton + stick",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "100 pcs",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "100 ədəd/qutu",
+      "minSifaris": "200 qutu+"
+    }
+  },
+  {
+    "data": {
+      "title": "Pambıq çubuqlar (cotton buds) (premium) – 100 ədəd/qutu",
+      "kod": "HACB-062",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Cotton buds",
+      "terkib": "Cotton + stick; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "100 pcs",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "100 ədəd/qutu",
+      "minSifaris": "200 qutu+"
+    }
+  },
+  {
+    "data": {
+      "title": "Əl dezinfektanı (mini) – 30 ml",
+      "kod": "HAHS-063",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Hand sanitizer",
+      "terkib": "Ethanol 70% + humectant",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Gel/spray",
+      "istifadeSahesi": "Otaq; Lobby",
+      "qablasdirma": "30 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Əl dezinfektanı (mini) – 50 ml",
+      "kod": "HAHS-063",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Hand sanitizer",
+      "terkib": "Ethanol 70% + humectant",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Gel/spray",
+      "istifadeSahesi": "Otaq; Lobby",
+      "qablasdirma": "50 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Əl dezinfektanı (mini) – 300 ml",
+      "kod": "HAHS-063",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Hand sanitizer",
+      "terkib": "Ethanol 70% + humectant",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Gel/spray",
+      "istifadeSahesi": "Otaq; Lobby",
+      "qablasdirma": "300 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Əl dezinfektanı (mini) (premium) – 30 ml",
+      "kod": "HAHS-063",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Hand sanitizer",
+      "terkib": "Ethanol 70% + humectant; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Gel/spray",
+      "istifadeSahesi": "Otaq; Lobby",
+      "qablasdirma": "30 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Əl dezinfektanı (mini) (premium) – 50 ml",
+      "kod": "HAHS-063",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Hand sanitizer",
+      "terkib": "Ethanol 70% + humectant; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Gel/spray",
+      "istifadeSahesi": "Otaq; Lobby",
+      "qablasdirma": "50 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Əl dezinfektanı (mini) (premium) – 300 ml",
+      "kod": "HAHS-063",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Hand sanitizer",
+      "terkib": "Ethanol 70% + humectant; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "s",
+      "istifadeSahesi": "Otaq; Lobby",
+      "qablasdirma": "300 ml",
+      "minSifaris": "300 ədəd+"
+    }
+  },
+  {
+    "data": {
+      "title": "Otel terlikləri (unisex) – 1 cüt",
+      "kod": "HAS-064",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Slippers",
+      "terkib": "Textile upper + plastic sole",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Logo embroidery/print",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 cüt",
+      "minSifaris": "200 cüt+"
+    }
+  },
+  {
+    "data": {
+      "title": "Otel terlikləri (unisex) – Qutu",
+      "kod": "HAS-064",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Slippers",
+      "terkib": "Textile upper + plastic sole",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Logo embroidery/print",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Qutu",
+      "minSifaris": "200 cüt+"
+    }
+  },
+  {
+    "data": {
+      "title": "Otel terlikləri (unisex) (premium) – 1 cüt",
+      "kod": "HAS-064",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Slippers",
+      "terkib": "Textile upper + plastic sole; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Logo embroidery/print",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "1 cüt",
+      "minSifaris": "200 cüt+"
+    }
+  },
+  {
+    "data": {
+      "title": "Otel terlikləri (unisex) (premium) – Qutu",
+      "kod": "HAS-064",
+      "kateqoriya": "Hotel Amenity",
+      "altKateqoriya": "Slippers",
+      "terkib": "Textile upper + plastic sole; premium fragrance",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Qonaq amenity",
+      "texnikiTesivr": "Logo embroidery/print",
+      "istifadeSahesi": "Otaq",
+      "qablasdirma": "Qutu",
+      "minSifaris": "200 cüt+"
+    }
+  },
+  {
+    "data": {
+      "title": "QRANUL XLOR 56%",
+      "kod": "HTX-066",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "QRANUL XLOR 90%",
+      "kod": "HTX-066",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "OXY POOL XLORSUZ DEZENFEKTAN",
+      "kod": "HTX-066",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Yosun önləyici",
+      "kod": "HTX-066",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Maye çöktürücü",
+      "kod": "HTX-066",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Maye xlor 15%",
+      "kod": "HTX-066",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Hovuz Parladıcı",
+      "kod": "HTP-067",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "PH düşürücü (toz və maye)",
+      "kod": "HTP-068",
+      "kateqoriya": "Hovuz Təmizliyi",
+      "altKateqoriya": "Hovuz Kimyəvi Maddələri",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Cüt kovalı təmizlik arabası Plastik",
+      "kod": "İMCKTA-069",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "Təmizlik arabaları",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Tək kovalı təmizlik arabası",
+      "kod": "İMTKTA-070",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "Təmizlik arabaları",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Kayqan zemin lövhə",
+      "kod": "İMKZL-071",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "Təmizlik arabaları",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "CEYMOP PROFESSIONAL Yer yuma Pedi ( ağ - qırmızı - qara )",
+      "kod": "İMCPP-072",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Metal Teleskop 2 Metr / 3 Metr",
+      "kod": "İMMT23-073",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Metal Teleskop 4 Metr / 4.5 Metr",
+      "kod": "İMMT45-074",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "130 cm qırmızı metal vidalı sap",
+      "kod": "İMQMVS130-075",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "130 cm taxta vidalı sap",
+      "kod": "İMTVS130-076",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Metal vidalı sap 130cm",
+      "kod": "İMMVS130-077",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "130 Cm Delikli çubuq RƏNGLİ",
+      "kod": "İMDC-R-078",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Ceymop mop aparatı 50 cm",
+      "kod": "İMCMA50-079",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Ceymop mop aparatı 60 cm",
+      "kod": "İMCMA60-080",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Mop makaron 40 cm rəngli",
+      "kod": "İMMM40-081",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Mop makaron 50 cm rəngli",
+      "kod": "İMMM50-082",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Mop makaron 60 cm rəngli",
+      "kod": "İMMM60-083",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Eco nemli mop 50 cm 150 ədədli bağlamada",
+      "kod": "İMENM50-084",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Zincir dikiş nəmli mop 50 cm",
+      "kod": "İMZNM50-085",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Metal camçek 45 cm",
+      "kod": "İMMC45-086",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Metal camçek 35 cm",
+      "kod": "İMMC35-087",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Karex cam lastiği 105 cm",
+      "kod": "İMKCL105-088",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Islak mop aparatı PLASTİK",
+      "kod": "İMİMAP-P-089",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "İslak mop aparatı METAL",
+      "kod": "İMİMAP-M-090",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "İslak mop aparatı METAL LUX",
+      "kod": "İMİMAP-ML-091",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "İslak mop 300 GR",
+      "kod": "İMİM300-092",
+      "kateqoriya": "İstehlak Materialları",
+      "altKateqoriya": "CEYMOP & MOP QRUPU",
+      "terkib": "",
+      "catdirilmaMuddeti": "",
+      "istifadeMeqsedi": "",
+      "texnikiTesivr": "",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  }
+]

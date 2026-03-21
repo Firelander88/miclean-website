@@ -1,0 +1,752 @@
+[
+  {
+    "data": {
+      "title": "Tekstil starch (nişasta) (ətirsiz) – 5 L",
+      "kod": "CMS-030",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Starch",
+      "terkib": "Modified starch; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Uniforma/masa örtüyü sərtliyi",
+      "texnikiTesivr": "Pressing support",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Tekstil starch (nişasta) (ətirsiz) – 20 L",
+      "kod": "CMS-030",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Starch",
+      "terkib": "Modified starch; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Uniforma/masa örtüyü sərtliyi",
+      "texnikiTesivr": "Pressing support",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Tekstil starch (nişasta) (eco) – 5 L",
+      "kod": "CMS-030",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Starch",
+      "terkib": "Modified starch; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Uniforma/masa örtüyü sərtliyi",
+      "texnikiTesivr": "Pressing support",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Tekstil starch (nişasta) (eco) – 20 L",
+      "kod": "CMS-030",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Starch",
+      "terkib": "Modified starch; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Uniforma/masa örtüyü sərtliyi",
+      "texnikiTesivr": "Pressing support",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Anti-foam (defoamer) – 1 L",
+      "kod": "CMA-F-031",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Anti-foam",
+      "terkib": "Silicone-based antifoam",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Köpüyün azaldılması",
+      "texnikiTesivr": "Low dose",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Anti-foam (defoamer) – 5 L",
+      "kod": "CMA-F-031",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Anti-foam",
+      "terkib": "Silicone-based antifoam",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Köpüyün azaldılması",
+      "texnikiTesivr": "Low dose",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Anti-foam (defoamer) (ətirsiz) – 1 L",
+      "kod": "CMA-F-031",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Anti-foam",
+      "terkib": "Silicone-based antifoam; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Köpüyün azaldılması",
+      "texnikiTesivr": "Low dose",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Anti-foam (defoamer) (ətirsiz) – 5 L",
+      "kod": "CMA-F-031",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Anti-foam",
+      "terkib": "Silicone-based antifoam; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Köpüyün azaldılması",
+      "texnikiTesivr": "Low dose",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Anti-foam (defoamer) (eco) – 1 L",
+      "kod": "CMA-F-031",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Anti-foam",
+      "terkib": "Silicone-based antifoam; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Köpüyün azaldılması",
+      "texnikiTesivr": "Low dose",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Anti-foam (defoamer) (eco) – 5 L",
+      "kod": "CMA-F-031",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Anti-foam",
+      "terkib": "Silicone-based antifoam; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Köpüyün azaldılması",
+      "texnikiTesivr": "Low dose",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Laundry disinfectant additive – 5 L",
+      "kod": "CMDA-032",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Disinfectant additive",
+      "terkib": "Hydrogen peroxide or QAC",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tekstil dezinfeksiyası",
+      "texnikiTesivr": "Low-temp disinfection",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Laundry disinfectant additive – 20 L",
+      "kod": "CMDA-032",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Disinfectant additive",
+      "terkib": "Hydrogen peroxide or QAC",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tekstil dezinfeksiyası",
+      "texnikiTesivr": "Low-temp disinfection",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Laundry disinfectant additive (ətirsiz) – 5 L",
+      "kod": "CMDA-032",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Disinfectant additive",
+      "terkib": "Hydrogen peroxide or QAC; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tekstil dezinfeksiyası",
+      "texnikiTesivr": "Low-temp disinfection",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "6 çıxışlı venturi çamaşırxana pompası",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "səthi aktiv maddələr",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "Venturi-based 6-outlet suction system",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Təkli qarışdırma aparatı",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "Single-product dilution and mixing unit",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "4 pozisiyalı qarışdırma aparatı",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "4-product dilution and mixing unit",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "8 pozisiyalı qarışdırma aparatı",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "8-product dilution and mixing unit",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "6 çıxışlı peristalgik çamaşırxana pompası",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "6-outlet peristaltic dosing pump",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Köpük verici xortum",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "Foaming nozzle and hose assembly",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Mətbəx yer yuma xortumu",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "Heavy-duty kitchen floor washdown house",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Mobil köpük aparatı",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "Mobile foam generator / Portable foaming unit",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Zaman ayarlı ikili qabyuyan maşın pompası",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "Time-controlled dual detergent & rinse aid pump",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Təkli qabyuyan maşın pompası",
+      "kod": "CMDS-065",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Dosing systems",
+      "terkib": "",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Kimyəvi maddələrin avtomatik dozalanması",
+      "texnikiTesivr": "Təkli qabyuyan maşın pompası",
+      "istifadeSahesi": "",
+      "qablasdirma": "",
+      "minSifaris": ""
+    }
+  },
+  {
+    "data": {
+      "title": "Laundry disinfectant additive (ətirsiz) – 20 L",
+      "kod": "CMDA-032",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Disinfectant additive",
+      "terkib": "Hydrogen peroxide or QAC; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tekstil dezinfeksiyası",
+      "texnikiTesivr": "Low-temp disinfection",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Laundry disinfectant additive (eco) – 5 L",
+      "kod": "CMDA-032",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Disinfectant additive",
+      "terkib": "Hydrogen peroxide or QAC; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tekstil dezinfeksiyası",
+      "texnikiTesivr": "Low-temp disinfection",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Laundry disinfectant additive (eco) – 20 L",
+      "kod": "CMDA-032",
+      "kateqoriya": "Camaşırxana Məhsulları",
+      "altKateqoriya": "Disinfectant additive",
+      "terkib": "Hydrogen peroxide or QAC; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Tekstil dezinfeksiyası",
+      "texnikiTesivr": "Low-temp disinfection",
+      "istifadeSahesi": "Camaşırxana",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Oven cleaner (heavy-duty) – 1 L",
+      "kod": "MGO-033",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Oven/grill cleaner",
+      "terkib": "Sodium hydroxide; solvents",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Oven/grill yağ-karbon",
+      "texnikiTesivr": "High alkalinity",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Oven cleaner (heavy-duty) – 5 L",
+      "kod": "MGO-033",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Oven/grill cleaner",
+      "terkib": "Sodium hydroxide; solvents",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Oven/grill yağ-karbon",
+      "texnikiTesivr": "High alkalinity",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Oven cleaner (heavy-duty) (ətirsiz) – 1 L",
+      "kod": "MGO-033",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Oven/grill cleaner",
+      "terkib": "Sodium hydroxide; solvents; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Oven/grill yağ-karbon",
+      "texnikiTesivr": "High alkalinity",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Oven cleaner (heavy-duty) (ətirsiz) – 5 L",
+      "kod": "MGO-033",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Oven/grill cleaner",
+      "terkib": "Sodium hydroxide; solvents; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Oven/grill yağ-karbon",
+      "texnikiTesivr": "High alkalinity",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Oven cleaner (heavy-duty) (eco) – 1 L",
+      "kod": "MGO-033",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Oven/grill cleaner",
+      "terkib": "Sodium hydroxide; solvents; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Oven/grill yağ-karbon",
+      "texnikiTesivr": "High alkalinity",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Oven cleaner (heavy-duty) (eco) – 5 L",
+      "kod": "MGO-033",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Oven/grill cleaner",
+      "terkib": "Sodium hydroxide; solvents; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Oven/grill yağ-karbon",
+      "texnikiTesivr": "High alkalinity",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Stainless steel cleaner – 500 ml",
+      "kod": "MGO-033",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Stainless steel cleaner",
+      "terkib": "Solvent; mineral oil",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Polad səthlər",
+      "texnikiTesivr": "Anti-fingerprint",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Stainless steel cleaner – 1 L",
+      "kod": "MGS-034",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Stainless steel cleaner",
+      "terkib": "Solvent; mineral oil",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Polad səthlər",
+      "texnikiTesivr": "Anti-fingerprint",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Stainless steel cleaner (ətirsiz) – 500 ml",
+      "kod": "MGS-034",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Stainless steel cleaner",
+      "terkib": "Solvent; mineral oil; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Polad səthlər",
+      "texnikiTesivr": "Anti-fingerprint",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Stainless steel cleaner (ətirsiz) – 1 L",
+      "kod": "MGS-034",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Stainless steel cleaner",
+      "terkib": "Solvent; mineral oil; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Polad səthlər",
+      "texnikiTesivr": "Anti-fingerprint",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Stainless steel cleaner (eco) – 500 ml",
+      "kod": "MGS-034",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Stainless steel cleaner",
+      "terkib": "Solvent; mineral oil; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Polad səthlər",
+      "texnikiTesivr": "Anti-fingerprint",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Stainless steel cleaner (eco) – 1 L",
+      "kod": "MGS-034",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Stainless steel cleaner",
+      "terkib": "Solvent; mineral oil; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Polad səthlər",
+      "texnikiTesivr": "Anti-fingerprint",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Food-grade sanitizer RTU – 500 ml",
+      "kod": "MGF-035",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Food contact sanitizer",
+      "terkib": "QAC; water",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Food-contact səth",
+      "texnikiTesivr": "No-rinse",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Food-grade sanitizer RTU – 1 L",
+      "kod": "MGF-035",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Food contact sanitizer",
+      "terkib": "QAC; water",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Food-contact səth",
+      "texnikiTesivr": "No-rinse",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Food-grade sanitizer RTU (ətirsiz) – 500 ml",
+      "kod": "MGF-035",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Food contact sanitizer",
+      "terkib": "QAC; water; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Food-contact səth",
+      "texnikiTesivr": "No-rinse",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Food-grade sanitizer RTU (ətirsiz) – 1 L",
+      "kod": "MGF-035",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Food contact sanitizer",
+      "terkib": "QAC; water; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Food-contact səth",
+      "texnikiTesivr": "No-rinse",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Food-grade sanitizer RTU (eco) – 500 ml",
+      "kod": "MGF-035",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Food contact sanitizer",
+      "terkib": "QAC; water; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Food-contact səth",
+      "texnikiTesivr": "No-rinse",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "500 ml",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Food-grade sanitizer RTU (eco) – 1 L",
+      "kod": "MGF-035",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Food contact sanitizer",
+      "terkib": "QAC; water; eco surfaktantlar",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Food-contact səth",
+      "texnikiTesivr": "No-rinse",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 qutu"
+    }
+  },
+  {
+    "data": {
+      "title": "Kitchen degreaser concentrate – 1 L",
+      "kod": "MGD-036",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Degreaser",
+      "terkib": "Alkalin; surfactant",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Yağ təmizliyi",
+      "texnikiTesivr": "Dilutable",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Kitchen degreaser concentrate – 5 L",
+      "kod": "MGD-036",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Degreaser",
+      "terkib": "Alkalin; surfactant",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Yağ təmizliyi",
+      "texnikiTesivr": "Dilutable",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Kitchen degreaser concentrate – 10 L",
+      "kod": "MGD-036",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Degreaser",
+      "terkib": "Alkalin; surfactant",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Yağ təmizliyi",
+      "texnikiTesivr": "Dilutable",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "10 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Kitchen degreaser concentrate – 20 L",
+      "kod": "MGD-036",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Degreaser",
+      "terkib": "Alkalin; surfactant",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Yağ təmizliyi",
+      "texnikiTesivr": "Dilutable",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "20 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Kitchen degreaser concentrate (ətirsiz) – 1 L",
+      "kod": "MGD-036",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Degreaser",
+      "terkib": "Alkalin; surfactant; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Yağ təmizliyi",
+      "texnikiTesivr": "Dilutable",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "1 kg",
+      "minSifaris": "1 bidon"
+    }
+  },
+  {
+    "data": {
+      "title": "Kitchen degreaser concentrate (ətirsiz) – 5 L",
+      "kod": "MGD-036",
+      "kateqoriya": "Mətbəx Gigiyena Məhsulları",
+      "altKateqoriya": "Degreaser",
+      "terkib": "Alkalin; surfactant; ətir yoxdur",
+      "catdirilmaMuddeti": "5–7 gün (iş günü)",
+      "istifadeMeqsedi": "Yağ təmizliyi",
+      "texnikiTesivr": "Dilutable",
+      "istifadeSahesi": "Mətbəx",
+      "qablasdirma": "5 kg",
+      "minSifaris": "1 bidon"
+    }
+  }
+]

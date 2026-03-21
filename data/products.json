@@ -1,12 +1,12 @@
 {
   "meta": {
-    "total": 538,
+    "total": 273,
     "categories": 7,
     "subcategories": 109,
     "services": 15,
     "currency": "AZN",
-    "usd_rate": 1.70,
-    "updated": "2025-01-01"
+    "usd_rate": 1.7,
+    "updated": "2026-03-20"
   },
   "categories": [
     {
@@ -17,21 +17,77 @@
       "product_count": 127,
       "subcategory_count": 25,
       "image": "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=75",
-      "tags": ["haccp", "eco", "sds"],
+      "tags": [
+        "haccp",
+        "eco",
+        "sds"
+      ],
       "subcategories": [
-        { "id": "ktumt", "name": "Ümumi Təmizləyicilər", "count": 8 },
-        { "id": "ktdt", "name": "Döşəmə Təmizləyiciləri", "count": 7 },
-        { "id": "ktst", "name": "Şüşə & Güzgü Təmizləyiciləri", "count": 5 },
-        { "id": "ktd", "name": "Dezenfektanlar", "count": 14 },
-        { "id": "ktsq", "name": "Sanitar Qovşağı Məhsulları", "count": 9 },
-        { "id": "ktqt", "name": "HACCP Qida Təhlükəsizliyi", "count": 6 },
-        { "id": "ktxal", "name": "Xalça & Döşəmə Xüsusi", "count": 8 },
-        { "id": "ktmeb", "name": "Mebel & Ekran Məhsulları", "count": 7 },
-        { "id": "ktqox", "name": "Qoxu & Hava Keyfiyyəti", "count": 9 },
-        { "id": "ktblc", "name": "Bleach & Oksidləşdirici", "count": 8 },
-        { "id": "ktmet", "name": "Metal & Paslanmaz Polad", "count": 5 },
-        { "id": "ktsolv", "name": "Solvent & Xüsusi", "count": 6 },
-        { "id": "ktfrost", "name": "Frost & Boru Açıcı", "count": 4 }
+        {
+          "id": "ktumt",
+          "name": "Ümumi Təmizləyicilər",
+          "count": 8
+        },
+        {
+          "id": "ktdt",
+          "name": "Döşəmə Təmizləyiciləri",
+          "count": 7
+        },
+        {
+          "id": "ktst",
+          "name": "Şüşə & Güzgü Təmizləyiciləri",
+          "count": 5
+        },
+        {
+          "id": "ktd",
+          "name": "Dezenfektanlar",
+          "count": 14
+        },
+        {
+          "id": "ktsq",
+          "name": "Sanitar Qovşağı Məhsulları",
+          "count": 9
+        },
+        {
+          "id": "ktqt",
+          "name": "HACCP Qida Təhlükəsizliyi",
+          "count": 6
+        },
+        {
+          "id": "ktxal",
+          "name": "Xalça & Döşəmə Xüsusi",
+          "count": 8
+        },
+        {
+          "id": "ktmeb",
+          "name": "Mebel & Ekran Məhsulları",
+          "count": 7
+        },
+        {
+          "id": "ktqox",
+          "name": "Qoxu & Hava Keyfiyyəti",
+          "count": 9
+        },
+        {
+          "id": "ktblc",
+          "name": "Bleach & Oksidləşdirici",
+          "count": 8
+        },
+        {
+          "id": "ktmet",
+          "name": "Metal & Paslanmaz Polad",
+          "count": 5
+        },
+        {
+          "id": "ktsolv",
+          "name": "Solvent & Xüsusi",
+          "count": 6
+        },
+        {
+          "id": "ktfrost",
+          "name": "Frost & Boru Açıcı",
+          "count": 4
+        }
       ]
     },
     {
@@ -42,17 +98,57 @@
       "product_count": 58,
       "subcategory_count": 9,
       "image": "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=600&q=75",
-      "tags": ["eco", "low-temp", "sds"],
+      "tags": [
+        "eco",
+        "low-temp",
+        "sds"
+      ],
       "subcategories": [
-        { "id": "camtoz", "name": "Sənaye Yuyucu Toz", "count": 8 },
-        { "id": "cammaye", "name": "Sənaye Yuyucu Maye", "count": 7 },
-        { "id": "camyum", "name": "Tekstil Yumşaldıcı", "count": 6 },
-        { "id": "camblc", "name": "Oksigen Bleach", "count": 5 },
-        { "id": "campH", "name": "pH Neutralizer", "count": 5 },
-        { "id": "camnish", "name": "Nişasta (Starch)", "count": 4 },
-        { "id": "camaf", "name": "Anti-Foam", "count": 4 },
-        { "id": "camdis", "name": "Dezinfeksiya Əlavəsi", "count": 6 },
-        { "id": "camdoz", "name": "Dozaj Sistemləri", "count": 13 }
+        {
+          "id": "camtoz",
+          "name": "Sənaye Yuyucu Toz",
+          "count": 8
+        },
+        {
+          "id": "cammaye",
+          "name": "Sənaye Yuyucu Maye",
+          "count": 7
+        },
+        {
+          "id": "camyum",
+          "name": "Tekstil Yumşaldıcı",
+          "count": 6
+        },
+        {
+          "id": "camblc",
+          "name": "Oksigen Bleach",
+          "count": 5
+        },
+        {
+          "id": "campH",
+          "name": "pH Neutralizer",
+          "count": 5
+        },
+        {
+          "id": "camnish",
+          "name": "Nişasta (Starch)",
+          "count": 4
+        },
+        {
+          "id": "camaf",
+          "name": "Anti-Foam",
+          "count": 4
+        },
+        {
+          "id": "camdis",
+          "name": "Dezinfeksiya Əlavəsi",
+          "count": 6
+        },
+        {
+          "id": "camdoz",
+          "name": "Dozaj Sistemləri",
+          "count": 13
+        }
       ]
     },
     {
@@ -63,13 +159,37 @@
       "product_count": 36,
       "subcategory_count": 5,
       "image": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=75",
-      "tags": ["haccp", "food-grade", "sds"],
+      "tags": [
+        "haccp",
+        "food-grade",
+        "sds"
+      ],
       "subcategories": [
-        { "id": "mtboven", "name": "Oven & Grill Təmizleyici", "count": 7 },
-        { "id": "mtbdeg", "name": "Kitchen Degreaser", "count": 8 },
-        { "id": "mtbss", "name": "Stainless Steel Məhsullar", "count": 5 },
-        { "id": "mtbqab", "name": "Qab Yuyucu & Dishwasher", "count": 9 },
-        { "id": "mtbsan", "name": "Food-Grade Sanitizer", "count": 7 }
+        {
+          "id": "mtboven",
+          "name": "Oven & Grill Təmizleyici",
+          "count": 7
+        },
+        {
+          "id": "mtbdeg",
+          "name": "Kitchen Degreaser",
+          "count": 8
+        },
+        {
+          "id": "mtbss",
+          "name": "Stainless Steel Məhsullar",
+          "count": 5
+        },
+        {
+          "id": "mtbqab",
+          "name": "Qab Yuyucu & Dishwasher",
+          "count": 9
+        },
+        {
+          "id": "mtbsan",
+          "name": "Food-Grade Sanitizer",
+          "count": 7
+        }
       ]
     },
     {
@@ -80,22 +200,82 @@
       "product_count": 62,
       "subcategory_count": 14,
       "image": "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&q=75",
-      "tags": ["inci", "logo-print", "premium"],
+      "tags": [
+        "inci",
+        "logo-print",
+        "premium"
+      ],
       "subcategories": [
-        { "id": "amnshm", "name": "Şampun", "count": 5 },
-        { "id": "amndus", "name": "Duş Geli", "count": 5 },
-        { "id": "amnsab", "name": "Sabun Bar", "count": 5 },
-        { "id": "amnlos", "name": "Losyon", "count": 5 },
-        { "id": "amndnt", "name": "Dental Kit", "count": 4 },
-        { "id": "amnvan", "name": "Vanity Kit", "count": 4 },
-        { "id": "amnter", "name": "Otel Terliyi", "count": 4 },
-        { "id": "amndus2", "name": "Duş Papağı", "count": 3 },
-        { "id": "amnulg", "name": "Ülgüc Seti", "count": 4 },
-        { "id": "amncot", "name": "Cotton Buds", "count": 3 },
-        { "id": "amnmsk", "name": "Maska & PPE Mini", "count": 3 },
-        { "id": "amnhsn", "name": "Hand Sanitizer Mini", "count": 4 },
-        { "id": "amnshv", "name": "Shaving Cream", "count": 3 },
-        { "id": "amnpkg", "name": "Qablaşdırma & Çap", "count": 10 }
+        {
+          "id": "amnshm",
+          "name": "Şampun",
+          "count": 5
+        },
+        {
+          "id": "amndus",
+          "name": "Duş Geli",
+          "count": 5
+        },
+        {
+          "id": "amnsab",
+          "name": "Sabun Bar",
+          "count": 5
+        },
+        {
+          "id": "amnlos",
+          "name": "Losyon",
+          "count": 5
+        },
+        {
+          "id": "amndnt",
+          "name": "Dental Kit",
+          "count": 4
+        },
+        {
+          "id": "amnvan",
+          "name": "Vanity Kit",
+          "count": 4
+        },
+        {
+          "id": "amnter",
+          "name": "Otel Terliyi",
+          "count": 4
+        },
+        {
+          "id": "amndus2",
+          "name": "Duş Papağı",
+          "count": 3
+        },
+        {
+          "id": "amnulg",
+          "name": "Ülgüc Seti",
+          "count": 4
+        },
+        {
+          "id": "amncot",
+          "name": "Cotton Buds",
+          "count": 3
+        },
+        {
+          "id": "amnmsk",
+          "name": "Maska & PPE Mini",
+          "count": 3
+        },
+        {
+          "id": "amnhsn",
+          "name": "Hand Sanitizer Mini",
+          "count": 4
+        },
+        {
+          "id": "amnshv",
+          "name": "Shaving Cream",
+          "count": 3
+        },
+        {
+          "id": "amnpkg",
+          "name": "Qablaşdırma & Çap",
+          "count": 10
+        }
       ]
     },
     {
@@ -106,19 +286,67 @@
       "product_count": 234,
       "subcategory_count": 48,
       "image": "https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=600&q=75",
-      "tags": ["bio", "recycled", "branded"],
+      "tags": [
+        "bio",
+        "recycled",
+        "branded"
+      ],
       "subcategories": [
-        { "id": "istkag", "name": "Kağız Məhsullar", "count": 20 },
-        { "id": "istalm", "name": "Alüminium Qablar", "count": 12 },
-        { "id": "istmkd", "name": "Mikrodalğalı Qablar", "count": 8 },
-        { "id": "istktk", "name": "Karton Stəkan", "count": 10 },
-        { "id": "istbio", "name": "Bio & Compostable", "count": 12 },
-        { "id": "istpzz", "name": "Pizza & Pide Qutuları", "count": 8 },
-        { "id": "istsous", "name": "Sous Qabları", "count": 7 },
-        { "id": "istdsp", "name": "Dispenser Sistemləri", "count": 18 },
-        { "id": "istzib", "name": "Zibil Qabları & Torbalar", "count": 22 },
-        { "id": "istppe", "name": "PPE & Qoruyucu Geyim", "count": 14 },
-        { "id": "istdgr", "name": "Digər İstehlak", "count": 103 }
+        {
+          "id": "istkag",
+          "name": "Kağız Məhsullar",
+          "count": 20
+        },
+        {
+          "id": "istalm",
+          "name": "Alüminium Qablar",
+          "count": 12
+        },
+        {
+          "id": "istmkd",
+          "name": "Mikrodalğalı Qablar",
+          "count": 8
+        },
+        {
+          "id": "istktk",
+          "name": "Karton Stəkan",
+          "count": 10
+        },
+        {
+          "id": "istbio",
+          "name": "Bio & Compostable",
+          "count": 12
+        },
+        {
+          "id": "istpzz",
+          "name": "Pizza & Pide Qutuları",
+          "count": 8
+        },
+        {
+          "id": "istsous",
+          "name": "Sous Qabları",
+          "count": 7
+        },
+        {
+          "id": "istdsp",
+          "name": "Dispenser Sistemləri",
+          "count": 18
+        },
+        {
+          "id": "istzib",
+          "name": "Zibil Qabları & Torbalar",
+          "count": 22
+        },
+        {
+          "id": "istppe",
+          "name": "PPE & Qoruyucu Geyim",
+          "count": 14
+        },
+        {
+          "id": "istdgr",
+          "name": "Digər İstehlak",
+          "count": 103
+        }
       ]
     },
     {
@@ -129,15 +357,46 @@
       "product_count": 13,
       "subcategory_count": 7,
       "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=75",
-      "tags": ["ceymop", "color-coded"],
+      "tags": [
+        "ceymop",
+        "color-coded"
+      ],
       "subcategories": [
-        { "id": "hkmkf", "name": "Mikrofiber Parça", "count": 3 },
-        { "id": "hkmop", "name": "Mop Sistemləri", "count": 4 },
-        { "id": "hkfrc", "name": "Fırça & Süpürgə", "count": 2 },
-        { "id": "hksap", "name": "Teleskop Saplar", "count": 2 },
-        { "id": "hkarb", "name": "Təmizlik Arabaları", "count": 3 },
-        { "id": "hkskr", "name": "Kazıma Alətləri", "count": 2 },
-        { "id": "hkznk", "name": "Xəbərdarlıq Lövhəsi", "count": 1 }
+        {
+          "id": "hkmkf",
+          "name": "Mikrofiber Parça",
+          "count": 3
+        },
+        {
+          "id": "hkmop",
+          "name": "Mop Sistemləri",
+          "count": 4
+        },
+        {
+          "id": "hkfrc",
+          "name": "Fırça & Süpürgə",
+          "count": 2
+        },
+        {
+          "id": "hksap",
+          "name": "Teleskop Saplar",
+          "count": 2
+        },
+        {
+          "id": "hkarb",
+          "name": "Təmizlik Arabaları",
+          "count": 3
+        },
+        {
+          "id": "hkskr",
+          "name": "Kazıma Alətləri",
+          "count": 2
+        },
+        {
+          "id": "hkznk",
+          "name": "Xəbərdarlıq Lövhəsi",
+          "count": 1
+        }
       ]
     },
     {
@@ -148,56 +407,3775 @@
       "product_count": 8,
       "subcategory_count": 1,
       "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=75",
-      "tags": ["spa", "chlorine-free"],
+      "tags": [
+        "spa",
+        "chlorine-free"
+      ],
       "subcategories": [
-        { "id": "hovkm", "name": "Hovuz & SPA Kimyəvi", "count": 8 }
+        {
+          "id": "hovkm",
+          "name": "Hovuz & SPA Kimyəvi",
+          "count": 8
+        }
       ]
     }
   ],
   "products": [
-    { "id": "KTUMT-001", "category": "kimyevi", "subcategory": "ktumt", "name": "Ümumi Səth Təmizləyici — Konsentrat", "formula": "Nonion/anionic surfaktant + builders", "zones": ["Otaq","Lobby","Back Office"], "variants": ["adi","ətirsiz","eco"], "sizes": ["1kg","5kg","10kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=75" },
-    { "id": "KTDT-002", "category": "kimyevi", "subcategory": "ktdt", "name": "Döşəmə Təmizləyici — Neytral pH", "formula": "Surfactants + su + chelator", "zones": ["Lobby","Konfrans","Restoran"], "variants": ["neytral","alkalin","eco"], "sizes": ["1kg","5kg","10kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=75" },
-    { "id": "KTST-003", "category": "kimyevi", "subcategory": "ktst", "name": "Şüşə & Güzgü Təmizləyici", "formula": "Isopropanol + su + surfaktant", "zones": ["Otaq","Lobby","Konfrans"], "variants": ["adi","ammonyaklı","eco"], "sizes": ["500ml","1kg","5kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1527515545081-5db817172677?w=600&q=75" },
-    { "id": "KTD-005A", "category": "kimyevi", "subcategory": "ktd", "name": "Alkoqollu Dezinfektan Spray", "formula": "Ethanol 70%", "zones": ["Ümumi sahə","Sanitar qovşağı"], "variants": ["adi","ətirsiz"], "sizes": ["500ml","1kg","5kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1584744982491-665216d95f8b?w=600&q=75" },
-    { "id": "KTD-005B", "category": "kimyevi", "subcategory": "ktd", "name": "Əl Dezinfektantı 95% Spirt", "formula": "Spirt 95%", "zones": ["Lobby","Ümumi sahələr"], "variants": ["adi","ətirsiz"], "sizes": ["500ml","1L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=600&q=75" },
-    { "id": "KTD-005C", "category": "kimyevi", "subcategory": "ktd", "name": "QAC Dezinfektan Konsentrat", "formula": "Benzalkonium chloride + su + surfaktant", "zones": ["Texniki otaqlar","Ümumi sahələr"], "variants": ["adi","ətirsiz","eco"], "sizes": ["1kg","5kg","10kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&q=75" },
-    { "id": "KTSQ-007", "category": "kimyevi", "subcategory": "ktsq", "name": "Tualet Təmizləyici — Turş Əsaslı ECO", "formula": "Citric/Lactic acid + eco surfaktantlar", "zones": ["Sanitar qovşağı"], "variants": ["adi","ətirsiz","eco","RTU"], "sizes": ["750ml","1kg","5kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=75" },
-    { "id": "KTQT-006", "category": "kimyevi", "subcategory": "ktqt", "name": "Food-Grade Sanitizer — No-Rinse HACCP", "formula": "QAC / peracetic acid + su", "zones": ["Mətbəx","Restoran","Bar"], "variants": ["ətirsiz","eco"], "sizes": ["1kg","5kg","10kg"], "delivery_days": "5-7", "haccp": true, "image": "https://images.unsplash.com/photo-1576867757603-05b134ebc379?w=600&q=75" },
-    { "id": "CAM-001", "category": "camasirxana", "subcategory": "camtoz", "name": "Sənaye Yuyucu Toz — Yüksək Aktivlik", "formula": "Surfactants + sodium carbonate + enzymes", "temp_range": "40-95°C", "variants": ["adi","ətirsiz","eco"], "sizes": ["10kg","25kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=600&q=75" },
-    { "id": "CAM-002", "category": "camasirxana", "subcategory": "cammaye", "name": "Sənaye Yuyucu Maye — Low-Temp", "formula": "Surfactants + enzymes", "temp_range": "30-60°C", "variants": ["adi","ətirsiz","eco"], "sizes": ["5L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=600&q=75" },
-    { "id": "CAM-003", "category": "camasirxana", "subcategory": "camyum", "name": "Tekstil Yumşaldıcı Konsentrat", "formula": "Cationic surfactants — industrial grade", "variants": ["adi","ətirsiz","eco"], "sizes": ["5L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1545173168-9f1947eebb7f?w=600&q=75" },
-    { "id": "MTB-001", "category": "metbex", "subcategory": "mtboven", "name": "Oven / Grill Cleaner — Heavy-Duty", "formula": "Sodium hydroxide + solvents", "variants": ["adi","ətirsiz","eco"], "sizes": ["1L","5L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=75" },
-    { "id": "MTB-002", "category": "metbex", "subcategory": "mtbdeg", "name": "Kitchen Degreaser Konsentrat", "formula": "Alkalin + surfactant — dilutable", "variants": ["adi","ətirsiz","eco"], "sizes": ["1L","5L","10L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=75" },
-    { "id": "MTB-003", "category": "metbex", "subcategory": "mtbss", "name": "Stainless Steel Cleaner", "formula": "Solvent + mineral oil", "variants": ["adi"], "sizes": ["500ml","1L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=75" },
-    { "id": "MTB-004", "category": "metbex", "subcategory": "mtbqab", "name": "Manual Dishwashing Liquid", "formula": "Surfactants + glycerin", "variants": ["adi","ətirsiz","eco"], "sizes": ["500ml","1L","5L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=600&q=75" },
-    { "id": "MTB-005", "category": "metbex", "subcategory": "mtbsan", "name": "Food-Grade Sanitizer RTU", "formula": "QAC + water — no-rinse", "variants": ["ətirsiz","eco"], "sizes": ["500ml","1L"], "delivery_days": "5-7", "haccp": true, "image": "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=75" },
-    { "id": "MTB-006", "category": "metbex", "subcategory": "mtbqab", "name": "Avtomatik Qabyuyan Deterjanı", "formula": "Alkalin builders + chelators", "variants": ["adi"], "sizes": ["5L","20L"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" },
-    { "id": "AMN-STD-001", "category": "amenity", "subcategory": "amnshm", "name": "Şampun — Standard Seriya", "sizes": ["20ml","30ml","50ml","300ml"], "series": "standard", "logo_print": true, "inci": true, "delivery_days": "7-14", "image": "https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&q=75" },
-    { "id": "IST-ALM-001", "category": "istehlak", "subcategory": "istalm", "name": "Alüminium Qablar + Qapaq", "sizes": ["250gr","350gr","500gr","750gr","1000gr","1500gr"], "variants": ["tək göz","iki göz","üç göz"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&q=75" },
-    { "id": "IST-KTK-001", "category": "istehlak", "subcategory": "istktk", "name": "Karton Stəkan — 8 OZ / 12 OZ", "sizes": ["8oz","12oz"], "variants": ["sadə","double","ripple"], "colors": ["ağ","qara","kraft"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600&q=75" },
-    { "id": "IST-BIO-001", "category": "istehlak", "subcategory": "istbio", "name": "Bio Çəngəl / Qaşıq / Bıçaq Seti", "standard": "EN13432", "compostable": true, "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&q=75" },
-    { "id": "IST-PZZ-001", "category": "istehlak", "subcategory": "istpzz", "name": "Pizza Qutusu", "sizes": ["25x25","30x30","33x33"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=600&q=75" },
-    { "id": "HK-MKF-001", "category": "housekeeping", "subcategory": "hkmkf", "name": "Mikrofiber Parça — Color-Coded", "gsm": "300-350", "colors": ["ağ","qırmızı","mavi","yaşıl","sarı"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=75" },
-    { "id": "HK-MOP-001", "category": "housekeeping", "subcategory": "hkmop", "name": "Yaş Mop — Replaceable Head", "material": "cotton/polyester", "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=75" },
-    { "id": "HOV-XLR-001", "category": "hovuz", "subcategory": "hovkm", "name": "Qranul Xlor 56% & 90%", "formula": "Trichloroisocyanuric acid", "variants": ["56%","90%","maye 15%"], "sizes": ["1kg","5kg","25kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1509114397022-ed747cca3f65?w=600&q=75" },
-    { "id": "HOV-OXY-001", "category": "hovuz", "subcategory": "hovkm", "name": "OXY POOL — Xlorsuz Dezenfektan", "formula": "Active oxygen", "suitable_for": ["SPA","uşaq hovuzu"], "sizes": ["5kg","20kg"], "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=75" },
-    { "id": "HOV-PH-001", "category": "hovuz", "subcategory": "hovkm", "name": "pH Düşürücü · Algisid · Parladıcı", "ph_range": "7.2-7.6", "delivery_days": "5-7", "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=75" }
+    {
+      "id": "KTÜT-001",
+      "category": "kimyevi",
+      "subcategory": "ktumt",
+      "name": "Ümumi təmizləyici (general purpose) – konsentrat",
+      "formula": "Nonion/anionic surfaktant; builders; su",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Gündəlik səth təmizliyi",
+      "description": "Seyrəldilə bilən, iz buraxmayan",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "10 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Otaq",
+        "Ümumi sahələr",
+        "Lobby",
+        "Back Office"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTDT-002",
+      "category": "kimyevi",
+      "subcategory": "ktdt",
+      "name": "Döşəmə təmizləyici (neytral pH) – konsentrat",
+      "formula": "Surfactants; su; chelator",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Mərmər/keramika/vinil döşəmə təmizliyi",
+      "description": "Neytral pH",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "10 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Ümumi sahələr",
+        "Lobby",
+        "Konfrans",
+        "Restoran/Bar",
+        "Texniki otaqlar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTŞT-003",
+      "category": "kimyevi",
+      "subcategory": "ktst",
+      "name": "Şüşə və güzgü təmizləyici",
+      "formula": "Isopropanol; su; surfaktant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Şüşə/güzgü",
+      "description": "Anti-streak, sürətli quruma",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Otaq",
+        "Ümumi sahələr",
+        "Lobby"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTAT-004",
+      "category": "kimyevi",
+      "subcategory": "ktst",
+      "name": "Ammonyaklı şüşə təmizləyici",
+      "formula": "Ammonia solution; su; surfaktant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Şüşə və sərt səthlərdə yağın çıxarılması",
+      "description": "Güclü qoxu; havalandırma",
+      "min_order": "1 qutu",
+      "sizes": [
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Ümumi sahələr",
+        "Texniki otaqlar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTD-005",
+      "category": "kimyevi",
+      "subcategory": "ktd",
+      "name": "Alkoqollu səth dezinfektanı (spray)",
+      "formula": "Ethanol 70%; su",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Sürətli dezinfeksiya",
+      "description": "Fast-dry, residue-free",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg",
+        "5 kg",
+        "10 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Ümumi sahələr",
+        "Sanitar qovşağı",
+        "Texniki otaqlar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTQT-006",
+      "category": "kimyevi",
+      "subcategory": "ktqt",
+      "name": "Food-grade sanitizer (no-rinse)",
+      "formula": "QAC və ya peracetic acid; su",
+      "delivery_days": "5-7",
+      "haccp": true,
+      "purpose": "Qida ilə təmas səthləri",
+      "description": "HACCP uyğun",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "10 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Mətbəx",
+        "Restoran/Bar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTSQ-007",
+      "category": "kimyevi",
+      "subcategory": "ktsq",
+      "name": "Tualet təmizləyici (turş əsaslı)",
+      "formula": "Citric/Lactic acid; surfaktant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Əhəng/pas çöküntüsü",
+      "description": "Limescale remover",
+      "min_order": "1 qutu",
+      "sizes": [
+        "750 ml",
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Sanitar qovşağı"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTYT-008",
+      "category": "kimyevi",
+      "subcategory": "ktmeb",
+      "name": "Ağır yağ təmizləyici (degreaser)",
+      "formula": "Sodium hydroxide; surfaktant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Mətbəx yağları",
+      "description": "High alkalinity",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "10 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Mətbəx",
+        "Texniki otaqlar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTDP-009",
+      "category": "kimyevi",
+      "subcategory": "ktmeb",
+      "name": "Əl ilə qab yuma mayesi",
+      "formula": "Surfactants; glycerin",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Əl ilə qabların yuyulması",
+      "description": "Food-contact suitable variants",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg",
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTDK-010",
+      "category": "kimyevi",
+      "subcategory": "ktfrost",
+      "name": "Kanal açıcı (gel)",
+      "formula": "Sodium hydroxide; thickener",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Tıxanıqların açılması",
+      "description": "Gel, heavy-duty",
+      "min_order": "1 qutu",
+      "sizes": [
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Mətbəx",
+        "Sanitar qovşağı"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTCU-011",
+      "category": "kimyevi",
+      "subcategory": "ktxal",
+      "name": "Xalça şampunu (ekstraktor)",
+      "formula": "Surfactant; anti-foam",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Xalça/örtük təmizliyi",
+      "description": "Low-foam",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "10 kg"
+      ],
+      "zones": [
+        "Otaq",
+        "Konfrans"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTLÇ-012",
+      "category": "kimyevi",
+      "subcategory": "ktxal",
+      "name": "Ləkə çıxarıcı (oksigen əsaslı)",
+      "formula": "Sodium percarbonate; builders",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Ləkələrin çıxarılması",
+      "description": "Oxygen bleach",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Otaq",
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTMT-013",
+      "category": "kimyevi",
+      "subcategory": "ktmeb",
+      "name": "Mebel təmizləyici (spray)",
+      "formula": "Surfactant; solvent; anti-static",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Mebel səthləri",
+      "description": "Anti-static",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg"
+      ],
+      "zones": [
+        "Back Office",
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTMC-014",
+      "category": "kimyevi",
+      "subcategory": "ktmeb",
+      "name": "Mebel cilası / wax (wood)",
+      "formula": "Polish/wax preparation",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Taxta mebel və parket baxımı",
+      "description": "Shine & protection",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg"
+      ],
+      "zones": [
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTET-015",
+      "category": "kimyevi",
+      "subcategory": "ktmet",
+      "name": "Ekran təmizləyici (screen cleaner)",
+      "formula": "Anti-static cleaner",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Monitor/TV ekran",
+      "description": "Non-streak",
+      "min_order": "1 qutu",
+      "sizes": [
+        "250 ml",
+        "500 ml"
+      ],
+      "zones": [
+        "Back Office",
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTMT-016",
+      "category": "kimyevi",
+      "subcategory": "ktmet",
+      "name": "Metal polish (stainless steel)",
+      "formula": "Solvent; mineral oil",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Metal səthlər",
+      "description": "Finger-print resistant",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTQN-017",
+      "category": "kimyevi",
+      "subcategory": "ktqox",
+      "name": "Qoxu neytrallaşdırıcı (deodorizer)",
+      "formula": "Odor neutralizer complex",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qoxunun neytrallaşdırılması",
+      "description": "Textile-safe variants",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Otaq",
+        "SPA/Fitnes"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTƏQ-018",
+      "category": "kimyevi",
+      "subcategory": "ktqox",
+      "name": "Hava təravətləndirici (aerozol) – 300 ml",
+      "formula": "Fragrance; solvent; propellant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qoxunun maskalanması",
+      "description": "Aerozol",
+      "min_order": "1 qutu",
+      "sizes": [
+        "300 ml",
+        "500 ml"
+      ],
+      "zones": [
+        "Otaq",
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTHS-019",
+      "category": "kimyevi",
+      "subcategory": "ktqox",
+      "name": "Hava sanitayzeri (biocidal aerosol) – 300 ml",
+      "formula": "Biocidal agent; propellant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Havanın dezinfeksiyası",
+      "description": "Use when unoccupied",
+      "min_order": "1 qutu",
+      "sizes": [
+        "300 ml"
+      ],
+      "zones": [
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTA-020",
+      "category": "kimyevi",
+      "subcategory": "ktqox",
+      "name": "Anti-dust sprey – 500 ml",
+      "formula": "Anti-static polymers",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Tozun azalması",
+      "description": "Anti-static",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg"
+      ],
+      "zones": [
+        "Back Office"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTA-021",
+      "category": "kimyevi",
+      "subcategory": "ktblc",
+      "name": "Sodium hypochlorite bleach (12%) – 5 L",
+      "formula": "Sodium hypochlorite 10–15%",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Ağartma və dezinfeksiya",
+      "description": "Dilution required",
+      "min_order": "1 bidon",
+      "sizes": [
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Camaşırxana",
+        "Texniki otaqlar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTD-022",
+      "category": "kimyevi",
+      "subcategory": "ktd",
+      "name": "Quru germisid (powder) – 1 kg",
+      "formula": "Oxidizing disinfectant powder",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Dezinfeksiya və qoxu nəzarəti",
+      "description": "Powder",
+      "min_order": "1 qutu",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "10 kg"
+      ],
+      "zones": [
+        "Sanitar qovşağı"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTP-023",
+      "category": "kimyevi",
+      "subcategory": "ktsolv",
+      "name": "Solvent əsaslı yapışqan təmizləyici – 500 ml",
+      "formula": "Petroleum distillates",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Yapışqan/qatran",
+      "description": "Solvent-based",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Texniki otaqlar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTC-024",
+      "category": "kimyevi",
+      "subcategory": "ktsolv",
+      "name": "Karbon remover (oven/grill) – 1 L",
+      "formula": "High alkalinity + solvents",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Yanmış yağ/karbon",
+      "description": "Oven & grill cleaner",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "KTD-025",
+      "category": "kimyevi",
+      "subcategory": "ktfrost",
+      "name": "De-icer / defroster – 5 L",
+      "formula": "Anti-freezing/de-icing prep",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Buzun əridilməsi (xarici sahə)",
+      "description": "Ready-to-use",
+      "min_order": "1 bidon",
+      "sizes": [
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Ümumi sahələr (xaric)"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMSY-026",
+      "category": "camasirxana",
+      "subcategory": "camtoz",
+      "name": "Sənaye yuyucu toz – yüksək aktivlik – 10 kg",
+      "formula": "Surfactants; sodium carbonate; enzymes",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Çarşaf/dəsmal/uniforma yuma",
+      "description": "Heavy-duty",
+      "min_order": "1 kisə",
+      "sizes": [
+        "10 kg",
+        "25 kg",
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMY-027",
+      "category": "camasirxana",
+      "subcategory": "camyum",
+      "name": "Tekstil yumşaldıcı – 5 L",
+      "formula": "Cationic surfactants",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Yumşaqlıq/anti-static",
+      "description": "Industrial",
+      "min_order": "1 bidon",
+      "sizes": [
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMO-028",
+      "category": "camasirxana",
+      "subcategory": "camblc",
+      "name": "Oksigen bleach (powder) – 5 kg",
+      "formula": "Sodium percarbonate",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Ağartma və ləkə",
+      "description": "Chlorine-free",
+      "min_order": "1 qutu",
+      "sizes": [
+        "5 kg",
+        "10 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMS-029",
+      "category": "camasirxana",
+      "subcategory": "campH",
+      "name": "pH neutralizer (sour) – 5 L",
+      "formula": "Citric/lactic acid",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "pH balansı, qoxunun azalması",
+      "description": "Final rinse additive",
+      "min_order": "1 bidon",
+      "sizes": [
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMS/N-029",
+      "category": "camasirxana",
+      "subcategory": "campH",
+      "name": "pH neutralizer (sour) (eco) – 20 L",
+      "formula": "Citric/lactic acid; eco surfaktantlar",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "pH balansı, qoxunun azalması",
+      "description": "Final rinse additive",
+      "min_order": "1 bidon",
+      "sizes": [
+        "20 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMS-030",
+      "category": "camasirxana",
+      "subcategory": "camnish",
+      "name": "Tekstil starch (nişasta) – 5 L",
+      "formula": "Modified starch",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Uniforma/masa örtüyü sərtliyi",
+      "description": "Pressing support",
+      "min_order": "1 bidon",
+      "sizes": [
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMA-F-031",
+      "category": "camasirxana",
+      "subcategory": "camaf",
+      "name": "Anti-foam (defoamer) – 1 L",
+      "formula": "Silicone-based antifoam",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Köpüyün azaldılması",
+      "description": "Low dose",
+      "min_order": "1 qutu",
+      "sizes": [
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMDA-032",
+      "category": "camasirxana",
+      "subcategory": "camdis",
+      "name": "Laundry disinfectant additive – 5 L",
+      "formula": "Hydrogen peroxide or QAC",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Tekstil dezinfeksiyası",
+      "description": "Low-temp disinfection",
+      "min_order": "1 bidon",
+      "sizes": [
+        "5 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Camaşırxana"
+      ],
+      "variants": []
+    },
+    {
+      "id": "CMDS-065",
+      "category": "camasirxana",
+      "subcategory": "camdoz",
+      "name": "6 çıxışlı venturi çamaşırxana pompası",
+      "formula": "səthi aktiv maddələr",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Kimyəvi maddələrin avtomatik dozalanması",
+      "description": "Venturi-based 6-outlet suction system",
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "MGO-033",
+      "category": "metbex",
+      "subcategory": "mtboven",
+      "name": "Oven cleaner (heavy-duty) – 1 L",
+      "formula": "Sodium hydroxide; solvents",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Oven/grill yağ-karbon",
+      "description": "High alkalinity",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "500 ml"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "MGS-034",
+      "category": "metbex",
+      "subcategory": "mtbss",
+      "name": "Stainless steel cleaner – 1 L",
+      "formula": "Solvent; mineral oil",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Polad səthlər",
+      "description": "Anti-fingerprint",
+      "min_order": "1 qutu",
+      "sizes": [
+        "1 kg",
+        "500 ml"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "MGF-035",
+      "category": "metbex",
+      "subcategory": "mtbsan",
+      "name": "Food-grade sanitizer RTU – 500 ml",
+      "formula": "QAC; water",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Food-contact səth",
+      "description": "No-rinse",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "MGD-036",
+      "category": "metbex",
+      "subcategory": "mtbdeg",
+      "name": "Kitchen degreaser concentrate – 1 L",
+      "formula": "Alkalin; surfactant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Yağ təmizliyi",
+      "description": "Dilutable",
+      "min_order": "1 bidon",
+      "sizes": [
+        "1 kg",
+        "5 kg",
+        "10 kg",
+        "20 kg"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "MGDS-037",
+      "category": "metbex",
+      "subcategory": "mtbqab",
+      "name": "Manual dishwashing liquid – 500 ml",
+      "formula": "Surfactants",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Əl ilə qab yuma",
+      "description": "Foam control",
+      "min_order": "1 qutu",
+      "sizes": [
+        "500 ml",
+        "1 kg",
+        "5 kg"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "İMKD-038",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Kağız dəsmal (hand towel) – rulon (1-ply) – Rulon",
+      "formula": "Sellüloza/recycle pulp; 1 qat",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Əl qurulama",
+      "description": "1–2 qat; dispenser uyğunluğu",
+      "min_order": "1 qutu",
+      "sizes": [
+        "Rulon",
+        "Qutu"
+      ],
+      "zones": [
+        "Sanitar qovşağı",
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "İMTK-039",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Tualet kağızı – jumbo roll (1-ply) – Rulon",
+      "formula": "Sellüloza/recycle pulp; 1 qat",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Sanitar qovşaq",
+      "description": "Jumbo dispenser",
+      "min_order": "1 qutu",
+      "sizes": [
+        "Rulon",
+        "Qutu"
+      ],
+      "zones": [
+        "Sanitar qovşağı"
+      ],
+      "variants": []
+    },
+    {
+      "id": "İMLÇ-040",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Salfet / serviette (logo çaplı) (1-ply) – Paket",
+      "formula": "Kağız + su əsaslı boya; 1 qat",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Servis və brendinq",
+      "description": "Logo print",
+      "min_order": "10 qutu+",
+      "sizes": [
+        "Paket",
+        "Qutu"
+      ],
+      "zones": [
+        "Restoran/Bar",
+        "Konfrans"
+      ],
+      "variants": []
+    },
+    {
+      "id": "İMÜS-041",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Facial tissue – qutu (1-ply) – Qutu",
+      "formula": "Sellüloza paper, 2 qat; 1 qat",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Otaq və ümumi sahələr",
+      "description": "Soft touch",
+      "min_order": "1 qutu",
+      "sizes": [
+        "Qutu"
+      ],
+      "zones": [
+        "Otaq",
+        "Lobby"
+      ],
+      "variants": []
+    },
+    {
+      "id": "İMT-042",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Paper toilet seat cover – half fold (1-ply) – Paket",
+      "formula": "Paper; 1 qat",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Gigiyena",
+      "description": "Dispenser üçün",
+      "min_order": "1 qutu",
+      "sizes": [
+        "Paket",
+        "Qutu"
+      ],
+      "zones": [
+        "Sanitar qovşağı"
+      ],
+      "variants": []
+    },
+    {
+      "id": "İMZT-043",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Zibil torbası – ağır yüklü (LDPE/HDPE) – Paket",
+      "formula": "LDPE/HDPE",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Zibilin yığılması",
+      "description": "30–240L",
+      "min_order": "1 qutu",
+      "sizes": [
+        "Paket",
+        "Qutu"
+      ],
+      "zones": [
+        "Back Office",
+        "Mətbəx",
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "İMBW-044",
+      "category": "istehlak",
+      "subcategory": "istbio",
+      "name": "Biodegradable waste bags – Paket",
+      "formula": "Compostable polymer",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Bio waste",
+      "description": "EN13432 option",
+      "min_order": "1 qutu",
+      "sizes": [
+        "Paket",
+        "Qutu"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAM-045",
+      "category": "housekeeping",
+      "subcategory": "hkmkf",
+      "name": "Mikrofiber parça (color-coded) – Paket",
+      "formula": "Microfiber textile",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Səth təmizliyi",
+      "description": "300–350 GSM",
+      "min_order": "10 paket",
+      "sizes": [
+        "Paket",
+        "Qutu"
+      ],
+      "zones": [
+        "Otaq",
+        "Ümumi sahələr",
+        "Mətbəx",
+        "Sanitar"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAR-046",
+      "category": "housekeeping",
+      "subcategory": "hkmkf",
+      "name": "Təmizləmə parçası (rag) – cotton – Paket",
+      "formula": "Cotton cloth",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Ümumi təmizləmə",
+      "description": "Reusable",
+      "min_order": "10 paket",
+      "sizes": [
+        "Paket",
+        "Qutu"
+      ],
+      "zones": [
+        "Back Office"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAS1-047",
+      "category": "housekeeping",
+      "subcategory": "hkfrc",
+      "name": "Süngər (non-scratch) – Paket",
+      "formula": "Cellulose/foam",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qab yuma / ümumi",
+      "description": "Non-scratch",
+      "min_order": "1 qutu",
+      "sizes": [
+        "Paket",
+        "Qutu"
+      ],
+      "zones": [
+        "Mətbəx"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAS2-048",
+      "category": "housekeeping",
+      "subcategory": "hkfrc",
+      "name": "Süpürgə (soft) – 1 ədəd",
+      "formula": "Synthetic bristles",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Süpürmə",
+      "description": "Soft",
+      "min_order": "10 ədəd",
+      "sizes": [
+        "1 ədəd",
+        "Qutu"
+      ],
+      "zones": [
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAWM-049",
+      "category": "housekeeping",
+      "subcategory": "hkmop",
+      "name": "Yaş mop (wet mop) – 1 ədəd",
+      "formula": "Cotton/polyester strands",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Döşəmə yuma",
+      "description": "Replaceable head",
+      "min_order": "10 ədəd",
+      "sizes": [
+        "1 ədəd",
+        "Qutu"
+      ],
+      "zones": [
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HATB-050",
+      "category": "housekeeping",
+      "subcategory": "hkfrc",
+      "name": "Tualet fırçası – 1 ədəd",
+      "formula": "Plastic + bristles",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "WC təmizliyi",
+      "description": "Holder option",
+      "min_order": "10 ədəd",
+      "sizes": [
+        "1 ədəd",
+        "Qutu"
+      ],
+      "zones": [
+        "Sanitar qovşağı"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAFF-051",
+      "category": "housekeeping",
+      "subcategory": "hkfrc",
+      "name": "Floor finish applicator – 1 ədəd",
+      "formula": "Frame + pad",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Floor finish tətbiqi",
+      "description": "Applicator",
+      "min_order": "5 ədəd",
+      "sizes": [
+        "1 ədəd"
+      ],
+      "zones": [
+        "Ümumi sahələr"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAŞ-052",
+      "category": "amenity",
+      "subcategory": "amnshm",
+      "name": "Şampun (otel mini) – 20 ml",
+      "formula": "Surfactants; conditioners; fragrance",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "INCI təmin edilir",
+      "min_order": "500 ədəd+",
+      "sizes": [
+        "20 ml",
+        "30 ml",
+        "50 ml",
+        "300 ml"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HADG-053",
+      "category": "amenity",
+      "subcategory": "amndus",
+      "name": "Duş geli (otel mini) – 20 ml",
+      "formula": "Surfactants; glycerin",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "pH balanced",
+      "min_order": "500 ədəd+",
+      "sizes": [
+        "20 ml",
+        "30 ml",
+        "50 ml",
+        "300 ml"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HASB-054",
+      "category": "amenity",
+      "subcategory": "amnsab",
+      "name": "Sabun bar (otel mini) – 20 g",
+      "formula": "Soap base; glycerin",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Individually wrapped",
+      "min_order": "500 ədəd+",
+      "sizes": [
+        "20 g",
+        "30 g",
+        "50 g",
+        "100 g"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAL-055",
+      "category": "amenity",
+      "subcategory": "amnlos",
+      "name": "Bədən losyonu (otel mini) – 20 ml",
+      "formula": "Emollients; glycerin",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Nəmləndirmə",
+      "description": "Fast-absorbing",
+      "min_order": "500 ədəd+",
+      "sizes": [
+        "20 ml",
+        "30 ml",
+        "50 ml"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HASC-056",
+      "category": "amenity",
+      "subcategory": "amnshv",
+      "name": "Üz qırxma kremi (mini) – 20 ml",
+      "formula": "Shaving cream",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Mini can/tube",
+      "min_order": "300 ədəd+",
+      "sizes": [
+        "20 ml",
+        "50 ml"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAR-057",
+      "category": "amenity",
+      "subcategory": "amnulg",
+      "name": "Birdəfəlik ülgüc – 1 ədəd",
+      "formula": "Disposable razor",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Twin blade option",
+      "min_order": "500 ədəd+",
+      "sizes": [
+        "1 ədəd"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HASC-058",
+      "category": "amenity",
+      "subcategory": "amndus2",
+      "name": "Duş papağı – 1 ədəd",
+      "formula": "PE plastic",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Elastic band",
+      "min_order": "500 ədəd+",
+      "sizes": [
+        "1 ədəd",
+        "Paket"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAVK-059",
+      "category": "amenity",
+      "subcategory": "amnvan",
+      "name": "Vanity kit (cotton pads, buds, file) – Set",
+      "formula": "Mixed kit",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Individually packed",
+      "min_order": "300 ədəd+",
+      "sizes": [
+        "Set"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HADK-060",
+      "category": "amenity",
+      "subcategory": "amndnt",
+      "name": "Dental kit (toothbrush+toothpaste) – Set",
+      "formula": "Mixed kit",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Individually packed",
+      "min_order": "300 ədəd+",
+      "sizes": [
+        "Set"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAT-061",
+      "category": "amenity",
+      "subcategory": "amndnt",
+      "name": "Diş pastası (mini) – 10 ml",
+      "formula": "Fluoride toothpaste",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Tube 5–15 ml",
+      "min_order": "500 ədəd+",
+      "sizes": [
+        "10 ml",
+        "20 ml",
+        "1 ədəd"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HACB-062",
+      "category": "amenity",
+      "subcategory": "amncot",
+      "name": "Pambıq çubuqlar (cotton buds) – 100 ədəd/qutu",
+      "formula": "Cotton + stick",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "100 pcs",
+      "min_order": "200 qutu+",
+      "sizes": [
+        "100 ədəd/qutu"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAHS-063",
+      "category": "amenity",
+      "subcategory": "amnhsn",
+      "name": "Əl dezinfektanı (mini) – 30 ml",
+      "formula": "Ethanol 70% + humectant",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Gel/spray",
+      "min_order": "300 ədəd+",
+      "sizes": [
+        "30 ml",
+        "50 ml",
+        "300 ml"
+      ],
+      "zones": [
+        "Otaq",
+        "Lobby"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HAS-064",
+      "category": "amenity",
+      "subcategory": "amnter",
+      "name": "Otel terlikləri (unisex) – 1 cüt",
+      "formula": "Textile upper + plastic sole",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "purpose": "Qonaq amenity",
+      "description": "Logo embroidery/print",
+      "min_order": "200 cüt+",
+      "sizes": [
+        "1 cüt",
+        "Qutu"
+      ],
+      "zones": [
+        "Otaq"
+      ],
+      "variants": []
+    },
+    {
+      "id": "HTX-066",
+      "category": "hovuz",
+      "subcategory": "hovkm",
+      "name": "QRANUL XLOR 56%",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "HTP-067",
+      "category": "hovuz",
+      "subcategory": "hovkm",
+      "name": "Hovuz Parladıcı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "HTP-068",
+      "category": "hovuz",
+      "subcategory": "hovkm",
+      "name": "PH düşürücü (toz və maye)",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCKTA-069",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Cüt kovalı təmizlik arabası Plastik",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMTKTA-070",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Tək kovalı təmizlik arabası",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKZL-071",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Kayqan zemin lövhə",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCPP-072",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "CEYMOP PROFESSIONAL Yer yuma Pedi ( ağ - qırmızı - qara )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMT23-073",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Metal Teleskop 2 Metr / 3 Metr",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMT45-074",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Metal Teleskop 4 Metr / 4.5 Metr",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMQMVS130-075",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "130 cm qırmızı metal vidalı sap",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMTVS130-076",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "130 cm taxta vidalı sap",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMVS130-077",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Metal vidalı sap 130cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMDC-R-078",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "130 Cm Delikli çubuq RƏNGLİ",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCMA50-079",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Ceymop mop aparatı 50 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCMA60-080",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Ceymop mop aparatı 60 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMM40-081",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Mop makaron 40 cm rəngli",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMM50-082",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Mop makaron 50 cm rəngli",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMM60-083",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Mop makaron 60 cm rəngli",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMENM50-084",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Eco nemli mop 50 cm 150 ədədli bağlamada",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMZNM50-085",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Zincir dikiş nəmli mop 50 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMC45-086",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Metal camçek 45 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMC35-087",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Metal camçek 35 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKCL105-088",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Karex cam lastiği 105 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİMAP-P-089",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Islak mop aparatı PLASTİK",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİMAP-M-090",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "İslak mop aparatı METAL",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİMAP-ML-091",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "İslak mop aparatı METAL LUX",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİM300-092",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "İslak mop 300 GR",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİM400-093",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "İslak mop 400 GR",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMDVU-094",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "DÖNERLİ VİLEDA UCU",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMMU-095",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Microfiber mop ucu",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPS714-096",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "4 lü sünger professional 7x14",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPRS714-097",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Professional rəngli bulaşık süngeri oluklu 7x14-10 lu",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPBSQ714-098",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Professional bulaşık süngeri oluklu QARA 7x14-10 lu",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSOS5-099",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "5 Lİ OLUKLU SÜNGER Sofitex",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMQS60-100",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Toptel 60 gr - Qab simi",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMQS40-101",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Toptel 40 gr - Qab simi",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMQS20-102",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "3 lü Toptel 20 gr - Qab simi",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCKJ-103",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Cam kazıma jilet",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCKA-104",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Cam kazıma APARATI",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMYKJ-105",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Yer Kazma jileti",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKYAP-P-106",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Karex yer kazıma aparatı plastik",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKYAP-M-107",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "KAREX YER KAZIMA APARATI METAL",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSC20-108",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Süngerli CamSil ( CAM CEKPAS 20 CM )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPY55-109",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "plastik yersil 55 sm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPY75-110",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Plastik yersil 75 sm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCPA45-111",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Cam peluş aparatı 45 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCP45-112",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Cam peluş 45 cm",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPX-113",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "PLASTIK Süpürgə xəkəndaz",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİTF-114",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Sənaye tipli Faraş",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİDM-115",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "ZAMBAK DÖNERLİ MOP",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İM3TF-116",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "3-lü temizlik bezi FLEXİ",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMLCB-117",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Lacos cam bezi",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMFJT-118",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Flodex jumbo microfiber təmizlik bezi 50*70",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMFJT-119",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Flodex jumbo microfiber təmizlik bezi 2 li 30*35",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMM4T-120",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Microfiber təmizlik bezi 4 lü",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMR4T-121",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Microfiber təmizlik bezi rəngli 40*40",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMGGM-122",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "40x40 Göy Mikrofiber",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMOFF-123",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "OTO FIRCA 20 CM",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMOFF-124",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "OTO FIRCA 17 CM",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCPK-125",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Carpex pisuar koku giderici",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKKF-126",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Krom klozet fırçası",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMTB2P-127",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "TOILET BLOCK 2 PCK (təravətləndirici)",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİBE-128",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Bulaşık eldiveni Beybi",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİCB-129",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "CEYFİX BULAŞIK ELDİVENİ",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİOBE-130",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Onton Bulaşık Eldiveni",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMLPN-131",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Latex Pudralı əlcək N100",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMLPN-132",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Latex Pudrasız əlcək N100",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMNM-133",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Nitril MAVİ pudrasız əlcək N100",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMNQ-134",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Nitril QARA pudrasız əlcək N100",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİEP-135",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Əlcək pingivin 100 lü ( HDP )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİTM-136",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Tibbi maska 50 li",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMÖ-137",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Müayinə masa örtüsü",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİTK-138",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Tek kullanımlık tela kolluk N50",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİTP-139",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Tek kullanımlık Plastik kolluk N50",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİPE-140",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Pe Önlük 100 lü",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB21-141",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Bone 21 inc N100",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB18-142",
+      "category": "istehlak",
+      "subcategory": "istppe",
+      "name": "Bone 18 inc N100",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİCH-143",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Chef Hat - Şef Aşpaz Papağı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİCH-144",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Chef Hat - Şef Aşpaz Papağı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİDC-145",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Duvara Monte Çöp Kovası Siyah / Beyaz 25 L",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMİDC-146",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Duvara Monte Çöp Kovası Siyah / Beyaz 50 L",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSZ-147",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Sıfır atık geri dönüşüm qutusu klastik 70 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMP50-148",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "50 Lt Pedallı Çöp Kovası",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMZK240-149",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Zibil konteyneri geri dönüşüm 240 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMZ240-150",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Zibil konteyneri 240 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMZ120-151",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Zibil konteyneri 120 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMS20-152",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Slim pedallı çöp kovası 20 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMS50-153",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Slim pedallı çöp kovası 50 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMS70-154",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Sıfır atık geri dönüşüm qutusu kağız 70 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB90-155",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Büfe tipi çöp kovası 90 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMS10-156",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Slim pedallı çöp kovası 10 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMS15-157",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Slim pedallı çöp kovası 15 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMS25-158",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Slim pedallı çöp kovası 25 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMST70-159",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Slim pedallı, təkərli çöp kovası 70 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMG15-160",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Girdap kapaklı çöp kovası 15 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMG25-161",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Girdap kapaklı çöp kovası 25 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMG60-162",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Girdap kapaklı çöp kovası 60 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKM8-163",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Krom medallı çöp kovası 8 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKM5-164",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Krom medallı çöp kovası 5 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKM3-165",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Krom medallı çöp kovası 3 lt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMG10-166",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "GULEN YUZ MARKET CANTASI 10 RULO",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMP-167",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Mayka Poşet KG - 23/27/31/35/44",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMBM-168",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "BIO Mini ÇÖP POŞETİ 40x50 ( 40 Yarpaq ) BEYAZ",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İM5060-169",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "50x60 zibil torbası 1*100",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İM80100-170",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "80x100 zibil torbası 1*40",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İM5560-171",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "55x60 ortaboy çöp poşeti 1*50",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMP80J-172",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "pacworld 80x110 Jumbo Çöp poşeti 400 qr 1*20",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB80-173",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "BİO ÇÖP POŞETİ 80x110 - 1*20",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMZ80-174",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Zibil Poşeti 80x110 KQ",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCO-175",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Carpex Otomatik Sensörlü Kağıt Havlu dispenseri",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMCM-176",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Carpex Autocut Manuel Kağıt Havlu dispenseri",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMC-177",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "Carpex mini içdən çəkmə tuvalet kağız dispenseri",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMOSK-178",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Carpex otomatik sensor köpük sabun aparatı 1000 ml",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMK-179",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Carpex manual köpük sabun aparatı 1000 ml",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMRTM-180",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Rulopak Tekçek Maxi Tuvalet Kağıdı Dispenseri Siyah",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMRTm-181",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Rulopak Tekçek mini Tuvalet Kağıdı Dispenseri Siyah",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMRZK-182",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Rulopak Eazy Z Katlama Kağıt Aparatı 200'Lü Siyah",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMVZK-183",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Vialli Z Katlama kağıt aparatı 200 lü",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMRMS-184",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Rulopak manuel S model sıvı sabun şampuan aparatı siyah",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMRMK-185",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Rulopak manuel S model sıvı sabun şampuan aparatı krom",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMRTS-186",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Rulopak T Çekmeli Sıvı Sabunluk Ve Şampuan aparatı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPSK-187",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Palex sensorlu el kurutma makinesi krom 2000",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPS-188",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Palex sensorlu el kurutma makinesi 2000",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMRCM-189",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Rulopak Cosmic M5 Profesyonel Koku Makinesi",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPDPB-190",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "PALEX DİSPANSER PEÇETE APARATI BEYAZ",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPDPC-191",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "PALEX DİSPANSER PEÇETE APARATI CHROM",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPDPS-192",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "PALEX DİSPANSER PEÇETE APARATI SİYAH",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSSD-193",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "SIVI SABUN DISPENSERI 500CC ŞEFFAF",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMH2180-194",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "21 sm havlu 6 lı 80 Metr (Mavi Beyaz )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMH21150-195",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "21 sm havlu 6 lı 150 Metr (Mavi Beyaz )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMBJ-196",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Mavi beyaz havlu jumbo 9 lu",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İTMPK-197",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Tem pak 40 lı tuvalet kağıdı çift kat 2",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMPM-198",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Mavi beyaz pro expert mini jumbo tualet kağıdı 4 kq 12",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMP-199",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Mavi beyaz pro expert tuvalet kağıdı 24 lü 2",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMDZH-200",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Dispenser Z havlu 200 yarpaq 21x200",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMTPP-201",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Tem prof dispenser peçete 350ypr 12 li",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMFH-202",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Flexi Mutfak 16 lı havlu 3",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMVSP-203",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "VILO SERVIS PECETE 100 YAPRAK 32-li KOLI",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSP-204",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Stolüstü PECETE 200 ədədli ( 24 lü bağlama )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMMPÖP-205",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Mavi beyaz pro expert özel katlama peçete 33*33 100 lü 12",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMVICT-206",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "VILO ICTEN CEKME TUVALET KAGIDI 150 MT 6 ADET",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMTMCT-207",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "TAMI MINI ICTEN CEKME TUVALET KAGIDI 4 KG 12 ADET",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSQ-208",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Stolüstü Qutu Salfet (100 Yarpaq)",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAF-209",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Al Folyo 45sm x 50 metr",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMGF-210",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Goldpack streç film 45*700",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSBK-211",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Sera Bişirmə kağızı 37x50 mt",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSS-212",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "STONE Streç 45x300",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSQ20-213",
+      "category": "istehlak",
+      "subcategory": "istsous",
+      "name": "20 cc sous qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSQ30-214",
+      "category": "istehlak",
+      "subcategory": "istsous",
+      "name": "30 cc sous qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSQ50-215",
+      "category": "istehlak",
+      "subcategory": "istsous",
+      "name": "50 cc sous qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSQ80-216",
+      "category": "istehlak",
+      "subcategory": "istsous",
+      "name": "80 cc sous qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSQ100-217",
+      "category": "istehlak",
+      "subcategory": "istsous",
+      "name": "100 cc sous qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSZ150-218",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "150 gr sızdırmaz qab",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSZ250-219",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "250 gr sızdırmaz qab",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSZ375-220",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "375 gr sızdırmaz qab",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSZ500-221",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "500 gr sızdırmaz qab",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSZ750-222",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "750 gr sızdımaz qab",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB750-223",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "750 cc BAMİYƏ qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL250-224",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Alminium 250gr qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL350-225",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Alminium 350gr qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL500-226",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Alminium 500gr qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL750-227",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Alminium 750gr qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL1000-228",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Aluminum 1000 gr qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL1500-229",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Alminium 1500 gr qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL2G-230",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Alminium iki göz qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAL3G-231",
+      "category": "istehlak",
+      "subcategory": "istalm",
+      "name": "Alminium üç göz qab + qapaq SAN",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB1B-232",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Mikrodalğalı bir bölməli qab / qapaq",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB2B-233",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Mikrodalğalı iki bölməli qab / qapaq",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMB3B-234",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Mikrodalğalı üç bölməli qab / qapaq",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK8-235",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "8 OZ karton cup SLEEVE",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK12-236",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "12/14/16 OZ karton cup SLEEVE",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK4-237",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "4 OZ KARTON BARDAK",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK6,5-238",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "6,5 OZ KARTON BARDAK",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK7-239",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "7 OZ KARTON BARDAK",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK8SD-240",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "8 OZ sadə desenli karton stəkan ( 1000 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK8DA-241",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "8 OZ Double AĞ stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK8DQ-242",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "8 OZ Double QARA stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK8DK-243",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "8 OZ Double KRAFT stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK8R-244",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "8 OZ ripple QARA / KRAFT / RƏNGLİ stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK8Q-245",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "8 OZ stəkan qapağı ( 1000 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK12SD-246",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "12 OZ sadə desenli karton stəkan ( 1000 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK12DA-247",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "12 OZ Double AĞ stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK12DQ-248",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "12 OZ Double QARA stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK12DK-249",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "12 OZ Double KRAFT stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK12R-250",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "12 OZ ripple QARA / KRAFT / RƏNGLİ stəkan ( 500 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK12Q-251",
+      "category": "istehlak",
+      "subcategory": "istktk",
+      "name": "12 OZ stəkan qapağı ( 1000 ədəd )",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMAK-252",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "11 SM AHŞAP KARIŞTIRICI",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMKP200-253",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "KAGIT SARGILI PIPET 200 lü",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMJSP-254",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Jelatin sarğılı rəngli pipet N50",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMJK-255",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Burpack 400 ədədli Jelatinli kürdan",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMADC-256",
+      "category": "istehlak",
+      "subcategory": "istzib",
+      "name": "ADANA Çöp Şiş 50-li paket",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMSCB-257",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Sushi çubuğu 50li paçka",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK16-258",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "16 OZ katon sup kase",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMBÇ-259",
+      "category": "istehlak",
+      "subcategory": "istbio",
+      "name": "Bio Çəngəl / qaşıq",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMBÇS-260",
+      "category": "istehlak",
+      "subcategory": "istkag",
+      "name": "Bio çəngəl, qaşıq, bıçaq, salfet seti",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK150-261",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "KAPAKSIZ SUP KASE 150 CC",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK200-262",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "KAPAKSIZ SUP KASE 200 CC",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK250-263",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "KAPAKSIZ SUP KASE 250 CC",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMP33-264",
+      "category": "istehlak",
+      "subcategory": "istpzz",
+      "name": "Pizza qutusu şəkilli 33x33",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMP30-265",
+      "category": "istehlak",
+      "subcategory": "istpzz",
+      "name": "Pizza qutusu şəkilli 30x30",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMP25-266",
+      "category": "istehlak",
+      "subcategory": "istpzz",
+      "name": "Pizza qutusu şəkilli 25x25",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMPP-267",
+      "category": "istehlak",
+      "subcategory": "istpzz",
+      "name": "Pide qutusu şəkilli",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMNT18-268",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Naturel tabak 18 cm (50A DX20PK) stone",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMNT22-269",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "Naturel tabak 22 cm (50A DX20PK) stone",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK4B-270",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "4 Bölməli kabab qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMK3B-271",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "3 Bölməli kabab qabı",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    },
+    {
+      "id": "İMQ500-272",
+      "category": "istehlak",
+      "subcategory": "istdgr",
+      "name": "500 GR qapaqsız qab",
+      "delivery_days": "5-7",
+      "haccp": false,
+      "sizes": [],
+      "zones": [],
+      "variants": []
+    }
   ],
   "services": [
-    { "id": "SVC-001", "name": "Texniki Konsultasiya", "duration": "1-3 gün", "price_type": "Pulsuz", "description": "Otelin tam ehtiyac analizi, məhsul seçimi, uyğunluq matrisası" },
-    { "id": "SVC-002", "name": "Dozaj Sistemi Quraşdırma", "duration": "1 gün", "price_type": "Layihə üzrə", "description": "Camaşırxana & mətbəx dozaj pompası quraşdırılması, kalibrasiya" },
-    { "id": "SVC-003", "name": "Housekeeping Təlimi", "duration": "2-4 saat", "price_type": "Per session", "description": "Kimyəvi təhlükəsizlik, düzgün istifadə, zona rəng kodlama, sertifikat" },
-    { "id": "SVC-004", "name": "SDS / Etiket Paketi", "duration": "3-7 gün", "price_type": "Layihə üzrə", "description": "Safety Data Sheet toplanması, etiketlər, piktogramlar" },
-    { "id": "SVC-005", "name": "HACCP Gigiyena Planı", "duration": "5-10 gün", "price_type": "Layihə üzrə", "description": "Mətbəx sanitizasiya planı, yoxlama checklistləri, SOP sənədi" },
-    { "id": "SVC-006", "name": "Camaşırxana Kimyəvi Audit", "duration": "3-5 gün", "price_type": "Layihə üzrə", "description": "Su sərtliyi, dozaj, yuma keyfiyyəti analizi, optimizasiya planı" },
-    { "id": "SVC-007", "name": "Pilot / Trial Proqramı", "duration": "2-4 həftə", "price_type": "Paket", "description": "2-4 həftəlik sınaq tətbiqi, test protokolu, hesabat" },
-    { "id": "SVC-008", "name": "Eco Alternativlər Seçimi", "duration": "3-5 gün", "price_type": "Paket", "description": "Safer Choice/eco variantların seçimi, uyğunluq matrisası" },
-    { "id": "SVC-009", "name": "Anbar Optimallaşdırma", "duration": "3-7 gün", "price_type": "Layihə üzrə", "description": "MOQ, təhlükəsizlik stok, sifariş dövrü qurulması, min-max plan" },
-    { "id": "SVC-010", "name": "Çatdırılma & Logistika", "duration": "Daimi", "price_type": "Aylıq", "description": "Çatdırılma qrafiki, bölünmüş çatdırılma, qəbul protokolu" },
-    { "id": "SVC-011", "name": "Keyfiyyət Zəmanəti & SLA", "duration": "1-2 gün SLA", "price_type": "Daxildir", "description": "Məhsul qüsurları SLA, dəyişmə qaydası, reklamasiya forması" },
-    { "id": "SVC-012", "name": "Logo Çap & Dizayn", "duration": "7-20 gün", "price_type": "Layihə üzrə", "description": "Salfet, amenities, qablaşdırma brend çapı, print-ready fayl" },
-    { "id": "SVC-013", "name": "Dispenser / Bathroom Setup", "duration": "1-2 gün", "price_type": "Layihə üzrə", "description": "Dispenser quraşdırma, optimum yerləşdirmə, rəhbərlik" },
-    { "id": "SVC-014", "name": "PPE Təlimi", "duration": "2-3 saat", "price_type": "Per session", "description": "Qoruyucu geyimin düzgün istifadəsi, kimyəvi təhlükəsizlik" },
-    { "id": "SVC-015", "name": "Spill Kit Hazırlığı", "duration": "1 gün", "price_type": "Layihə üzrə", "description": "Kimyəvi tökülmə əleyhinə hazırlıq, avadanlıq, prosedur" }
+    {
+      "id": "SVC-001",
+      "name": "Texniki Konsultasiya",
+      "duration": "1-3 gün",
+      "price_type": "Pulsuz",
+      "description": "Otelin tam ehtiyac analizi, məhsul seçimi, uyğunluq matrisası"
+    },
+    {
+      "id": "SVC-002",
+      "name": "Dozaj Sistemi Quraşdırma",
+      "duration": "1 gün",
+      "price_type": "Layihə üzrə",
+      "description": "Camaşırxana & mətbəx dozaj pompası quraşdırılması, kalibrasiya"
+    },
+    {
+      "id": "SVC-003",
+      "name": "Housekeeping Təlimi",
+      "duration": "2-4 saat",
+      "price_type": "Per session",
+      "description": "Kimyəvi təhlükəsizlik, düzgün istifadə, zona rəng kodlama, sertifikat"
+    },
+    {
+      "id": "SVC-004",
+      "name": "SDS / Etiket Paketi",
+      "duration": "3-7 gün",
+      "price_type": "Layihə üzrə",
+      "description": "Safety Data Sheet toplanması, etiketlər, piktogramlar"
+    },
+    {
+      "id": "SVC-005",
+      "name": "HACCP Gigiyena Planı",
+      "duration": "5-10 gün",
+      "price_type": "Layihə üzrə",
+      "description": "Mətbəx sanitizasiya planı, yoxlama checklistləri, SOP sənədi"
+    },
+    {
+      "id": "SVC-006",
+      "name": "Camaşırxana Kimyəvi Audit",
+      "duration": "3-5 gün",
+      "price_type": "Layihə üzrə",
+      "description": "Su sərtliyi, dozaj, yuma keyfiyyəti analizi, optimizasiya planı"
+    },
+    {
+      "id": "SVC-007",
+      "name": "Pilot / Trial Proqramı",
+      "duration": "2-4 həftə",
+      "price_type": "Paket",
+      "description": "2-4 həftəlik sınaq tətbiqi, test protokolu, hesabat"
+    },
+    {
+      "id": "SVC-008",
+      "name": "Eco Alternativlər Seçimi",
+      "duration": "3-5 gün",
+      "price_type": "Paket",
+      "description": "Safer Choice/eco variantların seçimi, uyğunluq matrisası"
+    },
+    {
+      "id": "SVC-009",
+      "name": "Anbar Optimallaşdırma",
+      "duration": "3-7 gün",
+      "price_type": "Layihə üzrə",
+      "description": "MOQ, təhlükəsizlik stok, sifariş dövrü qurulması, min-max plan"
+    },
+    {
+      "id": "SVC-010",
+      "name": "Çatdırılma & Logistika",
+      "duration": "Daimi",
+      "price_type": "Aylıq",
+      "description": "Çatdırılma qrafiki, bölünmüş çatdırılma, qəbul protokolu"
+    },
+    {
+      "id": "SVC-011",
+      "name": "Keyfiyyət Zəmanəti & SLA",
+      "duration": "1-2 gün SLA",
+      "price_type": "Daxildir",
+      "description": "Məhsul qüsurları SLA, dəyişmə qaydası, reklamasiya forması"
+    },
+    {
+      "id": "SVC-012",
+      "name": "Logo Çap & Dizayn",
+      "duration": "7-20 gün",
+      "price_type": "Layihə üzrə",
+      "description": "Salfet, amenities, qablaşdırma brend çapı, print-ready fayl"
+    },
+    {
+      "id": "SVC-013",
+      "name": "Dispenser / Bathroom Setup",
+      "duration": "1-2 gün",
+      "price_type": "Layihə üzrə",
+      "description": "Dispenser quraşdırma, optimum yerləşdirmə, rəhbərlik"
+    },
+    {
+      "id": "SVC-014",
+      "name": "PPE Təlimi",
+      "duration": "2-3 saat",
+      "price_type": "Per session",
+      "description": "Qoruyucu geyimin düzgün istifadəsi, kimyəvi təhlükəsizlik"
+    },
+    {
+      "id": "SVC-015",
+      "name": "Spill Kit Hazırlığı",
+      "duration": "1 gün",
+      "price_type": "Layihə üzrə",
+      "description": "Kimyəvi tökülmə əleyhinə hazırlıq, avadanlıq, prosedur"
+    }
   ]
 }

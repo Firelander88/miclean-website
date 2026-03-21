@@ -88,8 +88,9 @@ app.use(express.static(path.join(__dirname, 'public'), {
 // ── API routes ────────────────────────────────────────────────────────────────
 app.use('/api', apiLimiter);
 app.use('/api/products', productsRouter);
-app.use('/api/contact', contactLimiter, contactRouter);
-app.use('/api/quotes',  contactLimiter, quotesRouter);
+const postOnly = (limiter) => (req, res, next) => req.method === 'POST' ? limiter(req, res, next) : next();
+app.use('/api/contact', postOnly(contactLimiter), contactRouter);
+app.use('/api/quotes',  postOnly(contactLimiter), quotesRouter);
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/api/health', async (req, res) => {
@@ -108,6 +109,11 @@ app.get('/api/health', async (req, res) => {
     version,
     env: process.env.NODE_ENV || 'development',
   });
+});
+
+// ── Admin panel ───────────────────────────────────────────────────────────────
+app.get('/admin', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'admin.html'));
 });
 
 // ── SPA fallback ──────────────────────────────────────────────────────────────
