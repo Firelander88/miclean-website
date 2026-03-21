@@ -9,11 +9,11 @@ const { escapeHtml } = require('../utils/escapeHtml');
 const validators = [
   body('name').trim().isLength({ min: 2, max: 100 }).withMessage('Ad 2-100 simvol arasında olmalıdır.'),
   body('email').isEmail().normalizeEmail().withMessage('Düzgün email ünvanı daxil edin.'),
-  body('phone').optional({ checkFalsy: true }).trim().isLength({ max: 30 }),
+  body('phone').optional({ checkFalsy: true }).trim().isLength({ max: 30 }).withMessage('Telefon nömrəsi 30 simvoldan çox ola bilməz.'),
   body('hotel').trim().isLength({ min: 2, max: 150 }).withMessage('Otel/Şirkət adı 2-150 simvol arasında olmalıdır.'),
   body('hotel_stars').optional({ checkFalsy: true }).isIn(['3', '4', '5', 'other']).withMessage('Keçərsiz ulduz sayı.'),
-  body('categories').isArray({ min: 1 }).withMessage('Ən azı bir kateqoriya seçin.'),
-  body('notes').optional({ checkFalsy: true }).trim().isLength({ max: 1000 }),
+  body('categories').isArray({ min: 1, max: 10 }).withMessage('Ən azı bir kateqoriya seçin.'),
+  body('notes').optional({ checkFalsy: true }).trim().isLength({ max: 1000 }).withMessage('Qeydlər 1000 simvoldan çox ola bilməz.'),
   body('pilot').optional().isBoolean(),
 ];
 

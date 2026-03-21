@@ -39,7 +39,7 @@ app.use(helmet({
 // WARNING: ALLOWED_ORIGIN defaults to '*' (all origins) when not set.
 // In production, set ALLOWED_ORIGIN=https://micleangroup.az in your .env file.
 app.use(cors({
-  origin: process.env.ALLOWED_ORIGIN || '*',
+  origin: process.env.ALLOWED_ORIGIN || 'https://micleangroup.az',
   methods: ['GET', 'POST'],
 }));
 

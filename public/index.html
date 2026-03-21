@@ -860,7 +860,7 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
       <div class="ci"><span class="ci-lbl">Çatdırılma</span><span class="ci-val"><strong>5–7 iş günü</strong> · Bakı &amp; region</span></div>
     </div>
     <a href="mailto:info@micleangroup.az" class="cta">Qiymət Təklifi İstə →</a>
-    <div class="social"><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="https://wa.me/994500000000?text=Salam%2C%20MI%20CLEAN%20GROUP%20kataloqu%20bar%C9%99d%C9%99%20m%C9%99lumat%20almaq%20ist%C9%99yir%C9%99m." target="_blank" rel="noopener">WhatsApp</a></div>
+    <div class="social"><a href="https://www.linkedin.com/company/mi-clean-group/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.instagram.com/micleangroup/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://wa.me/994500000000?text=Salam%2C%20MI%20CLEAN%20GROUP%20kataloqu%20bar%C9%99d%C9%99%20m%C9%99lumat%20almaq%20ist%C9%99yir%C9%99m." target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
   </div>
   <div class="ct-r" style="background:var(--bg2);display:flex;align-items:center;justify-content:center;padding:56px 48px">
     <div style="width:100%;max-width:420px">
@@ -876,6 +876,7 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
           <div class="frow" style="margin:0"><label>Otel / Şirkət *</label><input type="text" name="hotel" placeholder="Grand Hotel Baku" required></div>
         </div>
         <div class="frow" style="margin-bottom:12px"><label>Mesaj *</label><textarea name="message" placeholder="Sualınızı yazın..." required style="min-height:80px;resize:vertical"></textarea></div>
+        <p style="font-size:10px;color:var(--muted);margin-bottom:12px;line-height:1.5">Göndər düyməsini klikləməklə, məlumatlarınızın yalnız bu sorğuya cavab vermək məqsədilə istifadə ediləcəyini qəbul edirsiniz.</p>
         <button type="button" class="btn-sub" id="cbtn" onclick="subC()" style="width:100%">Göndər</button>
       </form>
     </div>
@@ -883,7 +884,7 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
 </section>
 
 <footer>
-  <span class="ft-c">© <span id="footer-year">2025</span> MI CLEAN GROUP MMC — Bütün hüquqlar qorunur.</span>
+  <span class="ft-c">© <span id="footer-year">2026</span> MI CLEAN GROUP MMC — Bütün hüquqlar qorunur.</span>
   <span class="ft-b">MI CLEAN GROUP</span>
 </footer>
 
@@ -917,7 +918,7 @@ footer{border-top:1px solid var(--border);padding:24px 64px;display:flex;justify
 </div><div class="ferr" id="cerr">&#398;n az&#305; bir kateqoriya se&#231;in.</div></div>
 <div class="frow"><label>Q&#601;ydl&#601;r</label><textarea name="notes" placeholder="Otel yrl&#601;&#351;m&#601; say&#305;, m&#246;vcud probleml&#601;r..."></textarea></div>
 <div class="frow"><label class="frow-ck"><input type="checkbox" name="pilot"><span>Pilot proqram&#305;na (2&#8211;4 h&#601;ft&#601; pulsuz s&#305;naq) mara&#287;&#305;m var</span></label></div>
-<button type="button" class="btn-sub" id="qbtn" onclick="subQ()">Sor&#287;u G&#246;nd&#601;r</button>
+<p style="font-size:10px;color:var(--muted);margin:8px 0;line-height:1.5">Göndər düyməsini klikləməklə, məlumatlarınızın yalnız bu sorğuya cavab vermək məqsədilə istifadə ediləcəyini qəbul edirsiniz.</p><button type="button" class="btn-sub" id="qbtn" onclick="subQ()">Sor&#287;u G&#246;nd&#601;r</button>
 </form></div></div></div>
 <!-- Section TOC -->
 <nav id="sec-toc" aria-label="Bölmə naviqasiyası">
@@ -1155,7 +1156,7 @@ function doS(q) {
     return;
   }
   var h = f.map(function(p) {
-    var ig = p.image ? ('<img class="sri-img" src="'+p.image+'" alt="" onerror="this.style.display=\'none\'">') : '';
+    var ig = p.image ? ('<img class="sri-img" src="'+p.image+'" alt="'+(p.name||'Məhsul').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'">') : '';
     var hb = p.haccp ? ' <span class="bdg bdg-haccp" style="font-size:7px;padding:2px 6px;vertical-align:middle">HACCP</span>' : '';
     return '<div class="sri" onclick="goS(\''+p.category+'\')">'+ig+'<div><div class="sri-name">'+p.name+hb+'</div><div class="sri-cat">'+(CATS[p.category]||p.category)+'</div>'+(p.id?'<div class="sri-id">'+p.id+'</div>':'')+' </div></div>';
   }).join('');
@@ -1327,7 +1328,7 @@ function openCmp() {
   var cols = cmpList;
   var rows = [
     { label: 'Məhsul', fn: function(p) {
-      var imgHtml = p.img ? '<img class="cmp-img" src="'+p.img+'" alt="" onerror="this.style.display=\'none\'">' : '<div class="cmp-noimg">🧴</div>';
+      var imgHtml = p.img ? '<img class="cmp-img" src="'+p.img+'" alt="'+(p.name||'Məhsul').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'">' : '<div class="cmp-noimg">🧴</div>';
       return imgHtml + '<strong style="font-size:13px;color:var(--white)">' + p.name + '</strong>' + (p.code ? '<br><span style="font-size:9px;color:var(--gold);letter-spacing:.1em">' + p.code + '</span>' : '');
     }},
     { label: 'Kateqoriya', fn: function(p) { return p.cat; }},

@@ -9,7 +9,7 @@ const { escapeHtml } = require('../utils/escapeHtml');
 const validators = [
   body('name').trim().isLength({ min: 2, max: 100 }).withMessage('Ad 2-100 simvol arasında olmalıdır.'),
   body('email').isEmail().normalizeEmail().withMessage('Düzgün email ünvanı daxil edin.'),
-  body('phone').optional({ checkFalsy: true }).isMobilePhone().withMessage('Düzgün telefon nömrəsi daxil edin.'),
+  body('phone').optional({ checkFalsy: true }).isMobilePhone('any').withMessage('Düzgün telefon nömrəsi daxil edin.'),
   body('hotel').trim().isLength({ min: 2, max: 150 }).withMessage('Otel/Şirkət adı 2-150 simvol arasında olmalıdır.'),
   body('message').trim().isLength({ min: 10, max: 2000 }).withMessage('Mesaj 10-2000 simvol arasında olmalıdır.'),
 ];
