@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { body, validationResult } = require('express-validator');
+const { body, param, validationResult } = require('express-validator');
 const db = require('../db');
 const logger = require('../utils/logger');
 const { sendMail, sendMailTo } = require('../utils/mailer');
@@ -40,7 +40,7 @@ router.post('/', validators, async (req, res, next) => {
       ip:      req.ip,
     });
 
-    sendMail({
+    const mailSent = await sendMail({
       subject: `Yeni Mesaj: ${escapeHtml(name)} — ${escapeHtml(hotel)}`,
       html: `
         <h2 style="color:#C9A96E">Yeni Əlaqə Mesajı</h2>
@@ -54,9 +54,10 @@ router.post('/', validators, async (req, res, next) => {
         <p style="color:#999;font-size:12px">ID: ${escapeHtml(id)}</p>
       `,
     });
+    if (!mailSent) logger.warn('Admin notification email failed', { id });
 
-    // Confirmation email to customer (fire-and-forget)
-    sendMailTo({
+    // Confirmation email to customer
+    const userMailSent = await sendMailTo({
       to: email,
       subject: `Mesajınız alındı — MI CLEAN GROUP (${id})`,
       html: `
@@ -78,7 +79,7 @@ router.post('/', validators, async (req, res, next) => {
             </table>
           </div>
           <p style="color:#666;font-size:13px;line-height:1.7">
-            Əlavə suallarınız üçün bizimlə <a href="https://wa.me/994500000000" style="color:#C9A96E">WhatsApp</a> vasitəsilə əlaqə saxlaya bilərsiniz.
+            Əlavə suallarınız üçün bizimlə <a href="https://wa.me/994554882222" style="color:#C9A96E">WhatsApp</a> vasitəsilə əlaqə saxlaya bilərsiniz.
           </p>
           <div style="border-top:1px solid #e8e0d0;margin-top:24px;padding-top:16px;text-align:center;font-size:11px;color:#aaa">
             MI CLEAN GROUP MMC · Bakı, Azərbaycan<br>Bu email avtomatik göndərilmişdir.
@@ -86,6 +87,7 @@ router.post('/', validators, async (req, res, next) => {
         </div>
       `,
     });
+    if (!userMailSent) logger.warn('User confirmation email failed', { email });
 
     logger.info(`Yeni mesaj [${id}]: ${name} <${email}> — ${hotel}`);
 
@@ -102,7 +104,7 @@ router.post('/', validators, async (req, res, next) => {
 // GET /api/contact — admin only
 router.get('/', async (req, res, next) => {
   try {
-    if (process.env.ADMIN_KEY && req.headers['x-admin-key'] !== process.env.ADMIN_KEY) {
+    if (!process.env.ADMIN_KEY || req.headers['x-admin-key'] !== process.env.ADMIN_KEY) {
       return res.status(401).json({ success: false, message: 'İcazəsiz giriş.' });
     }
     const messages = await db('contact_messages').select('*').orderBy('created_at', 'desc');
@@ -113,17 +115,20 @@ router.get('/', async (req, res, next) => {
 });
 
 // PATCH /api/contact/:id — update status, admin only
-router.patch('/:id', async (req, res, next) => {
+router.patch('/:id', [
+  param('id').matches(/^MSG-\d+$/).withMessage('Invalid message ID format'),
+  body('status').trim().isIn(['new', 'read', 'replied', 'archived']).withMessage('Invalid status'),
+], async (req, res, next) => {
   try {
-    if (process.env.ADMIN_KEY && req.headers['x-admin-key'] !== process.env.ADMIN_KEY) {
+    if (!process.env.ADMIN_KEY || req.headers['x-admin-key'] !== process.env.ADMIN_KEY) {
       return res.status(401).json({ success: false, message: 'İcazəsiz giriş.' });
     }
-    const { status } = req.body;
-    const allowed = ['new', 'read', 'replied', 'archived'];
-    if (!allowed.includes(status)) {
-      return res.status(400).json({ success: false, message: 'Keçərsiz status.' });
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, message: 'Keçərsiz məlumat.', errors: errors.array() });
     }
-    const updated = await db('contact_messages').where({ id: req.params.id }).update({ status });
+    const { status } = req.body;
+    const updated = await db('contact_messages').where({ id: req.params.id }).update({ status, updated_at: new Date().toISOString() });
     if (!updated) return res.status(404).json({ success: false, message: 'Tapılmadı.' });
     res.json({ success: true });
   } catch (err) {

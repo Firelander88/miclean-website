@@ -1,0 +1,58 @@
+<script>
+// ── Section TOC indicator ──────────────────────────────────────────────────
+(function() {
+  var toc = document.getElementById('sec-toc');
+  if (!toc) return;
+  var dots = Array.from(toc.querySelectorAll('.toc-dot'));
+  var secs = dots.map(function(d) {
+    return document.getElementById(d.dataset.sec);
+  });
+
+  var tocSections = ['kimyevi','camasirxana','metbex','amenity','istehlak','housekeeping','hovuz'];
+  var firstSecTop = 0;
+  var firstSec = document.getElementById(tocSections[0]);
+  if (firstSec) firstSecTop = firstSec.getBoundingClientRect().top + window.scrollY - 200;
+
+  function updateToc() {
+    var scrollY = window.scrollY;
+    var winH = window.innerHeight;
+
+    // Show/hide TOC: show only when first catalog section is near view
+    var inCatalog = scrollY >= firstSecTop;
+    toc.classList.toggle('show', inCatalog);
+
+    // Find active section
+    var active = -1;
+    secs.forEach(function(sec, i) {
+      if (!sec) return;
+      var top = sec.getBoundingClientRect().top + scrollY;
+      if (scrollY >= top - winH * 0.4) active = i;
+    });
+
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === active);
+    });
+  }
+
+  window.addEventListener('scroll', updateToc, { passive: true });
+  updateToc();
+})();
+
+// ── Print / PDF catalog ────────────────────────────────────────────────────
+function printCatalog() {
+  // Update print date
+  var meta = document.getElementById('ph-meta');
+  if (meta) {
+    var now = new Date();
+    var months = ['Yanvar','Fevral','Mart','Aprel','May','İyun','İyul','Avqust','Sentyabr','Oktyabr','Noyabr','Dekabr'];
+    meta.textContent = 'Çap tarixi: ' + now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+  }
+  // Count visible cards for user feedback
+  var visible = document.querySelectorAll('.pc:not(.hidden)').length;
+  var total = document.querySelectorAll('.pc').length;
+  var msg = visible < total
+    ? 'Hal-hazırda ' + visible + ' məhsul süzülüb. Yalnız bunlar çap ediləcək. Davam edirsiniz?'
+    : null;
+  if (msg && !confirm(msg)) return;
+  window.print();
+}</script>

@@ -17,30 +17,44 @@ const db = require('./db');
 const contactRouter = require('./routes/contact');
 const productsRouter = require('./routes/products');
 const quotesRouter = require('./routes/quotes');
+const editorRouter = require('./routes/editor');
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 const { version } = require('./package.json');
 
+if (!process.env.ADMIN_KEY && process.env.NODE_ENV === 'production') {
+  logger.error('ADMIN_KEY is required in production. Set it in .env');
+  process.exit(1);
+}
+
 // ── Security middleware ──────────────────────────────────────────────────────
 app.use(helmet({
+  crossOriginResourcePolicy: { policy: 'cross-origin' },
   contentSecurityPolicy: {
     directives: {
       defaultSrc: ["'self'"],
-      imgSrc:     ["'self'", "https://images.unsplash.com", "data:"],
+      imgSrc:     ["'self'", "https://images.unsplash.com", "https://static.wixstatic.com", "data:"],
       fontSrc:    ["'self'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
       styleSrc:   ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
       scriptSrc:  ["'self'", "'unsafe-inline'"],
+      scriptSrcAttr: ["'unsafe-inline'"],
       connectSrc: ["'self'"],
+      frameSrc:   ["'self'"],
+      formAction: ["'self'"],
+      baseUri: ["'self'"],
+      frameAncestors: ["'self'"],
+      upgradeInsecureRequests: [],
     },
   },
 }));
 
-// WARNING: ALLOWED_ORIGIN defaults to '*' (all origins) when not set.
-// In production, set ALLOWED_ORIGIN=https://micleangroup.az in your .env file.
+// ALLOWED_ORIGIN defaults to 'https://micleangroup.az' when not set.
 app.use(cors({
   origin: process.env.ALLOWED_ORIGIN || 'https://micleangroup.az',
-  methods: ['GET', 'POST'],
+  methods: ['GET', 'POST', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'x-admin-key', 'x-admin-role'],
 }));
 
 // ── Compression ───────────────────────────────────────────────────────────────
@@ -85,12 +99,21 @@ app.use(express.static(path.join(__dirname, 'public'), {
   etag: true,
 }));
 
+// ── ID validation middleware ─────────────────────────────────────────────────
+const validateId = (pattern) => (req, res, next) => {
+  if (req.params.id && !pattern.test(req.params.id)) {
+    return res.status(400).json({ success: false, message: 'Invalid ID format' });
+  }
+  next();
+};
+
 // ── API routes ────────────────────────────────────────────────────────────────
 app.use('/api', apiLimiter);
 app.use('/api/products', productsRouter);
 const postOnly = (limiter) => (req, res, next) => req.method === 'POST' ? limiter(req, res, next) : next();
 app.use('/api/contact', postOnly(contactLimiter), contactRouter);
 app.use('/api/quotes',  postOnly(contactLimiter), quotesRouter);
+app.use('/api/editor',  postOnly(contactLimiter), editorRouter);
 
 // ── Health check ──────────────────────────────────────────────────────────────
 app.get('/api/health', async (req, res) => {
@@ -111,13 +134,35 @@ app.get('/api/health', async (req, res) => {
   });
 });
 
+// ── Admin page rate limiter ──────────────────────────────────────────────────
+const adminPageLimiter = isTest
+  ? (req, res, next) => next()
+  : rateLimit({
+      windowMs: 15 * 60 * 1000,
+      max: 30,
+      standardHeaders: true,
+      legacyHeaders: false,
+      message: { success: false, message: 'Çox sayda sorğu.' },
+    });
+
 // ── Admin panel ───────────────────────────────────────────────────────────────
-app.get('/admin', (req, res) => {
+app.get('/admin', adminPageLimiter, (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
+// ── Content editor ───────────────────────────────────────────────────────────
+app.get('/editor', adminPageLimiter, (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'editor.html'));
+});
+
+// ── API 404 handler ─────────────────────────────────────────────────────────
+app.all('/api/*', (req, res) => {
+  res.status(404).json({ success: false, message: 'API endpoint tapılmadı.' });
 });
 
 // ── SPA fallback ──────────────────────────────────────────────────────────────
 app.get('*', (req, res) => {
+  res.set('Cache-Control', 'no-cache, must-revalidate');
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 

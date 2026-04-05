@@ -1,0 +1,317 @@
+<script>// ── Dynamic footer year ──────────────────────────────────────────────────────
+var fyEl = document.getElementById('footer-year');
+if (fyEl) fyEl.textContent = new Date().getFullYear();
+
+// ── Count-up animation for stats ─────────────────────────────────────────────
+(function() {
+  var statsEl = document.querySelector('.stats');
+  if (!statsEl) return;
+  var nums = statsEl.querySelectorAll('.st-n');
+  var animated = false;
+  var so = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      nums.forEach(function(n) {
+        var target = parseInt(n.textContent);
+        if (isNaN(target)) return;
+        var start = 0;
+        var duration = 1500;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          n.textContent = Math.round(start + (target - start) * eased);
+          if (progress < 1) requestAnimationFrame(step);
+          else n.textContent = target;
+        }
+        n.textContent = '0';
+        requestAnimationFrame(step);
+      });
+      so.unobserve(statsEl);
+    }
+  }, {threshold: 0.5});
+  so.observe(statsEl);
+})();
+
+// ── Parallax effect for cover image ──────────────────────────────────────────
+(function() {
+  var covImg = document.querySelector('.cov-img');
+  if (!covImg) return;
+  window.addEventListener('scroll', function() {
+    var s = window.scrollY;
+    if (s < window.innerHeight * 1.5) {
+      covImg.style.transform = 'translateY(' + (s * 0.15) + 'px)';
+    }
+  }, {passive: true});
+})();
+
+// ── Nav scroll effect ────────────────────────────────────────────────────────
+var nav = document.getElementById('nav');
+var _scrollProg = document.getElementById('scroll-progress');
+var _backTop = document.getElementById('back-top');
+window.addEventListener('scroll', function() {
+  var s = window.scrollY;
+  nav.style.background = s > 60 ? 'rgba(7,17,28,.99)' : 'rgba(7,17,28,.96)';
+  var docH = document.documentElement.scrollHeight - window.innerHeight;
+  _scrollProg.style.width = (docH > 0 ? (s / docH * 100) : 0) + '%';
+  _backTop.classList.toggle('show', s > 300);
+}, { passive: true });
+
+function goId(id) { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+
+// ── Scroll-reveal animations ─────────────────────────────────────────────────
+// Use rootMargin so elements trigger slightly before entering viewport
+var rvo = new IntersectionObserver(function(entries) {
+  entries.forEach(function(x) {
+    if (x.isIntersecting) { x.target.classList.add('in'); rvo.unobserve(x.target); }
+  });
+}, { threshold: 0.04, rootMargin: '0px 0px 60px 0px' });
+document.querySelectorAll('.rv').forEach(function(el) { rvo.observe(el); });
+
+// Staggered fade-in for cards/items — fallback makes everything visible after 2s
+var co = new IntersectionObserver(function(entries) {
+  entries.forEach(function(x) {
+    if (x.isIntersecting) {
+      x.target.style.opacity = '1';
+      x.target.style.transform = 'none';
+      co.unobserve(x.target);
+    }
+  });
+}, { threshold: 0.03, rootMargin: '0px 0px 80px 0px' });
+
+document.querySelectorAll('.cc,.pc,.svc,.why,.step').forEach(function(el, i) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(14px)';
+  el.style.transition = 'opacity .5s ease ' + (i % 8 * 0.06) + 's,transform .5s ease ' + (i % 8 * 0.06) + 's,background .25s';
+  co.observe(el);
+});
+// Safety fallback: force-show everything after 2.5s in case observer never fires
+setTimeout(function() {
+  document.querySelectorAll('.cc,.pc,.svc,.why,.step,.rv').forEach(function(el) {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.classList.add('in');
+  });
+}, 2500);
+
+// ── Toast notifications ──────────────────────────────────────────────────────
+function toast(msg, tp) {
+  var c = document.getElementById('toast-container');
+  var t = document.createElement('div');
+  t.className = 'toast ' + (tp || '');
+  t.innerHTML = '<span>' + msg + '</span><span class="toast-x" onclick="this.parentElement.remove()">&#x2715;</span>';
+  c.appendChild(t);
+  setTimeout(function() { if (t.parentElement) t.remove(); }, 5000);
+}
+
+// ── Modal helpers ────────────────────────────────────────────────────────────
+var _prevFocus = null;
+function openM(n) {
+  _prevFocus = document.activeElement;
+  var overlay = document.getElementById('modal-' + n);
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  if (n === 'quote') populateQuoteBasket();
+  // Move focus to first focusable element inside modal
+  setTimeout(function() {
+    var first = overlay.querySelector('input,select,textarea,button,[tabindex]:not([tabindex="-1"])');
+    if (first) first.focus();
+  }, 50);
+}
+function closeM(n) {
+  var overlay = document.getElementById('modal-' + n);
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (_prevFocus) { _prevFocus.focus(); _prevFocus = null; }
+}
+document.querySelectorAll('.modal-overlay').forEach(function(m) {
+  m.setAttribute('role', 'dialog');
+  m.setAttribute('aria-modal', 'true');
+  m.setAttribute('aria-hidden', 'true');
+  m.addEventListener('click', function(e) { if (e.target === m) { m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; } });
+  // Focus trap: keep Tab/Shift+Tab inside modal
+  m.addEventListener('keydown', function(e) {
+    if (!m.classList.contains('open')) return;
+    if (e.key !== 'Tab') return;
+    var focusable = Array.from(m.querySelectorAll('input,select,textarea,button,a[href],[tabindex]:not([tabindex="-1"])')).filter(function(el) { return !el.disabled; });
+    if (!focusable.length) return;
+    var first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
+  });
+});
+document.addEventListener('keydown', function(e) {
+  var tag = document.activeElement ? document.activeElement.tagName : '';
+  var inInput = (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT');
+
+  // Esc — close any open modal
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      closeM(m.id.replace('modal-', ''));
+    });
+    return;
+  }
+
+  // / — focus search (only when not typing in a field)
+  if (e.key === '/' && !inInput) {
+    e.preventDefault();
+    var si = document.getElementById('sinput');
+    si.focus(); si.select();
+    return;
+  }
+
+  // Arrow keys — navigate cards in detail modal
+  if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && document.getElementById('modal-detail').classList.contains('open')) {
+    e.preventDefault();
+    var cards = Array.from(document.querySelectorAll('.pc'));
+    var idx = _currentPC ? cards.indexOf(_currentPC) : -1;
+    if (idx === -1) return;
+    var next = e.key === 'ArrowRight' ? cards[idx + 1] : cards[idx - 1];
+    if (next) openDetail(next);
+    return;
+  }
+});
+
+// ── Product search ───────────────────────────────────────────────────────────
+var sdata = null, cfilter = 'all', stimer = null;
+fetch('/api/products?limit=1000').then(function(r) { return r.json(); }).then(function(d) { sdata = d.products; }).catch(function() {});
+
+function setF(c, btn) {
+  cfilter = c;
+  document.querySelectorAll('.fbtn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var q = document.getElementById('sinput').value.trim();
+  if (q) doS(q);
+  var pp = document.getElementById('sub-pills');
+  if (c === 'all') { pp.className = ''; pp.innerHTML = ''; }
+  else {
+    var sc = SUBCATS[c] || [];
+    if (sc.length) {
+      pp.className = 'open';
+      pp.innerHTML = sc.map(function(s) {
+        return '<button class="spill" onclick="clickPill(\'' + s.replace(/'/g,"\\'") + '\',\'' + c + '\')">' + s + '</button>';
+      }).join('');
+    } else { pp.className = ''; pp.innerHTML = ''; }
+  }
+}
+document.getElementById('sinput').addEventListener('input', function() {
+  clearTimeout(stimer);
+  var q = this.value.trim();
+  stimer = setTimeout(function() { doS(q); }, 200);
+});
+document.getElementById('sinput').addEventListener('keydown', function(e) { if (e.key === 'Escape') { this.value = ''; hideS(); } });
+document.addEventListener('click', function(e) { if (!e.target.closest('#sbar')) hideS(); });
+
+var CATS = { kimyevi: 'Kimyəvi', camasirxana: 'Camaşırxana', metbex: 'Mətbəx', amenity: 'Amenity', istehlak: 'İstehlak', housekeeping: 'Housekeeping', hovuz: 'Hovuz & SPA' };
+function doS(q) {
+  var r = document.getElementById('sres');
+  if (!q) { hideS(); return; }
+  if (!sdata) {
+    r.style.display = 'block';
+    r.innerHTML = [1,2,3].map(function() {
+      return '<div class="sk-item"><div class="sk-thumb"></div><div class="sk-lines"><div class="sk-l" style="width:68%"></div><div class="sk-l" style="width:40%"></div></div></div>';
+    }).join('');
+    document.getElementById('sinput').setAttribute('aria-expanded','true');
+    return;
+  }
+  var ql = q.toLowerCase();
+  var f = sdata.filter(function(p) {
+    var m = (cfilter === 'all' || p.category === cfilter);
+    return m && (p.name.toLowerCase().indexOf(ql) > -1 || (p.id && p.id.toLowerCase().indexOf(ql) > -1) || (p.formula && p.formula.toLowerCase().indexOf(ql) > -1));
+  });
+  var sv = document.getElementById('ssort').value;
+  if (sv === 'az') f.sort(function(a,b) { return a.name.localeCompare(b.name); });
+  else if (sv === 'haccp') f.sort(function(a,b) { return (b.haccp ? 1:0) - (a.haccp ? 1:0); });
+  else if (sv === 'eco') f.sort(function(a,b) {
+    var ae = a.name.toLowerCase().indexOf('eco') > -1 ? 1:0;
+    var be = b.name.toLowerCase().indexOf('eco') > -1 ? 1:0;
+    return be - ae;
+  });
+  f = f.slice(0, 8);
+  if (!f.length) {
+    var qs = q.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    r.style.display = 'block';
+    r.innerHTML = '<div class="sri-empty"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="18" cy="18" r="10" stroke="#7A94A8" stroke-width="1.5"/><path d="M26 26l6 6" stroke="#7A94A8" stroke-width="1.5" stroke-linecap="round"/><path d="M13 18h10" stroke="#C9A96E" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg><p>«<span>' + qs + '</span>» üzrə nəticə tapılmadı.<br>Axtarış ifadəsini dəyişin.</p></div>';
+    document.getElementById('sinput').setAttribute('aria-expanded','true');
+    return;
+  }
+  var h = f.map(function(p) {
+    var ig = p.image ? ('<img class="sri-img" src="'+p.image+'" alt="'+(p.name||'Məhsul').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'">') : '';
+    var hb = p.haccp ? ' <span class="bdg bdg-haccp" style="font-size:7px;padding:2px 6px;vertical-align:middle">HACCP</span>' : '';
+    return '<div class="sri" onclick="goS(\''+p.category+'\')">'+ig+'<div><div class="sri-name">'+p.name+hb+'</div><div class="sri-cat">'+(CATS[p.category]||p.category)+'</div>'+(p.id?'<div class="sri-id">'+p.id+'</div>':'')+' </div></div>';
+  }).join('');
+  r.style.display = 'block';
+  r.innerHTML = h;
+  document.getElementById('sinput').setAttribute('aria-expanded','true');
+}
+function goS(cat) { hideS(); document.getElementById('sinput').value = ''; var el = document.getElementById(cat); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+function hideS() {
+  var sr = document.getElementById('sres');
+  sr.style.display = 'none';
+  document.getElementById('sinput').setAttribute('aria-expanded', 'false');
+}
+
+// ── Contact form ─────────────────────────────────────────────────────────────
+function subC() {
+  var form = document.getElementById('cform');
+  var btn = document.getElementById('cbtn');
+  if (!form.name.value || !form.email.value || !form.hotel.value || !form.message.value) {
+    toast('Zəruri sahələri doldurun.', 'error'); return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Göndərilir...';
+  fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: form.name.value, email: form.email.value, phone: form.phone.value, hotel: form.hotel.value, message: form.message.value })
+  }).then(function(r) { return r.json(); }).then(function(d) {
+    if (d.success) {
+      toast('✓ Mesajınız göndərildi! Tezliklə əlaqə saxlayacağıq.', 'success');
+      form.reset();
+    } else {
+      toast('Xəta: ' + (d.message || 'Yenidən cəhd edin.'), 'error');
+    }
+  }).catch(function() {
+    toast('Xəta. Yenidən cəhd edin.', 'error');
+  }).finally(function() {
+    btn.disabled = false;
+    btn.textContent = 'Göndər';
+  });
+}
+
+// ── Quote form ───────────────────────────────────────────────────────────────
+function subQ() {
+  var form = document.getElementById('qform');
+  var btn = document.getElementById('qbtn');
+  var cats = Array.from(form.querySelectorAll('input[name="cats"]:checked')).map(function(i) { return i.value; });
+  if (!cats.length) { document.getElementById('cerr').style.display = 'block'; return; }
+  document.getElementById('cerr').style.display = 'none';
+  if (!form.name.value || !form.email.value || !form.hotel.value) { toast('Zəruri sahələri doldurun.', 'error'); return; }
+  btn.disabled = true;
+  btn.classList.add('loading');
+  btn.textContent = 'Göndərilir...';
+  fetch('/api/quotes', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: form.name.value, email: form.email.value, phone: form.phone.value, hotel: form.hotel.value, hotel_stars: form.hotel_stars.value, categories: cats, notes: form.notes.value, pilot: form.querySelector('[name="pilot"]').checked })
+  }).then(function(r) { return r.json(); }).then(function(d) {
+    if (d.success) {
+      closeM('quote');
+      toast('✓ Sorğunuz qəbul edildi!', 'success');
+      form.reset();
+      document.querySelectorAll('.fcat-item').forEach(function(i) { i.classList.remove('checked'); });
+    } else {
+      toast('Xəta: ' + (d.message || 'Yenidən cəhd edin.'), 'error');
+    }
+  }).catch(function() {
+    toast('Xəta. Yenidən cəhd edin.', 'error');
+  }).finally(function() {
+    btn.disabled = false;
+    btn.classList.remove('loading');
+    btn.textContent = 'Sorğu Göndər';
+  });
+}
+</script>

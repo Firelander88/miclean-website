@@ -1,0 +1,136 @@
+<script>// ── Product search ───────────────────────────────────────────────────────────
+var sdata = null, cfilter = 'all', stimer = null;
+// Static product data (embedded at build time)
+sdata=[{"name":"Ümumi Səth Təmizləyici — Konsentrat","id":"KTÜT-001","category":"kimyevi","haccp":false},{"name":"Döşəmə Təmizləyici — Neytral pH","id":"KTDT-002","category":"kimyevi","haccp":false},{"name":"Şüşə & Güzgü Təmizləyici","id":"KTŞT-003 / KTAT-004","category":"kimyevi","haccp":false},{"name":"Alkoqollu Dezinfektan Spray","id":"KTD-005 / Spray","category":"kimyevi","haccp":false},{"name":"Spirt Əsaslı Əl Dezinfektantı 95%","id":"KTD-005 / Əl","category":"kimyevi","haccp":false},{"name":"QAC Əsaslı Dezinfektan Konsentrat","id":"KTD-005 / QAC","category":"kimyevi","haccp":false},{"name":"Tualet Təmizləyici — Turş Əsaslı ECO","id":"KTSQ-007","category":"kimyevi","haccp":false},{"name":"Food-Grade Sanitizer — No-Rinse HACCP","id":"KTQT-006","category":"kimyevi","haccp":true},{"name":"Dezinfeksiyaedici Banyo Təmizləyici RTU","id":"KTSQ-007 / RTU","category":"kimyevi","haccp":false},{"name":"Sənaye Yuyucu Toz — Yüksək Aktivlik","id":"CAM-001 / Toz","category":"camasirxana","haccp":false},{"name":"Sənaye Yuyucu Maye — Low-Temp","id":"CAM-002 / Maye","category":"camasirxana","haccp":false},{"name":"Tekstil Yumşaldıcı Konsentrat","id":"CAM-003 / Yumşaldıcı","category":"camasirxana","haccp":false},{"name":"6 Çıxışlı Venturi Pompası","id":"","category":"camasirxana","haccp":false},{"name":"6 Çıxışlı Peristalgik Pompa","id":"","category":"camasirxana","haccp":false},{"name":"4 / 8 Pozisiyalı Qarışdırıcı","id":"","category":"camasirxana","haccp":false},{"name":"Mobil Köpük Aparatı","id":"","category":"camasirxana","haccp":false},{"name":"Qabyuyan Maşın Pompası","id":"","category":"camasirxana","haccp":false},{"name":"Oven / Grill Cleaner — Heavy-Duty","id":"MTB-001","category":"metbex","haccp":false},{"name":"Kitchen Degreaser Konsentrat","id":"MTB-002","category":"metbex","haccp":false},{"name":"Stainless Steel Cleaner","id":"MTB-003","category":"metbex","haccp":false},{"name":"Manual Dishwashing Liquid","id":"MTB-004","category":"metbex","haccp":false},{"name":"Food-Grade Sanitizer RTU","id":"MTB-005","category":"metbex","haccp":true},{"name":"Avtomatik Qabyuyan Deterjanı","id":"MTB-006","category":"metbex","haccp":false},{"name":"Alüminium Qablar + Qapaq","id":"","category":"istehlak","haccp":false},{"name":"Karton Stəkan — 8 OZ / 12 OZ","id":"","category":"istehlak","haccp":false},{"name":"Bio Çəngəl / Qaşıq / Bıçaq Seti","id":"","category":"istehlak","haccp":false},{"name":"Pizza / Pide Qutuları","id":"","category":"istehlak","haccp":false},{"name":"Mikrofiber Parça — Color-Coded","id":"","category":"housekeeping","haccp":false},{"name":"Yaş Mop — Replaceable Head","id":"","category":"housekeeping","haccp":false},{"name":"CEYMOP Professional Ped","id":"","category":"housekeeping","haccp":false},{"name":"Metal Teleskop Sap","id":"","category":"housekeeping","haccp":false},{"name":"Süpürgə & Tualet Fırçası","id":"","category":"housekeeping","haccp":false},{"name":"Cam & Yer Kazıma Aparatı","id":"","category":"housekeeping","haccp":false},{"name":"Qranul Xlor 56% & 90%","id":"","category":"hovuz","haccp":false},{"name":"OXY POOL — Xlorsuz Dezinfektan","id":"","category":"hovuz","haccp":false},{"name":"pH Düşürücü · Algisid · Parladıcı","id":"","category":"hovuz","haccp":false}];
+
+function setF(c, btn) {
+  cfilter = c;
+  document.querySelectorAll('.fbtn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var q = document.getElementById('sinput').value.trim();
+  if (q) doS(q);
+  var pp = document.getElementById('sub-pills');
+  if (c === 'all') { pp.className = ''; pp.innerHTML = ''; }
+  else {
+    var sc = SUBCATS[c] || [];
+    if (sc.length) {
+      pp.className = 'open';
+      pp.innerHTML = sc.map(function(s) {
+        return '<button class="spill" onclick="clickPill(\'' + s.replace(/'/g,"\\'") + '\',\'' + c + '\')">' + s + '</button>';
+      }).join('');
+    } else { pp.className = ''; pp.innerHTML = ''; }
+  }
+}
+document.getElementById('sinput').addEventListener('input', function() {
+  clearTimeout(stimer);
+  var q = this.value.trim();
+  stimer = setTimeout(function() { doS(q); }, 200);
+});
+document.getElementById('sinput').addEventListener('keydown', function(e) { if (e.key === 'Escape') { this.value = ''; hideS(); } });
+document.addEventListener('click', function(e) { if (!e.target.closest('#sbar')) hideS(); });
+
+var CATS = { kimyevi: 'Kimyəvi', camasirxana: 'Camaşırxana', metbex: 'Mətbəx', amenity: 'Amenity', istehlak: 'İstehlak', housekeeping: 'Housekeeping', hovuz: 'Hovuz & SPA' };
+function doS(q) {
+  var r = document.getElementById('sres');
+  if (!q) { hideS(); return; }
+  if (!sdata) {
+    r.style.display = 'block';
+    r.innerHTML = [1,2,3].map(function() {
+      return '<div class="sk-item"><div class="sk-thumb"></div><div class="sk-lines"><div class="sk-l" style="width:68%"></div><div class="sk-l" style="width:40%"></div></div></div>';
+    }).join('');
+    document.getElementById('sinput').setAttribute('aria-expanded','true');
+    return;
+  }
+  var ql = q.toLowerCase();
+  var f = sdata.filter(function(p) {
+    var m = (cfilter === 'all' || p.category === cfilter);
+    return m && (p.name.toLowerCase().indexOf(ql) > -1 || (p.id && p.id.toLowerCase().indexOf(ql) > -1) || (p.formula && p.formula.toLowerCase().indexOf(ql) > -1));
+  });
+  var sv = document.getElementById('ssort').value;
+  if (sv === 'az') f.sort(function(a,b) { return a.name.localeCompare(b.name); });
+  else if (sv === 'haccp') f.sort(function(a,b) { return (b.haccp ? 1:0) - (a.haccp ? 1:0); });
+  else if (sv === 'eco') f.sort(function(a,b) {
+    var ae = a.name.toLowerCase().indexOf('eco') > -1 ? 1:0;
+    var be = b.name.toLowerCase().indexOf('eco') > -1 ? 1:0;
+    return be - ae;
+  });
+  f = f.slice(0, 8);
+  if (!f.length) {
+    var qs = q.replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    r.style.display = 'block';
+    r.innerHTML = '<div class="sri-empty"><svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="18" cy="18" r="10" stroke="#6B7D8E" stroke-width="1.5"/><path d="M26 26l6 6" stroke="#6B7D8E" stroke-width="1.5" stroke-linecap="round"/><path d="M13 18h10" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" opacity=".5"/></svg><p>«<span>' + qs + '</span>» üzrə nəticə tapılmadı.<br>Axtarış ifadəsini dəyişin.</p></div>';
+    document.getElementById('sinput').setAttribute('aria-expanded','true');
+    return;
+  }
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+  var h = f.map(function(p) {
+    var nm = esc(p.name||'Məhsul');
+    var ig = p.image ? ('<img class="sri-img" src="'+esc(p.image)+'" alt="'+nm+'" onerror="this.style.display=\'none\'">') : '';
+    var hb = p.haccp ? ' <span class="bdg bdg-haccp" style="font-size:7px;padding:2px 6px;vertical-align:middle">HACCP</span>' : '';
+    return '<div class="sri" onclick="goS(\''+esc(p.category)+'\')">'+ig+'<div><div class="sri-name">'+nm+hb+'</div><div class="sri-cat">'+esc(CATS[p.category]||p.category)+'</div>'+(p.id?'<div class="sri-id">'+esc(p.id)+'</div>':'')+' </div></div>';
+  }).join('');
+  r.style.display = 'block';
+  r.innerHTML = h;
+  document.getElementById('sinput').setAttribute('aria-expanded','true');
+}
+function goS(cat) { hideS(); document.getElementById('sinput').value = ''; var el = document.getElementById(cat); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+function hideS() {
+  var sr = document.getElementById('sres');
+  sr.style.display = 'none';
+  document.getElementById('sinput').setAttribute('aria-expanded', 'false');
+}
+
+// ── Contact form ─────────────────────────────────────────────────────────────
+function subC() {
+  var form = document.getElementById('cform');
+  var btn = document.getElementById('cbtn');
+  if (!form.name.value || !form.email.value || !form.hotel.value || !form.message.value) {
+    toast('Zəruri sahələri doldurun.', 'error'); return;
+  }
+  btn.disabled = true;
+  btn.textContent = 'Göndərilir...';
+  var subject = encodeURIComponent('Saytdan əlaqə: ' + form.name.value);
+  var body = encodeURIComponent('Ad: ' + form.name.value + '\nEmail: ' + form.email.value + '\nTelefon: ' + (form.phone.value || '—') + '\nOtel/Şirkət: ' + form.hotel.value + '\n\nMesaj:\n' + form.message.value);
+  window.open('mailto:micleangroupmmc@gmail.com?subject=' + subject + '&body=' + body);
+  toast('✓ E-poçt proqramınız açılacaq. Mesajı göndərin.', 'success');
+  form.reset();
+  btn.disabled = false;
+  btn.textContent = 'Göndər';
+}
+
+// ── Quote form ───────────────────────────────────────────────────────────────
+function subQ() {
+  var form = document.getElementById('qform');
+  var btn = document.getElementById('qbtn');
+  var cats = Array.from(form.querySelectorAll('input[name="cats"]:checked')).map(function(i) { return i.value; });
+  if (!cats.length) { document.getElementById('cerr').style.display = 'block'; return; }
+  document.getElementById('cerr').style.display = 'none';
+  if (!form.name.value || !form.email.value || !form.hotel.value) { toast('Zəruri sahələri doldurun.', 'error'); return; }
+  btn.disabled = true;
+  btn.classList.add('loading');
+  btn.textContent = 'Göndərilir...';
+  var basketItems = window._quoteBasket || [];
+  var basketText = basketItems.length ? '\n\nSeçilmiş məhsullar:\n' + basketItems.map(function(b) { return '- ' + b.name + ' (' + b.code + ')'; }).join('\n') : '';
+  var subject = encodeURIComponent('Qiymət Sorğusu: ' + form.hotel.value);
+  var body = encodeURIComponent('Ad: ' + form.name.value + '\nEmail: ' + form.email.value + '\nTelefon: ' + (form.phone.value || '—') + '\nOtel/Şirkət: ' + form.hotel.value + '\nUlduz: ' + (form.hotel_stars.value || '—') + '\nKateqoriyalar: ' + cats.join(', ') + '\nPilot proqram: ' + (form.querySelector('[name="pilot"]').checked ? 'Bəli' : 'Xeyr') + '\nQeydlər: ' + (form.notes.value || '—') + basketText);
+  window.open('mailto:micleangroupmmc@gmail.com?subject=' + subject + '&body=' + body);
+  closeM('quote');
+  toast('✓ E-poçt proqramınız açılacaq. Sorğunu göndərin.', 'success');
+  form.reset();
+  document.querySelectorAll('.fcat-item').forEach(function(i) { i.classList.remove('checked'); });
+  btn.disabled = false;
+  btn.classList.remove('loading');
+  btn.textContent = 'Sorğu Göndər';
+}
+
+// ── Subcategory pill data ─────────────────────────────────────────────────────
+var SUBCATS = {
+  kimyevi:      ['Ümumi & Döşəmə','Dezenfektanlar','Sanitar & HACCP','Xüsusi Kimyəvi Xətt'],
+  camasirxana:  ['Yuyucu Toz','Yuyucu Maye','Yumşaldıcı & Bleach','Dozaj Sistemləri'],
+  metbex:       ['Oven & Grill','Degreaser','Stainless Steel','Qab Yuyucu','HACCP Sanitizer'],
+  amenity:      ['Şampun & Duş Geli','Sabun & Losyon','Dental & Vanity Kit','Terliklər & Ülgüc'],
+  istehlak:     ['Kağız Məhsullar','F&B Qablar','Dispenser & Avadanlıq','PPE & Qoruyucu'],
+  housekeeping: ['Mikrofiber Parça','Mop Sistemləri','Fırça & Süpürgə','Teleskop Saplar'],
+  hovuz:        ['Xlor & OXY','pH · Algisid · Parladıcı']
+};
+</script>

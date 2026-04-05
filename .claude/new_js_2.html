@@ -1,0 +1,296 @@
+<script>
+// ── Subcategory pill data ─────────────────────────────────────────────────────
+var SUBCATS = {
+  kimyevi:      ['Ümumi & Döşəmə','Dezenfektanlar','Sanitar & HACCP','Xüsusi Kimyəvi Xətt'],
+  camasirxana:  ['Yuyucu Toz','Yuyucu Maye','Yumşaldıcı & Bleach','Dozaj Sistemləri'],
+  metbex:       ['Oven & Grill','Degreaser','Stainless Steel','Qab Yuyucu','HACCP Sanitizer'],
+  amenity:      ['Şampun & Duş Geli','Sabun & Losyon','Dental & Vanity Kit','Terliklər & Ülgüc'],
+  istehlak:     ['Kağız Məhsullar','F&B Qablar','Dispenser & Avadanlıq','PPE & Qoruyucu'],
+  housekeeping: ['Mikrofiber Parça','Mop Sistemləri','Fırça & Süpürgə','Teleskop Saplar'],
+  hovuz:        ['Xlor & OXY','pH · Algisid · Parladıcı']
+};
+
+// Subcategory pill click
+function clickPill(subName, catId) {
+  var subs = document.querySelectorAll('#' + catId + ' .sub');
+  var found = null;
+  var keyword = subName.toLowerCase().replace(/ & /g,' ').split(' ')[0];
+  subs.forEach(function(s) {
+    if (!found && s.textContent.toLowerCase().indexOf(keyword) > -1) found = s;
+  });
+  if (found) found.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  else goId(catId);
+  document.querySelectorAll('.spill').forEach(function(p) { p.classList.remove('active'); });
+  if (event && event.target) event.target.classList.add('active');
+}
+
+// Sort change listener
+document.getElementById('ssort').addEventListener('change', function() {
+  var q = document.getElementById('sinput').value.trim();
+  if (q) doS(q);
+});
+
+// ── Müqayisə (Compare) ───────────────────────────────────────────────────────
+var cmpList = [];
+
+function toggleCmp(btn) {
+  var pc = btn.closest('.pc');
+  if (!pc) return;
+  var name = pc.querySelector('.pc-name') ? pc.querySelector('.pc-name').textContent.trim() : '';
+  var code = pc.querySelector('.pc-code') ? pc.querySelector('.pc-code').textContent.trim() : '';
+  var imgEl = pc.querySelector('.pc-img');
+  var img = imgEl ? imgEl.src : '';
+  var specs = Array.from(pc.querySelectorAll('.pc-ul li')).map(function(li) { return li.textContent.trim().replace(/^[\u2014\-]\s*/, ''); });
+  var pkg = pc.querySelector('.pc-pkg') ? pc.querySelector('.pc-pkg').textContent.replace('📦 ','').trim() : '—';
+  var del = pc.querySelector('.pc-del') ? pc.querySelector('.pc-del').textContent.trim() : '—';
+  var section = pc.closest('section[id]');
+  var cat = section ? (CATS[section.id] || section.id) : '—';
+  var bdgEl = pc.querySelector('.pc-badges');
+  var badges = bdgEl ? Array.from(bdgEl.querySelectorAll('.bdg')).map(function(b){return b.textContent;}) : [];
+
+  var idx = cmpList.findIndex(function(x) { return x.name === name; });
+  if (idx > -1) {
+    cmpList.splice(idx, 1);
+    btn.classList.remove('in-cmp');
+  } else {
+    if (cmpList.length >= 3) { toast('Maksimum 3 məhsul müqayisə edilə bilər.', 'error'); return; }
+    cmpList.push({ name: name, code: code, img: img, specs: specs, pkg: pkg, del: del, cat: cat, badges: badges });
+    btn.classList.add('in-cmp');
+  }
+  renderCmpBar();
+}
+
+function renderCmpBar() {
+  var bar = document.getElementById('cmp-bar');
+  var slotsEl = document.getElementById('cmp-slots');
+  var countEl = document.getElementById('cmp-count');
+  if (!cmpList.length) { bar.classList.remove('open'); return; }
+  bar.classList.add('open');
+  countEl.textContent = cmpList.length + ' / 3';
+  slotsEl.innerHTML = cmpList.map(function(p, i) {
+    return '<div class="cmp-slot filled"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px">' + p.name.substring(0,22) + (p.name.length>22?'…':'') + '</span>' +
+      '<button class="cmp-slot-rm" onclick="removeCmpAt(' + i + ')" aria-label="Sil">×</button></div>';
+  }).concat(Array(3 - cmpList.length).fill('<div class="cmp-slot">Məhsul seçin...</div>')).join('');
+}
+
+function removeCmpAt(i) {
+  var removed = cmpList.splice(i, 1)[0];
+  document.querySelectorAll('.pc-cmp').forEach(function(btn) {
+    var pc = btn.closest('.pc');
+    if (pc && pc.querySelector('.pc-name') && pc.querySelector('.pc-name').textContent.trim() === removed.name) {
+      btn.classList.remove('in-cmp');
+    }
+  });
+  renderCmpBar();
+}
+
+function clearCmp() {
+  cmpList = [];
+  document.querySelectorAll('.pc-cmp.in-cmp').forEach(function(b) { b.classList.remove('in-cmp'); });
+  document.getElementById('cmp-bar').classList.remove('open');
+}
+
+function openCmp() {
+  if (cmpList.length < 2) { toast('Müqayisə üçün ən azı 2 məhsul seçin.', 'error'); return; }
+  var cols = cmpList;
+  var rows = [
+    { label: 'Məhsul', fn: function(p) {
+      var imgHtml = p.img ? '<img class="cmp-img" src="'+p.img+'" alt="'+(p.name||'Məhsul').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'">' : '<div class="cmp-noimg">🧴</div>';
+      return imgHtml + '<strong style="font-size:13px;color:var(--white)">' + p.name + '</strong>' + (p.code ? '<br><span style="font-size:9px;color:var(--gold);letter-spacing:.1em">' + p.code + '</span>' : '');
+    }},
+    { label: 'Kateqoriya', fn: function(p) { return p.cat; }},
+    { label: 'Badgelər', fn: function(p) { return p.badges.length ? p.badges.map(function(b){ return '<span class="bdg bdg-haccp" style="font-size:7px">' + b + '</span>'; }).join(' ') : '—'; }},
+    { label: 'Spesifikasiya', fn: function(p) { return p.specs.map(function(s){ return '— ' + s; }).join('<br>') || '—'; }},
+    { label: 'Qablaşdırma', fn: function(p) { return p.pkg; }},
+    { label: 'Çatdırılma', fn: function(p) { return p.del; }},
+  ];
+  var thead = '<tr><th></th>' + cols.map(function(p){ return '<th>' + p.name.substring(0,28) + '</th>'; }).join('') + '</tr>';
+  var tbody = rows.map(function(row) {
+    return '<tr><td>' + row.label + '</td>' + cols.map(function(p){ return '<td>' + row.fn(p) + '</td>'; }).join('') + '</tr>';
+  }).join('');
+  document.getElementById('cmp-content').innerHTML = '<table class="cmp-tbl"><thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table>';
+  openM('cmp');
+}
+
+// Inject compare button into every card
+document.querySelectorAll('.pc').forEach(function(pc) {
+  var cb = document.createElement('button');
+  cb.className = 'pc-cmp';
+  cb.type = 'button';
+  cb.setAttribute('aria-label', 'Müqayisəyə əlavə et');
+  cb.title = 'Müqayisə';
+  cb.innerHTML = '⇄';
+  cb.addEventListener('click', function(e) { e.stopPropagation(); toggleCmp(cb); });
+  pc.appendChild(cb);
+});
+
+// ── Axtarış tarixi ────────────────────────────────────────────────────────────
+var HISTORY_KEY = 'mcg_search_history';
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem(HISTORY_KEY) || '[]'); } catch(e) { return []; }
+}
+function saveHistory(q) {
+  if (!q || q.length < 2) return;
+  var h = getHistory().filter(function(x) { return x !== q; });
+  h.unshift(q);
+  localStorage.setItem(HISTORY_KEY, JSON.stringify(h.slice(0, 6)));
+}
+function showHistory() {
+  var h = getHistory();
+  if (!h.length) return;
+  var r = document.getElementById('sres');
+  r.style.display = 'block';
+  r.innerHTML = '<div style="padding:8px 14px 4px;font-size:8px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center">Son axtarışlar <span onclick="clearHistory()" style="cursor:pointer;color:var(--gold);font-size:8px">Sil</span></div>' +
+    h.map(function(q) {
+      return '<div class="sri" onclick="applyHistory(\'' + q.replace(/'/g,"\\'").replace(/</g,'&lt;') + '\')" style="padding:9px 14px;gap:10px"><span style="color:var(--muted);font-size:13px">🕐</span><span class="sri-name">' + q.replace(/</g,'&lt;') + '</span></div>';
+    }).join('');
+  document.getElementById('sinput').setAttribute('aria-expanded', 'true');
+}
+function applyHistory(q) {
+  var si = document.getElementById('sinput');
+  si.value = q; doS(q);
+}
+function clearHistory() {
+  localStorage.removeItem(HISTORY_KEY);
+  hideS();
+}
+
+// Show history on input focus (when empty)
+document.getElementById('sinput').addEventListener('focus', function() {
+  if (!this.value.trim()) showHistory();
+});
+
+// Save on search (when user pauses typing and has result)
+var _origDoS = doS;
+doS = function(q) {
+  _origDoS(q);
+  if (q && q.length >= 2) saveHistory(q);
+};
+
+// ── Quote basket ──────────────────────────────────────────────────────────────
+var quoteBasket = [];
+var _currentPC = null;
+
+function updateBasketCount() {
+  var cnt = document.getElementById('qfloat-cnt');
+  if (quoteBasket.length > 0) {
+    cnt.textContent = quoteBasket.length;
+    cnt.style.display = 'flex';
+  } else {
+    cnt.style.display = 'none';
+  }
+}
+
+function addCardToQuote(btn) {
+  var pc = btn.closest('.pc');
+  if (!pc) return;
+  var name = pc.querySelector('.pc-name') ? pc.querySelector('.pc-name').textContent.trim() : '';
+  var code = pc.querySelector('.pc-code') ? pc.querySelector('.pc-code').textContent.trim() : '';
+  var section = pc.closest('section[id]');
+  var cat = section ? section.id : '';
+  var idx = quoteBasket.findIndex(function(x) { return x.name === name; });
+  if (idx === -1) {
+    quoteBasket.push({ name: name, code: code, category: cat });
+    btn.classList.add('added'); btn.textContent = '✓';
+    updateBasketCount();
+    toast('Sorğuya əlavə edildi', 'success');
+  } else {
+    quoteBasket.splice(idx, 1);
+    btn.classList.remove('added'); btn.textContent = '+';
+    updateBasketCount();
+  }
+}
+
+function populateQuoteBasket() {
+  var box = document.getElementById('qbasket-box');
+  var list = document.getElementById('qbasket-list');
+  if (!quoteBasket.length) { box.style.display = 'none'; return; }
+  box.style.display = 'block';
+  list.innerHTML = quoteBasket.map(function(item) {
+    return '<li><span style="color:var(--white);flex:1">' + item.name.replace(/</g,'&lt;') + '</span>' +
+      (item.code ? '<span class="qb-code">' + item.code.replace(/</g,'&lt;') + '</span>' : '') + '</li>';
+  }).join('');
+  var cats = quoteBasket.map(function(x) { return x.category; }).filter(Boolean);
+  document.querySelectorAll('#qform input[name="cats"]').forEach(function(cb) {
+    if (cats.indexOf(cb.value) > -1) {
+      cb.checked = true;
+      cb.closest('.fcat-item').classList.add('checked');
+    }
+  });
+  var notesEl = document.querySelector('#qform textarea[name="notes"]');
+  if (notesEl && !notesEl.value) {
+    notesEl.value = 'Seçilmiş məhsullar:\n' + quoteBasket.map(function(x, i) {
+      return (i + 1) + '. ' + x.name + (x.code ? ' (' + x.code + ')' : '');
+    }).join('\n');
+  }
+}
+
+// ── Product detail modal ──────────────────────────────────────────────────────
+function openDetail(pc) {
+  _currentPC = pc;
+  var code = pc.querySelector('.pc-code') ? pc.querySelector('.pc-code').textContent.trim() : '';
+  var name = pc.querySelector('.pc-name') ? pc.querySelector('.pc-name').textContent.trim() : '';
+  var imgEl = pc.querySelector('.pc-img');
+  var img = imgEl ? imgEl.src : '';
+  var imgAlt = imgEl ? (imgEl.getAttribute('alt') || '') : '';
+  var specs = Array.from(pc.querySelectorAll('.pc-ul li')).map(function(li) {
+    return li.textContent.trim().replace(/^[\u2014\-]\s*/, '');
+  });
+  var pkg = pc.querySelector('.pc-pkg') ? pc.querySelector('.pc-pkg').textContent.trim() : '';
+  var del = pc.querySelector('.pc-del') ? pc.querySelector('.pc-del').textContent.trim() : '';
+  var bdgEl = pc.querySelector('.pc-badges');
+  var bdgHtml = bdgEl ? '<div style="display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px">' + bdgEl.innerHTML + '</div>' : '';
+  var imgHtml = img
+    ? '<img class="dm-img" src="' + img + '" alt="' + imgAlt.replace(/"/g,'&quot;') + '" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=dm-noimg>&#129529;</div>\'">'
+    : '<div class="dm-noimg">🧴</div>';
+  var specsHtml = specs.length
+    ? '<ul class="dm-specs">' + specs.map(function(s) { return '<li>' + s.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</li>'; }).join('') + '</ul>'
+    : '';
+  var rowsHtml = '';
+  if (pkg) rowsHtml += '<div class="dm-row"><span class="dm-label">Qablaşdırma</span><span class="dm-val">' + pkg.replace('📦 ','') + '</span></div>';
+  if (del) rowsHtml += '<div class="dm-row"><span class="dm-label">Çatdırılma</span><span class="dm-val">' + del + '</span></div>';
+  var section = pc.closest('section[id]');
+  var cat = section ? section.id : '';
+  if (cat && CATS[cat]) rowsHtml += '<div class="dm-row"><span class="dm-label">Kateqoriya</span><span class="dm-val">' + CATS[cat] + '</span></div>';
+  document.getElementById('dm-body').innerHTML =
+    '<div class="dm-side">' + imgHtml + '</div>' +
+    '<div class="dm-info">' +
+      bdgHtml +
+      (code ? '<div class="dm-code">' + code.replace(/</g,'&lt;') + '</div>' : '') +
+      '<div class="dm-name">' + name.replace(/</g,'&lt;') + '</div>' +
+      specsHtml +
+      (rowsHtml ? '<div style="margin-top:14px">' + rowsHtml + '</div>' : '') +
+    '</div>';
+  var addBtn = document.getElementById('dm-add-btn');
+  var inBasket = quoteBasket.some(function(x) { return x.name === name; });
+  if (inBasket) { addBtn.textContent = '✓ Sorğuda var'; addBtn.classList.add('dm-added'); }
+  else { addBtn.textContent = '+ Sorğuya Əlavə Et'; addBtn.classList.remove('dm-added'); }
+  var title = name.length > 35 ? name.substring(0, 32) + '…' : name;
+  document.getElementById('modal-detail-title').textContent = title;
+  openM('detail');
+}
+
+function addCurrentToQuote() {
+  if (!_currentPC) return;
+  var name = _currentPC.querySelector('.pc-name') ? _currentPC.querySelector('.pc-name').textContent.trim() : '';
+  var code = _currentPC.querySelector('.pc-code') ? _currentPC.querySelector('.pc-code').textContent.trim() : '';
+  var section = _currentPC.closest('section[id]');
+  var cat = section ? section.id : '';
+  var idx = quoteBasket.findIndex(function(x) { return x.name === name; });
+  var addBtn = document.getElementById('dm-add-btn');
+  var cardBtn = _currentPC.querySelector('.pc-add');
+  if (idx === -1) {
+    quoteBasket.push({ name: name, code: code, category: cat });
+    addBtn.textContent = '✓ Sorğuda var'; addBtn.classList.add('dm-added');
+    if (cardBtn) { cardBtn.classList.add('added'); cardBtn.textContent = '✓'; }
+    updateBasketCount();
+    toast('Sorğuya əlavə edildi', 'success');
+  } else {
+    quoteBasket.splice(idx, 1);
+    addBtn.textContent = '+ Sorğuya Əlavə Et'; addBtn.classList.remove('dm-added');
+    if (cardBtn) { cardBtn.classList.remove('added'); cardBtn.textContent = '+'; }
+    updateBasketCount();
+    toast('Sorğudan çıxarıldı', '');
+  }
+}
+</script>

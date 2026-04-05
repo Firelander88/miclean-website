@@ -1,0 +1,93 @@
+<script>
+// ── Product card injection (badges + add buttons) ─────────────────────────────
+var BADGE_HACCP = ['haccp','food-grade','food-safe'];
+var BADGE_ECO   = [' eco','bio ','compostable','xlorsuz'];
+document.querySelectorAll('.pc').forEach(function(pc) {
+  // + button
+  var ab = document.createElement('button');
+  ab.className = 'pc-add'; ab.type = 'button';
+  ab.setAttribute('aria-label', 'Sorğuya əlavə et');
+  ab.textContent = '+';
+  pc.appendChild(ab);
+  // badges
+  var code = (pc.querySelector('.pc-code') ? pc.querySelector('.pc-code').textContent : '').toLowerCase();
+  var name = (pc.querySelector('.pc-name') ? pc.querySelector('.pc-name').textContent : '').toLowerCase();
+  var combined = code + ' ' + name;
+  var bdgs = [];
+  if (BADGE_HACCP.some(function(k) { return combined.indexOf(k) > -1; }))
+    bdgs.push('<span class="bdg bdg-haccp">HACCP</span>');
+  if (BADGE_ECO.some(function(k) { return combined.indexOf(k) > -1; }))
+    bdgs.push('<span class="bdg bdg-eco">ECO</span>');
+  if (bdgs.length) {
+    var bd = document.createElement('div');
+    bd.className = 'pc-badges'; bd.innerHTML = bdgs.join('');
+    pc.appendChild(bd);
+  }
+  pc.style.cursor = 'pointer';
+});
+
+// Event delegation for card clicks
+document.addEventListener('click', function(e) {
+  var ab = e.target.closest('.pc-add');
+  if (ab) { e.stopPropagation(); addCardToQuote(ab); return; }
+  var pc = e.target.closest('.pc');
+  if (pc) openDetail(pc);
+});
+
+// ── Section TOC indicator ──────────────────────────────────────────────────
+(function() {
+  var toc = document.getElementById('sec-toc');
+  if (!toc) return;
+  var dots = Array.from(toc.querySelectorAll('.toc-dot'));
+  var secs = dots.map(function(d) {
+    return document.getElementById(d.dataset.sec);
+  });
+
+  var tocSections = ['kimyevi','camasirxana','metbex','amenity','istehlak','housekeeping','hovuz'];
+  var firstSecTop = 0;
+  var firstSec = document.getElementById(tocSections[0]);
+  if (firstSec) firstSecTop = firstSec.getBoundingClientRect().top + window.scrollY - 200;
+
+  function updateToc() {
+    var scrollY = window.scrollY;
+    var winH = window.innerHeight;
+
+    // Show/hide TOC: show only when first catalog section is near view
+    var inCatalog = scrollY >= firstSecTop;
+    toc.classList.toggle('show', inCatalog);
+
+    // Find active section
+    var active = -1;
+    secs.forEach(function(sec, i) {
+      if (!sec) return;
+      var top = sec.getBoundingClientRect().top + scrollY;
+      if (scrollY >= top - winH * 0.4) active = i;
+    });
+
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === active);
+    });
+  }
+
+  window.addEventListener('scroll', updateToc, { passive: true });
+  updateToc();
+})();
+
+// ── Print / PDF catalog ────────────────────────────────────────────────────
+function printCatalog() {
+  // Update print date
+  var meta = document.getElementById('ph-meta');
+  if (meta) {
+    var now = new Date();
+    var months = ['Yanvar','Fevral','Mart','Aprel','May','İyun','İyul','Avqust','Sentyabr','Oktyabr','Noyabr','Dekabr'];
+    meta.textContent = 'Çap tarixi: ' + now.getDate() + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+  }
+  // Count visible cards for user feedback
+  var visible = document.querySelectorAll('.pc:not(.hidden)').length;
+  var total = document.querySelectorAll('.pc').length;
+  var msg = visible < total
+    ? 'Hal-hazırda ' + visible + ' məhsul süzülüb. Yalnız bunlar çap ediləcək. Davam edirsiniz?'
+    : null;
+  if (msg && !confirm(msg)) return;
+  window.print();
+}</script>

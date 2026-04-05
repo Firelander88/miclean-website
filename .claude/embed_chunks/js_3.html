@@ -1,0 +1,115 @@
+<script>// Subcategory pill click
+function clickPill(subName, catId) {
+  var subs = document.querySelectorAll('#' + catId + ' .sub');
+  var found = null;
+  var keyword = subName.toLowerCase().replace(/ & /g,' ').split(' ')[0];
+  subs.forEach(function(s) {
+    if (!found && s.textContent.toLowerCase().indexOf(keyword) > -1) found = s;
+  });
+  if (found) found.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  else goId(catId);
+  document.querySelectorAll('.spill').forEach(function(p) { p.classList.remove('active'); });
+  if (event && event.target) event.target.classList.add('active');
+}
+
+// Sort change listener
+document.getElementById('ssort').addEventListener('change', function() {
+  var q = document.getElementById('sinput').value.trim();
+  if (q) doS(q);
+});
+
+// ── Müqayisə (Compare) ───────────────────────────────────────────────────────
+var cmpList = [];
+
+function toggleCmp(btn) {
+  var pc = btn.closest('.pc');
+  if (!pc) return;
+  var name = pc.querySelector('.pc-name') ? pc.querySelector('.pc-name').textContent.trim() : '';
+  var code = pc.querySelector('.pc-code') ? pc.querySelector('.pc-code').textContent.trim() : '';
+  var imgEl = pc.querySelector('.pc-img');
+  var img = imgEl ? imgEl.src : '';
+  var specs = Array.from(pc.querySelectorAll('.pc-ul li')).map(function(li) { return li.textContent.trim().replace(/^[\u2014\-]\s*/, ''); });
+  var pkg = pc.querySelector('.pc-pkg') ? pc.querySelector('.pc-pkg').textContent.replace('📦 ','').trim() : '—';
+  var del = pc.querySelector('.pc-del') ? pc.querySelector('.pc-del').textContent.trim() : '—';
+  var section = pc.closest('section[id]');
+  var cat = section ? (CATS[section.id] || section.id) : '—';
+  var bdgEl = pc.querySelector('.pc-badges');
+  var badges = bdgEl ? Array.from(bdgEl.querySelectorAll('.bdg')).map(function(b){return b.textContent;}) : [];
+
+  var idx = cmpList.findIndex(function(x) { return x.name === name; });
+  if (idx > -1) {
+    cmpList.splice(idx, 1);
+    btn.classList.remove('in-cmp');
+  } else {
+    if (cmpList.length >= 3) { toast('Maksimum 3 məhsul müqayisə edilə bilər.', 'error'); return; }
+    cmpList.push({ name: name, code: code, img: img, specs: specs, pkg: pkg, del: del, cat: cat, badges: badges });
+    btn.classList.add('in-cmp');
+  }
+  renderCmpBar();
+}
+
+function renderCmpBar() {
+  var bar = document.getElementById('cmp-bar');
+  var slotsEl = document.getElementById('cmp-slots');
+  var countEl = document.getElementById('cmp-count');
+  if (!cmpList.length) { bar.classList.remove('open'); return; }
+  bar.classList.add('open');
+  countEl.textContent = cmpList.length + ' / 3';
+  slotsEl.innerHTML = cmpList.map(function(p, i) {
+    return '<div class="cmp-slot filled"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px">' + p.name.substring(0,22) + (p.name.length>22?'…':'') + '</span>' +
+      '<button class="cmp-slot-rm" onclick="removeCmpAt(' + i + ')" aria-label="Sil">×</button></div>';
+  }).concat(Array(3 - cmpList.length).fill('<div class="cmp-slot">Məhsul seçin...</div>')).join('');
+}
+
+function removeCmpAt(i) {
+  var removed = cmpList.splice(i, 1)[0];
+  document.querySelectorAll('.pc-cmp').forEach(function(btn) {
+    var pc = btn.closest('.pc');
+    if (pc && pc.querySelector('.pc-name') && pc.querySelector('.pc-name').textContent.trim() === removed.name) {
+      btn.classList.remove('in-cmp');
+    }
+  });
+  renderCmpBar();
+}
+
+function clearCmp() {
+  cmpList = [];
+  document.querySelectorAll('.pc-cmp.in-cmp').forEach(function(b) { b.classList.remove('in-cmp'); });
+  document.getElementById('cmp-bar').classList.remove('open');
+}
+
+function openCmp() {
+  if (cmpList.length < 2) { toast('Müqayisə üçün ən azı 2 məhsul seçin.', 'error'); return; }
+  var cols = cmpList;
+  var rows = [
+    { label: 'Məhsul', fn: function(p) {
+      var imgHtml = p.img ? '<img class="cmp-img" src="'+p.img+'" alt="'+(p.name||'Məhsul').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'">' : '<div class="cmp-noimg">🧴</div>';
+      return imgHtml + '<strong style="font-size:13px;color:var(--white)">' + p.name + '</strong>' + (p.code ? '<br><span style="font-size:9px;color:var(--gold);letter-spacing:.1em">' + p.code + '</span>' : '');
+    }},
+    { label: 'Kateqoriya', fn: function(p) { return p.cat; }},
+    { label: 'Badgelər', fn: function(p) { return p.badges.length ? p.badges.map(function(b){ return '<span class="bdg bdg-haccp" style="font-size:7px">' + b + '</span>'; }).join(' ') : '—'; }},
+    { label: 'Spesifikasiya', fn: function(p) { return p.specs.map(function(s){ return '— ' + s; }).join('<br>') || '—'; }},
+    { label: 'Qablaşdırma', fn: function(p) { return p.pkg; }},
+    { label: 'Çatdırılma', fn: function(p) { return p.del; }},
+  ];
+  var thead = '<tr><th></th>' + cols.map(function(p){ return '<th>' + p.name.substring(0,28) + '</th>'; }).join('') + '</tr>';
+  var tbody = rows.map(function(row) {
+    return '<tr><td>' + row.label + '</td>' + cols.map(function(p){ return '<td>' + row.fn(p) + '</td>'; }).join('') + '</tr>';
+  }).join('');
+  document.getElementById('cmp-content').innerHTML = '<table class="cmp-tbl"><thead>' + thead + '</thead><tbody>' + tbody + '</tbody></table>';
+  openM('cmp');
+}
+
+// Inject compare button into every card
+document.querySelectorAll('.pc').forEach(function(pc) {
+  var cb = document.createElement('button');
+  cb.className = 'pc-cmp';
+  cb.type = 'button';
+  cb.setAttribute('aria-label', 'Müqayisəyə əlavə et');
+  cb.title = 'Müqayisə';
+  cb.innerHTML = '⇄';
+  cb.addEventListener('click', function(e) { e.stopPropagation(); toggleCmp(cb); });
+  pc.appendChild(cb);
+});
+
+// ── Axtarış tarixi ────────────────────────────────────────────────────────────</script>

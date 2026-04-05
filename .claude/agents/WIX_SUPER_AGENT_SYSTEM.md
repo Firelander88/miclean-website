@@ -72,6 +72,22 @@ Bu sistem 17 ixtisaslaşmış agentdən ibarət çox-agentli arxitekturadır. H�
 | 15 | **QA / Bug Hunter** | Quality | Test, bug aşkarlama |
 | 16 | **Fix & Recovery** | Delivery | Bug fix, rollback, bərpa |
 | 17 | **Launch Readiness** | Delivery | Publish hazırlığı, checklist |
+| 18 | **Embed Sync** | Delivery | index.html → Wix embed avtomatik sinxronizasiya |
+| 19 | **Design Diff** | Quality | Localhost vs Wix vizual müqayisə |
+| 20 | **Embed Chunk Manager** | Structure | 15K limitə uyğun ağıllı chunk bölmə |
+| 21 | **Template Cleaner** | Structure | Wix template elementlərini aşkarlama və gizlətmə |
+| 22 | **Image Asset** | Content | Məhsul şəkilləri audit, optimize, upload |
+| 23 | **Form Integration** | Content | Contact/Quote form → Wix CRM inteqrasiya |
+| 24 | **Responsive QA** | Quality | Multi-device responsive test |
+| 25 | **Analytics & Conversion** | Quality | GA4, event tracking, conversion funnel |
+| 26 | **Product Content Writer** | Content | AI ilə məhsul təsviri yazma (AZ/EN/RU) |
+| 27 | **Google Business** | Content | GBP profil, postlar, rəylərə cavab |
+| 28 | **Customer Review** | Content | Müştəri rəyləri, testimonial bölməsi |
+| 29 | **WhatsApp Commerce** | Content | WA Business inteqrasiya, sifariş flow |
+| 30 | **Competitor Watch** | Quality | Rəqib analizi, bazar benchmarking |
+| 31 | **Embed Version Control** | Delivery | Embed versiyalama, diff, rollback |
+| 32 | **Uptime Monitor** | Quality | Sayt uptime, response time, alert |
+| 33 | **Link Checker** | Quality | Broken link aşkarlama, placeholder audit |
 
 ---
 

@@ -1,0 +1,180 @@
+<script>// ── Mobile hamburger toggle ─────────────────────────────────────────────────
+function toggleNav(){var b=document.getElementById('n-hamburger'),l=document.getElementById('n-links');b.classList.toggle('active');l.classList.toggle('open');b.setAttribute('aria-expanded',l.classList.contains('open'));}
+document.querySelectorAll('#n-links a').forEach(function(a){a.addEventListener('click',function(){var b=document.getElementById('n-hamburger'),l=document.getElementById('n-links');b.classList.remove('active');l.classList.remove('open');b.setAttribute('aria-expanded','false');});});
+// ── Dynamic footer year ──────────────────────────────────────────────────────
+var fyEl = document.getElementById('footer-year');
+if (fyEl) fyEl.textContent = new Date().getFullYear();
+
+// ── Count-up animation for stats ─────────────────────────────────────────────
+(function() {
+  var statsEl = document.querySelector('.stats');
+  if (!statsEl) return;
+  var nums = statsEl.querySelectorAll('.st-n');
+  var animated = false;
+  var so = new IntersectionObserver(function(entries) {
+    if (entries[0].isIntersecting && !animated) {
+      animated = true;
+      nums.forEach(function(n) {
+        var target = parseInt(n.textContent);
+        if (isNaN(target)) return;
+        var start = 0;
+        var duration = 1500;
+        var startTime = null;
+        function step(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          n.textContent = Math.round(start + (target - start) * eased);
+          if (progress < 1) requestAnimationFrame(step);
+          else n.textContent = target;
+        }
+        n.textContent = '0';
+        requestAnimationFrame(step);
+      });
+      so.unobserve(statsEl);
+    }
+  }, {threshold: 0.5});
+  so.observe(statsEl);
+})();
+
+// ── Parallax effect for cover image ──────────────────────────────────────────
+(function() {
+  var covImg = document.querySelector('.cov-img');
+  if (!covImg) return;
+  window.addEventListener('scroll', function() {
+    var s = window.scrollY;
+    if (s < window.innerHeight * 1.5) {
+      covImg.style.transform = 'translateY(' + (s * 0.15) + 'px)';
+    }
+  }, {passive: true});
+})();
+
+// ── Nav scroll effect ────────────────────────────────────────────────────────
+var nav = document.getElementById('nav');
+var _scrollProg = document.getElementById('scroll-progress');
+var _backTop = document.getElementById('back-top');
+window.addEventListener('scroll', function() {
+  var s = window.scrollY;
+  nav.style.background = s > 60 ? 'rgba(255,255,255,.99)' : 'rgba(255,255,255,.97)';
+  var docH = document.documentElement.scrollHeight - window.innerHeight;
+  _scrollProg.style.width = (docH > 0 ? (s / docH * 100) : 0) + '%';
+  _backTop.classList.toggle('show', s > 300);
+}, { passive: true });
+
+function goId(id) { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth' }); }
+
+// ── Scroll-reveal animations ─────────────────────────────────────────────────
+// Use rootMargin so elements trigger slightly before entering viewport
+var rvo = new IntersectionObserver(function(entries) {
+  entries.forEach(function(x) {
+    if (x.isIntersecting) { x.target.classList.add('in'); rvo.unobserve(x.target); }
+  });
+}, { threshold: 0.04, rootMargin: '0px 0px 60px 0px' });
+document.querySelectorAll('.rv').forEach(function(el) { rvo.observe(el); });
+
+// Staggered fade-in for cards/items — fallback makes everything visible after 2s
+var co = new IntersectionObserver(function(entries) {
+  entries.forEach(function(x) {
+    if (x.isIntersecting) {
+      x.target.style.opacity = '1';
+      x.target.style.transform = 'none';
+      co.unobserve(x.target);
+    }
+  });
+}, { threshold: 0.03, rootMargin: '0px 0px 80px 0px' });
+
+document.querySelectorAll('.cc,.pc,.svc,.why,.step').forEach(function(el, i) {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(14px)';
+  el.style.transition = 'opacity .5s ease ' + (i % 8 * 0.06) + 's,transform .5s ease ' + (i % 8 * 0.06) + 's,background .25s';
+  co.observe(el);
+});
+// Safety fallback: force-show everything after 2.5s in case observer never fires
+setTimeout(function() {
+  document.querySelectorAll('.cc,.pc,.svc,.why,.step,.rv').forEach(function(el) {
+    el.style.opacity = '1';
+    el.style.transform = 'none';
+    el.classList.add('in');
+  });
+}, 2500);
+
+// ── Toast notifications ──────────────────────────────────────────────────────
+function toast(msg, tp) {
+  var c = document.getElementById('toast-container');
+  var t = document.createElement('div');
+  t.className = 'toast ' + (tp || '');
+  t.innerHTML = '<span>' + msg + '</span><span class="toast-x" onclick="this.parentElement.remove()">&#x2715;</span>';
+  c.appendChild(t);
+  setTimeout(function() { if (t.parentElement) t.remove(); }, 5000);
+}
+
+// ── Modal helpers ────────────────────────────────────────────────────────────
+var _prevFocus = null;
+function openM(n) {
+  _prevFocus = document.activeElement;
+  var overlay = document.getElementById('modal-' + n);
+  overlay.classList.add('open');
+  overlay.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  if (n === 'quote') populateQuoteBasket();
+  // Move focus to first focusable element inside modal
+  setTimeout(function() {
+    var first = overlay.querySelector('input,select,textarea,button,[tabindex]:not([tabindex="-1"])');
+    if (first) first.focus();
+  }, 50);
+}
+function closeM(n) {
+  var overlay = document.getElementById('modal-' + n);
+  overlay.classList.remove('open');
+  overlay.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (_prevFocus) { _prevFocus.focus(); _prevFocus = null; }
+}
+document.querySelectorAll('.modal-overlay').forEach(function(m) {
+  m.setAttribute('role', 'dialog');
+  m.setAttribute('aria-modal', 'true');
+  m.setAttribute('aria-hidden', 'true');
+  m.addEventListener('click', function(e) { if (e.target === m) { m.classList.remove('open'); m.setAttribute('aria-hidden','true'); document.body.style.overflow = ''; } });
+  // Focus trap: keep Tab/Shift+Tab inside modal
+  m.addEventListener('keydown', function(e) {
+    if (!m.classList.contains('open')) return;
+    if (e.key !== 'Tab') return;
+    var focusable = Array.from(m.querySelectorAll('input,select,textarea,button,a[href],[tabindex]:not([tabindex="-1"])')).filter(function(el) { return !el.disabled; });
+    if (!focusable.length) return;
+    var first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+    else { if (document.activeElement === last) { e.preventDefault(); first.focus(); } }
+  });
+});
+document.addEventListener('keydown', function(e) {
+  var tag = document.activeElement ? document.activeElement.tagName : '';
+  var inInput = (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT');
+
+  // Esc — close any open modal
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      closeM(m.id.replace('modal-', ''));
+    });
+    return;
+  }
+
+  // / — focus search (only when not typing in a field)
+  if (e.key === '/' && !inInput) {
+    e.preventDefault();
+    var si = document.getElementById('sinput');
+    si.focus(); si.select();
+    return;
+  }
+
+  // Arrow keys — navigate cards in detail modal
+  if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && document.getElementById('modal-detail').classList.contains('open')) {
+    e.preventDefault();
+    var cards = Array.from(document.querySelectorAll('.pc'));
+    var idx = _currentPC ? cards.indexOf(_currentPC) : -1;
+    if (idx === -1) return;
+    var next = e.key === 'ArrowRight' ? cards[idx + 1] : cards[idx - 1];
+    if (next) openDetail(next);
+    return;
+  }
+});
+</script>

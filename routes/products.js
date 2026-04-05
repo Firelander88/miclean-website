@@ -23,7 +23,7 @@ async function withDetails(products) {
 
   return products.map(p => ({
     ...p,
-    meta:     p.meta ? JSON.parse(p.meta) : undefined,
+    meta:     (() => { try { return p.meta ? JSON.parse(p.meta) : undefined; } catch { return null; } })(),
     variants: vMap[p.id] || [],
     sizes:    sMap[p.id] || [],
     zones:    zMap[p.id] || [],

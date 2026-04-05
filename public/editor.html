@@ -1,0 +1,2856 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Content Editor — MI CLEAN GROUP</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--gold:#C9A96E;--gold2:#b8935a;--bg:#07111C;--bg2:#0d1f30;--bg3:#112333;--border:rgba(255,255,255,.09);--border2:rgba(201,169,110,.25);--white:#F5F0E8;--muted:rgba(245,240,232,.45);--red:#f87171;--green:#4ade80;--blue:#60a5fa;--yellow:#fbbf24;--sidebar-w:220px;--header-h:56px}
+html,body{height:100%;font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--white);font-size:14px;overflow:hidden}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ── Auth screen ── */
+#auth-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.auth-box{background:var(--bg2);border:1px solid var(--border);border-radius:6px;padding:40px;max-width:380px;width:100%;text-align:center}
+.auth-logo{font-size:11px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.auth-title{font-size:22px;font-weight:700;color:var(--white);margin-bottom:6px}
+.auth-sub{font-size:12px;color:var(--muted);margin-bottom:28px}
+.auth-input{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--white);padding:13px 16px;border-radius:4px;font-size:14px;font-family:inherit;margin-bottom:12px;transition:border-color .2s;outline:none;letter-spacing:.05em}
+.auth-input:focus{border-color:var(--gold)}
+.auth-btn{width:100%;background:var(--gold);color:var(--bg);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:14px;border:none;border-radius:4px;cursor:pointer;font-family:inherit;transition:background .2s}
+.auth-btn:hover{background:var(--gold2)}
+.auth-err{font-size:12px;color:var(--red);margin-top:10px;min-height:18px}
+.auth-role-select{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--white);padding:10px 16px;border-radius:4px;font-size:13px;font-family:inherit;margin-bottom:12px;outline:none}
+
+/* ── Main layout ── */
+#main-screen{display:none;height:100vh;flex-direction:column}
+
+/* ── Header ── */
+.hdr{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:var(--header-h);display:flex;align-items:center;gap:16px;flex-shrink:0;z-index:100}
+.hdr-brand{font-size:10px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+.hdr-sep{width:1px;height:24px;background:var(--border)}
+.hdr-label{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em}
+.hdr-spacer{flex:1}
+.hdr-btn{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .2s;border:1px solid var(--border);background:transparent;color:var(--muted)}
+.hdr-btn:hover{border-color:var(--gold);color:var(--gold)}
+.hdr-btn-primary{background:var(--gold);color:var(--bg);border-color:var(--gold)}
+.hdr-btn-primary:hover{background:var(--gold2);border-color:var(--gold2)}
+.hdr-btn-danger{border-color:transparent}
+.hdr-btn-danger:hover{border-color:var(--red);color:var(--red)}
+.hdr-btn-deploy{background:linear-gradient(135deg,#C9A96E,#e0c48d);color:var(--bg);border-color:var(--gold)}
+.hdr-btn-deploy:hover{background:linear-gradient(135deg,#b8935a,#C9A96E)}
+.hdr-changes{font-size:10px;color:var(--yellow);font-weight:700;letter-spacing:.1em;display:none;align-items:center;gap:6px}
+.hdr-changes.has-changes{display:flex}
+.hdr-changes::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--yellow)}
+.hdr-autosave{font-size:9px;color:var(--green);font-weight:600;letter-spacing:.06em;opacity:.7}
+.hdr-role-badge{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:10px;background:rgba(201,169,110,.15);color:var(--gold);border:1px solid rgba(201,169,110,.25)}
+.hdr-undo-group{display:flex;gap:4px}
+.hdr-undo-group button{background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 10px;border-radius:3px;cursor:pointer;font-size:13px;transition:all .2s}
+.hdr-undo-group button:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
+.hdr-undo-group button:disabled{opacity:.3;cursor:not-allowed}
+
+/* ── Body layout ── */
+.editor-body{display:flex;flex:1;overflow:hidden;position:relative}
+
+/* ── Left sidebar ── */
+.sidebar{width:var(--sidebar-w);background:var(--bg2);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;overflow-y:auto}
+.sb-title{font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:16px 16px 8px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:11px 16px;cursor:pointer;transition:all .15s;border-left:2px solid transparent;font-size:12px;color:rgba(245,240,232,.6);position:relative}
+.sb-item:hover{background:rgba(255,255,255,.03);color:var(--white)}
+.sb-item.active{background:rgba(201,169,110,.08);border-left-color:var(--gold);color:var(--gold)}
+.sb-icon{font-size:15px;width:22px;text-align:center;flex-shrink:0}
+.sb-label{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sb-badge{margin-left:auto;font-size:9px;background:rgba(201,169,110,.15);color:var(--gold);padding:2px 6px;border-radius:10px;flex-shrink:0}
+.sb-badge-red{background:rgba(248,113,113,.2);color:var(--red)}
+.sb-divider{height:1px;background:var(--border);margin:8px 16px}
+
+/* ── Center: iframe preview ── */
+.preview-wrap{flex:1;display:flex;flex-direction:column;position:relative;background:#0a0a12}
+.preview-bar{height:32px;background:var(--bg3);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 12px;gap:8px;flex-shrink:0}
+.preview-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.1)}
+.preview-dot.r{background:#f87171}.preview-dot.y{background:#fbbf24}.preview-dot.g{background:#4ade80}
+.preview-url{flex:1;font-size:10px;color:var(--muted);letter-spacing:.04em;text-align:center;font-family:monospace}
+.preview-reload{background:none;border:none;color:var(--muted);cursor:pointer;font-size:13px;padding:2px 6px;transition:color .2s}
+.preview-reload:hover{color:var(--gold)}
+.preview-responsive-bar{height:36px;background:var(--bg2);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:8px;flex-shrink:0;padding:0 12px}
+.preview-responsive-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:5px 12px;border-radius:3px;cursor:pointer;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:inherit;transition:all .2s}
+.preview-responsive-btn:hover{border-color:var(--gold);color:var(--gold)}
+.preview-responsive-btn.active{background:rgba(201,169,110,.12);border-color:var(--gold);color:var(--gold)}
+.preview-viewport-label{font-size:9px;color:var(--muted);letter-spacing:.08em;margin-left:12px}
+.iframe-container{flex:1;display:flex;justify-content:center;overflow:hidden;background:#0a0a12}
+#site-iframe{border:none;background:#fff;transition:width .4s cubic-bezier(.16,1,.3,1);height:100%}
+
+/* ── Right panel (edit forms) ── */
+.edit-panel{width:380px;background:var(--bg2);border-left:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;transform:translateX(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);position:absolute;right:0;top:0;bottom:0;z-index:50;overflow:hidden}
+.edit-panel.open{transform:translateX(0)}
+.ep-header{padding:18px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;flex-shrink:0;background:var(--bg3)}
+.ep-title{font-size:14px;font-weight:600;flex:1}
+.ep-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:20px;padding:0;line-height:1;transition:color .2s}
+.ep-close:hover{color:var(--white)}
+.ep-body{flex:1;overflow-y:auto;padding:20px}
+.ep-footer{padding:14px 20px;border-top:1px solid var(--border);display:flex;gap:8px;flex-shrink:0;background:var(--bg3)}
+.ep-save{flex:1;background:var(--gold);color:var(--bg);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px;border:none;border-radius:3px;cursor:pointer;font-family:inherit;transition:background .2s}
+.ep-save:hover{background:var(--gold2)}
+.ep-cancel{background:transparent;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--border);border-radius:3px;cursor:pointer;font-family:inherit;transition:all .2s}
+.ep-cancel:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── Language tabs ── */
+.lang-tabs{display:flex;gap:0;margin-bottom:16px;border:1px solid var(--border);border-radius:4px;overflow:hidden}
+.lang-tab{flex:1;text-align:center;padding:8px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;background:transparent;color:var(--muted);border:none;font-family:inherit;transition:all .2s}
+.lang-tab:not(:last-child){border-right:1px solid var(--border)}
+.lang-tab.active{background:rgba(201,169,110,.12);color:var(--gold)}
+
+/* ── Form elements ── */
+.fg{margin-bottom:16px}
+.fg label{display:block;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--white);padding:10px 12px;font-size:13px;border-radius:4px;transition:border .2s,box-shadow .2s;outline:none;font-family:inherit}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169,110,.12)}
+.fg textarea{min-height:80px;resize:vertical;line-height:1.6}
+.fg-help{font-size:10px;color:var(--muted);margin-top:4px}
+.fg-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg-divider{height:1px;background:var(--border);margin:20px 0}
+.fg-section{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.fg-charcount{font-size:9px;color:var(--muted);margin-top:3px;text-align:right}
+.fg-charcount.over{color:var(--red)}
+
+/* ── Rich text toolbar ── */
+.rt-toolbar{display:flex;gap:4px;margin-bottom:4px}
+.rt-btn{background:var(--bg3);border:1px solid var(--border);color:var(--muted);padding:4px 10px;border-radius:3px;cursor:pointer;font-size:12px;font-family:inherit;transition:all .15s}
+.rt-btn:hover{border-color:var(--gold);color:var(--gold)}
+.rt-btn.active{background:rgba(201,169,110,.12);border-color:var(--gold);color:var(--gold)}
+.rt-editable{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--white);padding:10px 12px;font-size:13px;border-radius:4px;min-height:80px;line-height:1.6;outline:none;font-family:inherit;overflow-y:auto}
+.rt-editable:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,169,110,.12)}
+
+/* ── Image preview in form ── */
+.img-preview{width:100%;height:120px;border-radius:4px;border:1px solid var(--border);overflow:hidden;margin-bottom:8px;background:var(--bg3);display:flex;align-items:center;justify-content:center;position:relative}
+.img-preview img{width:100%;height:100%;object-fit:cover}
+.img-preview .img-placeholder{font-size:32px;opacity:.3}
+.img-preview .img-overlay{position:absolute;inset:0;background:rgba(7,17,28,.6);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .2s;cursor:pointer}
+.img-preview:hover .img-overlay{opacity:1}
+.img-overlay span{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);background:var(--bg2);padding:8px 14px;border-radius:3px;border:1px solid var(--gold)}
+
+/* ── Repeater (for FAQ, Services, etc) ── */
+.rep-item{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:14px;margin-bottom:10px;position:relative}
+.rep-item:hover{border-color:rgba(201,169,110,.2)}
+.rep-num{position:absolute;top:8px;left:10px;font-size:8px;color:var(--muted);letter-spacing:.1em;font-weight:700}
+.rep-remove{position:absolute;top:8px;right:10px;background:none;border:none;color:var(--muted);cursor:pointer;font-size:14px;line-height:1;padding:2px}
+.rep-remove:hover{color:var(--red)}
+.rep-reorder{position:absolute;top:8px;right:32px;display:flex;gap:2px}
+.rep-reorder button{background:none;border:1px solid var(--border);color:var(--muted);cursor:pointer;font-size:10px;padding:1px 5px;border-radius:2px;transition:all .15s}
+.rep-reorder button:hover{border-color:var(--gold);color:var(--gold)}
+.rep-add{width:100%;background:transparent;border:1px dashed var(--border);color:var(--muted);padding:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;border-radius:4px;transition:all .2s;margin-top:8px}
+.rep-add:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── Toast ── */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg3);border:1px solid var(--border2);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.12em;padding:10px 20px;border-radius:3px;opacity:0;transition:all .25s;pointer-events:none;z-index:9999;white-space:nowrap}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#toast.error{border-color:var(--red);color:var(--red)}
+
+/* ── JSON modal ── */
+.modal-overlay{position:fixed;inset:0;z-index:5000;background:rgba(7,17,28,.7);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal{background:var(--bg2);border:1px solid var(--border2);border-radius:6px;width:100%;max-width:720px;max-height:85vh;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.modal-head{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border);flex-shrink:0}
+.modal-title{font-size:16px;font-weight:600}
+.modal-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:22px;line-height:1;padding:0}
+.modal-close:hover{color:var(--white)}
+.modal-body{flex:1;overflow-y:auto;padding:20px 24px}
+.modal-body pre{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:16px;font-size:11px;color:var(--muted);line-height:1.7;overflow-x:auto;white-space:pre-wrap;word-break:break-all;max-height:50vh;font-family:'Consolas','Courier New',monospace}
+.modal-foot{padding:14px 24px;border-top:1px solid var(--border);display:flex;gap:8px;justify-content:flex-end;flex-shrink:0}
+.modal-btn{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:10px 20px;border-radius:3px;cursor:pointer;font-family:inherit;transition:all .2s}
+.modal-btn-gold{background:var(--gold);color:var(--bg);border:none}
+.modal-btn-gold:hover{background:var(--gold2)}
+.modal-btn-outline{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.modal-btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── Image upload modal with drag & drop ── */
+.img-modal-preview{width:100%;height:180px;border-radius:4px;border:1px solid var(--border);overflow:hidden;margin-bottom:16px;background:var(--bg3);display:flex;align-items:center;justify-content:center}
+.img-modal-preview img{width:100%;height:100%;object-fit:cover}
+.img-modal-preview .img-placeholder{font-size:48px;opacity:.3}
+.upload-zone{border:2px dashed var(--border);border-radius:4px;padding:20px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:12px;position:relative}
+.upload-zone:hover,.upload-zone.dragover{border-color:var(--gold);background:rgba(201,169,110,.03)}
+.upload-zone.dragover{background:rgba(201,169,110,.08)}
+.upload-zone p{font-size:12px;color:var(--muted);margin-top:6px}
+.upload-zone span{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
+.upload-progress{width:100%;height:4px;background:var(--bg3);border-radius:2px;margin-top:10px;overflow:hidden;display:none}
+.upload-progress-bar{height:100%;width:0;background:var(--gold);border-radius:2px;transition:width .3s}
+.upload-progress.active{display:block}
+
+/* ── CRM Table ── */
+.crm-table{width:100%;border-collapse:collapse;font-size:11px}
+.crm-table th{text-align:left;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);padding:8px 10px;border-bottom:1px solid var(--border)}
+.crm-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--muted);vertical-align:top}
+.crm-table tr:hover td{background:rgba(201,169,110,.04);color:var(--white)}
+.crm-status{display:inline-block;padding:2px 8px;border-radius:10px;font-size:9px;font-weight:700;letter-spacing:.06em}
+.crm-status-new{background:rgba(96,165,250,.15);color:var(--blue)}
+.crm-status-read{background:rgba(74,222,128,.15);color:var(--green)}
+
+/* ── Analytics cards ── */
+.an-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.an-card{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:16px;text-align:center}
+.an-card-num{font-size:28px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.an-card-label{font-size:10px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+
+/* ── Image list ── */
+.img-list-item{display:flex;gap:12px;padding:10px;border:1px solid var(--border);border-radius:4px;margin-bottom:8px;align-items:center;background:var(--bg3)}
+.img-list-thumb{width:60px;height:40px;border-radius:3px;overflow:hidden;flex-shrink:0;background:var(--bg)}
+.img-list-thumb img{width:100%;height:100%;object-fit:cover}
+.img-list-info{flex:1;min-width:0}
+.img-list-url{font-size:10px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:monospace}
+.img-list-size{font-size:9px;color:var(--gold);margin-top:3px}
+
+/* ── Color picker ── */
+.color-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.color-row label{flex:1;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.color-row input[type="color"]{width:40px;height:28px;border:1px solid var(--border);border-radius:3px;background:transparent;cursor:pointer;padding:0}
+.color-row input[type="text"]{width:90px;background:var(--bg3);border:1px solid var(--border);color:var(--white);padding:5px 8px;font-size:11px;border-radius:3px;font-family:monospace}
+
+/* ── Activity log ── */
+.log-entry{padding:8px 0;border-bottom:1px solid var(--border);font-size:11px}
+.log-time{color:var(--muted);font-size:9px;font-family:monospace;margin-bottom:2px}
+.log-action{color:var(--white)}
+.log-field{color:var(--gold);font-weight:600}
+
+/* ── Version item ── */
+.version-item{display:flex;align-items:center;gap:12px;padding:10px;border:1px solid var(--border);border-radius:4px;margin-bottom:8px;cursor:pointer;transition:all .15s;background:var(--bg3)}
+.version-item:hover{border-color:var(--gold);background:rgba(201,169,110,.04)}
+.version-time{font-size:10px;color:var(--gold);font-weight:600;flex:1}
+.version-sections{font-size:9px;color:var(--muted)}
+.version-restore-btn{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:transparent;border:1px solid var(--gold);padding:4px 10px;border-radius:3px;cursor:pointer;transition:all .15s}
+.version-restore-btn:hover{background:var(--gold);color:var(--bg)}
+
+/* ── Product CRUD ── */
+.product-item{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:12px;margin-bottom:8px;cursor:pointer;transition:all .15s}
+.product-item:hover{border-color:rgba(201,169,110,.3)}
+.product-name{font-size:13px;font-weight:600;color:var(--white);margin-bottom:2px}
+.product-code{font-size:10px;color:var(--gold);font-family:monospace}
+.product-form{background:var(--bg3);border:1px solid var(--border2);border-radius:4px;padding:16px;margin-bottom:12px}
+
+/* ── AI Writer ── */
+.ai-btn{background:transparent;border:1px solid var(--border);color:var(--muted);padding:8px 14px;border-radius:3px;cursor:pointer;font-size:11px;font-weight:600;font-family:inherit;transition:all .2s;margin-right:6px;margin-bottom:6px}
+.ai-btn:hover{border-color:var(--gold);color:var(--gold)}
+.ai-output{background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:14px;margin-top:12px;font-size:12px;color:var(--white);line-height:1.7;white-space:pre-wrap;max-height:300px;overflow-y:auto}
+
+/* ── Backup item ── */
+.backup-item{display:flex;align-items:center;gap:12px;padding:10px;border:1px solid var(--border);border-radius:4px;margin-bottom:8px;background:var(--bg3)}
+.backup-date{font-size:11px;color:var(--gold);font-weight:600;flex:1}
+.backup-size{font-size:9px;color:var(--muted)}
+
+/* ── Deploy progress ── */
+.deploy-progress{position:fixed;top:var(--header-h);left:0;right:0;height:3px;z-index:9000;background:var(--bg3);overflow:hidden;display:none}
+.deploy-progress.active{display:block}
+.deploy-progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:width .5s;border-radius:0 2px 2px 0}
+
+/* ── Shortcut help modal ── */
+.shortcut-list{list-style:none}
+.shortcut-list li{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;color:var(--muted)}
+.shortcut-key{background:var(--bg3);border:1px solid var(--border);padding:2px 8px;border-radius:3px;font-size:11px;font-family:monospace;color:var(--white)}
+
+/* ── Notification toast ── */
+.notif-toast{position:fixed;top:70px;right:20px;background:var(--bg2);border:1px solid var(--gold);border-radius:4px;padding:12px 20px;z-index:9500;box-shadow:0 8px 24px rgba(0,0,0,.3);transform:translateX(120%);transition:transform .3s;font-size:12px}
+.notif-toast.show{transform:translateX(0)}
+.notif-toast-title{font-weight:700;color:var(--gold);margin-bottom:2px;font-size:11px;letter-spacing:.08em}
+.notif-toast-body{color:var(--muted);font-size:11px}
+
+/* ── Hamburger toggle for mobile ── */
+.hamburger-btn{display:none;background:none;border:1px solid var(--border);color:var(--muted);font-size:20px;padding:4px 10px;border-radius:3px;cursor:pointer;transition:all .2s;line-height:1}
+.hamburger-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ── Responsive ── */
+@media(max-width:960px){
+  .sidebar{width:180px}
+  .edit-panel{width:320px}
+}
+@media(max-width:768px){
+  .hamburger-btn{display:block}
+  .sidebar{position:absolute;left:-220px;top:var(--header-h);bottom:0;z-index:60;transition:left .3s}
+  .sidebar.open{left:0}
+  .edit-panel{width:100%;left:0;right:0}
+  .preview-wrap{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<!-- Auth screen -->
+<div id="auth-screen">
+  <div class="auth-box">
+    <div class="auth-logo">MI CLEAN GROUP</div>
+    <div class="auth-title">Content Editor</div>
+    <div class="auth-sub">Sayt redaktoru - admin acari ile daxil olun</div>
+    <input class="auth-input" id="key-input" type="password" placeholder="Admin acari" autocomplete="current-password" onkeydown="if(event.key==='Enter')login()">
+    <select class="auth-role-select" id="role-select">
+      <option value="admin">Admin (Tam icaze)</option>
+      <option value="editor">Editor (Redakte)</option>
+      <option value="viewer">Viewer (Yalniz bax)</option>
+    </select>
+    <button class="auth-btn" onclick="login()">Daxil ol</button>
+    <div class="auth-err" id="auth-err"></div>
+  </div>
+</div>
+
+<!-- Main editor screen -->
+<div id="main-screen">
+  <!-- Deploy progress bar -->
+  <div class="deploy-progress" id="deploy-progress"><div class="deploy-progress-bar" id="deploy-progress-bar"></div></div>
+
+  <!-- Header -->
+  <div class="hdr">
+    <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Sidebar ac/bagla">&#9776;</button>
+    <div class="hdr-brand">MI CLEAN GROUP</div>
+    <div class="hdr-sep"></div>
+    <div class="hdr-label">Content Editor</div>
+    <span class="hdr-role-badge" id="hdr-role-badge">Admin</span>
+    <div class="hdr-spacer"></div>
+    <div class="hdr-autosave" id="hdr-autosave"></div>
+    <div class="hdr-changes" id="change-indicator">Deyisiklikler var</div>
+    <div class="hdr-undo-group">
+      <button id="btn-undo" onclick="doUndo()" disabled title="Geri al (Ctrl+Z)">&#8630;</button>
+      <button id="btn-redo" onclick="doRedo()" disabled title="Ireli (Ctrl+Y)">&#8631;</button>
+    </div>
+    <button class="hdr-btn hdr-btn-primary" onclick="saveAllChanges()" id="btn-save-all">Hamısını Saxla</button>
+    <button class="hdr-btn hdr-btn-deploy" onclick="deployToWix()" id="btn-deploy" title="Wix-e deploy et (Beta - endpoint konfiqurasiyasi teleb olunur)">&#128640; Deploy (Beta)</button>
+    <button class="hdr-btn" onclick="exportJSON()">JSON Export</button>
+    <button class="hdr-btn" onclick="reloadPreview()">Yenile</button>
+    <button class="hdr-btn hdr-btn-danger" onclick="logout()">Cixis</button>
+  </div>
+
+  <!-- Body -->
+  <div class="editor-body">
+    <!-- Left sidebar: Section navigator -->
+    <div class="sidebar" id="sidebar">
+      <div class="sb-title">Bolmeler</div>
+      <div class="sb-item active" data-section="hero" tabindex="0" role="button" onclick="selectSection('hero',this)">
+        <span class="sb-icon">&#9733;</span>
+        <span class="sb-label">Hero / Cover</span>
+      </div>
+      <div class="sb-item" data-section="categories" tabindex="0" role="button" onclick="selectSection('categories',this)">
+        <span class="sb-icon">&#9776;</span>
+        <span class="sb-label">Kateqoriyalar</span>
+        <span class="sb-badge">7</span>
+      </div>
+      <div class="sb-item" data-section="products" tabindex="0" role="button" onclick="selectSection('products',this)">
+        <span class="sb-icon">&#9881;</span>
+        <span class="sb-label">Mehsullar</span>
+      </div>
+      <div class="sb-item" data-section="services" tabindex="0" role="button" onclick="selectSection('services',this)">
+        <span class="sb-icon">&#9874;</span>
+        <span class="sb-label">Xidmetler</span>
+        <span class="sb-badge">12</span>
+      </div>
+      <div class="sb-divider"></div>
+      <div class="sb-item" data-section="trust" tabindex="0" role="button" onclick="selectSection('trust',this)">
+        <span class="sb-icon">&#9878;</span>
+        <span class="sb-label">Trust / Statistika</span>
+        <span class="sb-badge">4</span>
+      </div>
+      <div class="sb-item" data-section="testimonials" tabindex="0" role="button" onclick="selectSection('testimonials',this)">
+        <span class="sb-icon">&#10077;</span>
+        <span class="sb-label">Reyler</span>
+        <span class="sb-badge">2</span>
+      </div>
+      <div class="sb-item" data-section="faq" tabindex="0" role="button" onclick="selectSection('faq',this)">
+        <span class="sb-icon">?</span>
+        <span class="sb-label">FAQ</span>
+        <span class="sb-badge">6</span>
+      </div>
+      <div class="sb-divider"></div>
+      <div class="sb-item" data-section="contact" tabindex="0" role="button" onclick="selectSection('contact',this)">
+        <span class="sb-icon">&#9993;</span>
+        <span class="sb-label">Elaqe</span>
+      </div>
+      <div class="sb-divider"></div>
+      <div class="sb-title">Aletler</div>
+      <div class="sb-item" data-section="seo" tabindex="0" role="button" onclick="selectSection('seo',this)">
+        <span class="sb-icon">&#128270;</span>
+        <span class="sb-label">SEO</span>
+      </div>
+      <div class="sb-item" data-section="analytics" tabindex="0" role="button" onclick="selectSection('analytics',this)">
+        <span class="sb-icon">&#128200;</span>
+        <span class="sb-label">Analitika</span>
+      </div>
+      <div class="sb-item" data-section="images" tabindex="0" role="button" onclick="selectSection('images',this)">
+        <span class="sb-icon">&#128247;</span>
+        <span class="sb-label">Sekiller</span>
+      </div>
+      <div class="sb-item" data-section="theme" tabindex="0" role="button" onclick="selectSection('theme',this)">
+        <span class="sb-icon">&#127912;</span>
+        <span class="sb-label">Tema</span>
+      </div>
+      <div class="sb-item" data-section="crm" tabindex="0" role="button" onclick="selectSection('crm',this)">
+        <span class="sb-icon">&#128101;</span>
+        <span class="sb-label">CRM</span>
+        <span class="sb-badge sb-badge-red" id="crm-badge" style="display:none">0</span>
+      </div>
+      <div class="sb-divider"></div>
+      <div class="sb-item" data-section="versions" tabindex="0" role="button" onclick="selectSection('versions',this)">
+        <span class="sb-icon">&#128197;</span>
+        <span class="sb-label">Tarixce</span>
+      </div>
+      <div class="sb-item" data-section="activitylog" tabindex="0" role="button" onclick="selectSection('activitylog',this)">
+        <span class="sb-icon">&#128221;</span>
+        <span class="sb-label">Jurnal</span>
+      </div>
+      <div class="sb-item" data-section="aiwriter" tabindex="0" role="button" onclick="selectSection('aiwriter',this)">
+        <span class="sb-icon">&#128221;</span>
+        <span class="sb-label">Sablon Yazici</span>
+      </div>
+      <div class="sb-item" data-section="backup" tabindex="0" role="button" onclick="selectSection('backup',this)">
+        <span class="sb-icon">&#128190;</span>
+        <span class="sb-label">Backup</span>
+      </div>
+    </div>
+
+    <!-- Center: iframe preview -->
+    <div class="preview-wrap">
+      <div class="preview-bar">
+        <span class="preview-dot r"></span>
+        <span class="preview-dot y"></span>
+        <span class="preview-dot g"></span>
+        <span class="preview-url">localhost:3000</span>
+        <button class="preview-reload" onclick="reloadPreview()" title="Yenile">&#8635;</button>
+      </div>
+      <div class="preview-responsive-bar">
+        <button class="preview-responsive-btn active" onclick="setPreviewSize('desktop',this)">&#128421; Desktop</button>
+        <button class="preview-responsive-btn" onclick="setPreviewSize('tablet',this)">&#128241; Tablet</button>
+        <button class="preview-responsive-btn" onclick="setPreviewSize('mobile',this)">&#128242; Mobile</button>
+        <span class="preview-viewport-label" id="viewport-label">100%</span>
+      </div>
+      <div class="iframe-container">
+        <iframe id="site-iframe" src="/"></iframe>
+      </div>
+    </div>
+
+    <!-- Right panel: Edit forms -->
+    <div class="edit-panel" id="edit-panel">
+      <div class="ep-header">
+        <span class="ep-title" id="ep-title">Redakte et</span>
+        <button class="ep-close" onclick="closePanel()">&times;</button>
+      </div>
+      <div class="ep-body" id="ep-body">
+        <!-- Dynamic form content goes here -->
+      </div>
+      <div class="ep-footer" id="ep-footer">
+        <button class="ep-save" onclick="saveCurrentSection()">Saxla</button>
+        <button class="ep-cancel" onclick="closePanel()">Legv et</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JSON export modal -->
+<div class="modal-overlay" id="modal-json">
+  <div class="modal">
+    <div class="modal-head">
+      <span class="modal-title">JSON Deyisiklikler</span>
+      <button class="modal-close" onclick="closeModal('modal-json')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <pre id="json-output"></pre>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-btn modal-btn-gold" onclick="copyJSON()">Kopyala</button>
+      <button class="modal-btn modal-btn-outline" onclick="downloadJSON()">Yukle (.json)</button>
+      <button class="modal-btn modal-btn-outline" onclick="closeModal('modal-json')">Bagla</button>
+    </div>
+  </div>
+</div>
+
+<!-- Image change modal -->
+<div class="modal-overlay" id="modal-image">
+  <div class="modal" style="max-width:500px">
+    <div class="modal-head">
+      <span class="modal-title">Sekil Deyis</span>
+      <button class="modal-close" onclick="closeModal('modal-image')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="img-modal-preview" id="img-modal-preview">
+        <span class="img-placeholder">&#128247;</span>
+      </div>
+      <div class="fg">
+        <label>Sekil URL</label>
+        <input type="url" id="img-url-input" placeholder="https://images.unsplash.com/photo-..." oninput="previewImageUrl(this.value)">
+        <div class="fg-help">Unsplash, Wix Static ve ya her hansi URL istifade edin</div>
+      </div>
+      <div class="upload-zone" id="upload-zone" onclick="document.getElementById('img-file-input').click()">
+        <span>&#128228; Suruklyin ve ya klikleyin</span>
+        <p>PNG, JPG, WebP - max 5MB</p>
+        <input type="file" id="img-file-input" accept="image/png,image/jpeg,image/webp" style="display:none" onchange="handleFileUpload(this)">
+        <div class="upload-progress" id="upload-progress">
+          <div class="upload-progress-bar" id="upload-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-btn modal-btn-gold" onclick="applyImageChange()">Tetbiq et</button>
+      <button class="modal-btn modal-btn-outline" onclick="closeModal('modal-image')">Legv et</button>
+    </div>
+  </div>
+</div>
+
+<!-- Autosave restore modal -->
+<div class="modal-overlay" id="modal-autosave">
+  <div class="modal" style="max-width:440px">
+    <div class="modal-head">
+      <span class="modal-title">Avtomatik saxlama tapildi</span>
+      <button class="modal-close" onclick="closeModal('modal-autosave')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <p style="color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:12px">Son sessiyadan avtomatik saxlanmis melumatlar tapildi. Berpa etmek isteyirsiniz?</p>
+      <p style="color:var(--gold);font-size:11px" id="autosave-time"></p>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-btn modal-btn-gold" onclick="restoreAutosave()">Berpa et</button>
+      <button class="modal-btn modal-btn-outline" onclick="discardAutosave()">Yeni baslat</button>
+    </div>
+  </div>
+</div>
+
+<!-- Keyboard shortcuts help modal -->
+<div class="modal-overlay" id="modal-shortcuts">
+  <div class="modal" style="max-width:440px">
+    <div class="modal-head">
+      <span class="modal-title">Klaviatura qisayollari</span>
+      <button class="modal-close" onclick="closeModal('modal-shortcuts')">&times;</button>
+    </div>
+    <div class="modal-body">
+      <ul class="shortcut-list">
+        <li><span>Bolmeni saxla</span><span class="shortcut-key">Ctrl+S</span></li>
+        <li><span>Geri al (Undo)</span><span class="shortcut-key">Ctrl+Z</span></li>
+        <li><span>Ireli (Redo)</span><span class="shortcut-key">Ctrl+Y</span></li>
+        <li><span>Preview olcusunu deyis</span><span class="shortcut-key">Ctrl+P</span></li>
+        <li><span>Panel/modal baglama</span><span class="shortcut-key">Escape</span></li>
+        <li><span>Bu komeyi goster</span><span class="shortcut-key">Ctrl+/</span></li>
+        <li><span>Qalin (rich text)</span><span class="shortcut-key">Ctrl+B</span></li>
+        <li><span>Italik (rich text)</span><span class="shortcut-key">Ctrl+I</span></li>
+      </ul>
+    </div>
+    <div class="modal-foot">
+      <button class="modal-btn modal-btn-outline" onclick="closeModal('modal-shortcuts')">Bagla</button>
+    </div>
+  </div>
+</div>
+
+<!-- Notification toast -->
+<div class="notif-toast" id="notif-toast">
+  <div class="notif-toast-title" id="notif-toast-title"></div>
+  <div class="notif-toast-body" id="notif-toast-body"></div>
+</div>
+
+<div id="toast" aria-live="polite"></div>
+
+<script>
+/* =========================================================================
+   MI CLEAN GROUP — Content Editor (Enhanced with 20 features)
+   ========================================================================= */
+
+var KEY_STORE = 'mcg_admin_key';
+var ROLE_STORE = 'mcg_user_role';
+var AUTOSAVE_KEY = 'mcg_editor_autosave';
+var VERSIONS_KEY = 'mcg_versions';
+var ACTIVITY_KEY = 'mcg_activity_log';
+var BACKUP_HISTORY_KEY = 'mcg_backup_history';
+var adminKey = '';
+var userRole = 'admin';
+
+/* ── Pending changes store ── */
+var changes = {};
+var currentSection = 'hero';
+var currentImageTarget = null;
+var currentLang = 'az';
+
+/* ── Undo/Redo stacks ── */
+var undoStack = [];
+var redoStack = [];
+var MAX_UNDO = 50;
+
+/* ── CRM data ── */
+var crmContacts = [];
+var crmQuotes = [];
+var lastCrmCount = 0;
+
+/* ── Site content (loaded from iframe) ── */
+var siteData = {
+  hero: {
+    eyebrow: 'Azerbaycanin #1 Otel Techizat Partneri',
+    h1_line1: 'Bir Menbeden -',
+    h1_em: 'Tam Hell',
+    description: 'Kimyevi temizlik, premium amenity, housekeeping aletleri ve texniki xidmetler - hamisi ISO 9001, HACCP ve Safer Choice sertifikatli. 40+ otel bize etibar edir. Siz de pilot proqramla baslayin.',
+    stat1_num: '538', stat1_label: 'Mehsul novu',
+    stat2_num: '7', stat2_label: 'Kateqoriya',
+    stat3_num: '5\u2605', stat3_label: 'Standart',
+    cta_text: 'Kataloqa bax',
+    image_url: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80&fm=webp'
+  },
+  categories: [
+    { num: '01 / 07', name: 'Kimyevi Temizlik Vasiteleri', meta: '127 mehsul \u00b7 25 alt bolme', image: 'https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=75' },
+    { num: '02 / 07', name: 'Camasirxana Mehsullari', meta: '58 mehsul \u00b7 9 alt bolme', image: 'https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=600&q=75' },
+    { num: '03 / 07', name: 'Metbex Gigiyena Mehsullari', meta: '36 mehsul \u00b7 5 alt bolme', image: 'https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=75' },
+    { num: '04 / 07', name: 'Otel Amenity', meta: '62 mehsul \u00b7 14 alt bolme', image: 'https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&q=75' },
+    { num: '05 / 07', name: 'Istehlak Materiallari', meta: '234 mehsul \u00b7 48 alt bolme', image: 'https://images.unsplash.com/photo-1612549584800-4a0e0f291050?w=600&q=75' },
+    { num: '06 / 07', name: 'Housekeeping Aletleri', meta: '13 mehsul \u00b7 7 alt bolme', image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=600&q=75' },
+    { num: '07 / 07', name: 'Hovuz & SPA Kimyevi', meta: '8 mehsul \u00b7 1 alt bolme', image: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=75' }
+  ],
+  services: [
+    { icon: '\ud83d\udd2c', name: 'Texniki Konsultasiya', desc: 'Otelin tam ehtiyac analizi, mehsul secimi. Teleb siyahisi + uygunluq matrisasi hazirlanir.', tags: '1-3 gun, Pulsuz' },
+    { icon: '\u2699\ufe0f', name: 'Dozaj Sistemi Qurasdirlma', desc: 'Camasirxana & metbex ucun dozaj pompasi. Qurasdirlma akti + kalibrasiya.', tags: '1 gun, Layihe uzre' },
+    { icon: '\ud83d\udc65', name: 'Housekeeping Telimi', desc: 'Kimyevi tehlukesizlik, duzgun istifade, zona reng kodlama. Sertifikat + test neticesi.', tags: '2-4 saat, Her sessiya ucun' },
+    { icon: '\ud83d\udccb', name: 'SDS / Etiket Paketi', desc: 'Safety Data Sheet toplanmasi, etiketler, piktoqramlar hazirlanmasi.', tags: '3-7 gun, Layihe uzre' },
+    { icon: '\ud83c\udf7d\ufe0f', name: 'HACCP Gigiyena Plani', desc: 'Metbex sanitizasiya plani, yoxlama checklistleri. HACCP uygun SOP senedi.', tags: '5-10 gun, Layihe uzre' },
+    { icon: '\ud83d\udcca', name: 'Camasirxana Audit', desc: 'Su sertliyi, dozaj, yuma keyfiyyeti analizi. Hesabat + optimizasiya plani.', tags: '3-5 gun, Layihe uzre' },
+    { icon: '\ud83e\uddea', name: 'Pilot / Trial Proqrami', desc: 'Secilmis mehsullarin 2-4 heftelik sinaq tetbiqi. Test protokolu + hesabat.', tags: '2-4 hefte, Paket' },
+    { icon: '\ud83c\udf3f', name: 'Eco Alternativler Secimi', desc: 'Safer Choice/eco variantlarin secimi, uygunluq matrisasi. Sertifikat senedi.', tags: '3-5 gun, Paket' },
+    { icon: '\ud83d\udce6', name: 'Anbar Optimallasdirma', desc: 'MOQ, tehlukesizlik stok, sifaris dovrunun qurulmasi. Min-max plan hazirlanir.', tags: '3-7 gun, Layihe uzre' },
+    { icon: '\ud83d\ude9b', name: 'Catdirilma & Logistika', desc: 'Catdirilma qrafiki, bolunmus catdirilma, qebul protokolu. Daimi ayliq servis.', tags: 'Daimi, Ayliq' },
+    { icon: '\u2705', name: 'Keyfiyyet Zemaneti & SLA', desc: 'Mehsul qusurlari ucun SLA, deyisme qaydasi. Reklamasiya formasi hazir.', tags: '1-2 gun SLA, Daxildir' },
+    { icon: '\ud83c\udfa8', name: 'Logo Cap & Dizayn', desc: 'Salfet, amenities, qablasdirma ucun brend capi. Print-ready fayl + mockup.', tags: '7-20 gun, Layihe uzre' }
+  ],
+  trust: [
+    { num: '40+', label: 'Otel Partneri' },
+    { num: '538', label: 'Mehsul Cesidi' },
+    { num: '98%', label: 'Musteri Raziligi' },
+    { num: '5+', label: 'Il Tecrube' }
+  ],
+  testimonials: [
+    { text: 'MI CLEAN GROUP ile emekdasliq bizim kimyevi xerclerimizi 30% azaltdi. Dozaj sistemi qurasdirilandan sonra heyet vaxti da ciddi qenaet oldu.', author: 'Housekeeping Manager', role: '5\u2605 Resort - Baki' },
+    { text: 'Pilot proqramdan basladiq, indi tam emekdasliq edirik. Xususile HACCP uygun metbex mehsullari ve texniki destek keyfiyyeti ile ferqlenirlir.', author: 'F&B Director', role: 'Boutique Otel - Seki' }
+  ],
+  faq: [
+    { q: 'MI CLEAN GROUP hansi sektorlara xidmet gosterir?', a: 'Esasen 5 ulduzlu oteller, resort ve SPA merkezleri. Bundan elave restoran zensirleri, xesteaxanalar ve ofis kompleksleri ucun de kimyevi temizlik, amenity ve housekeeping helleri teqdim edirik.' },
+    { q: 'Minimum sifaris miqdari (MOQ) ne qederdir?', a: 'MOQ kateqoriyaya gore deyisir. Kimyevi mehsullarda 5 kg, amenity-de 500 eded, istehlak materiallarinda 1 koli. Pilot proqramda MOQ telebi yoxdur.' },
+    { q: 'Catdirilma muddeti ne qederdir?', a: 'Standart catdirilma 5-7 is gunudur. Baki daxili tecili catdirilma 24-48 saat. Region sifarisler 7-10 is gunu.' },
+    { q: 'Mehsullariniz hansi sertifikatlara malikdir?', a: 'Butun kimyevi mehsullar SDS (Safety Data Sheet) ile techiz olunur. HACCP uygunluq, Safer Choice eco sertifikati ve ISO 9001 keyfiyyet standartina cavab verir.' },
+    { q: 'Pilot proqram nece isleyir?', a: '2-4 heftelik pulsuz sinaq proqrami. Secilmis mehsullari oteliniz ucun test edirsiniz, neticeleri birlikde qiymetlendiririk. Razi qaldiqda esas muqavileye kecirik.' },
+    { q: 'Ferdi logo capi mumkundurmu?', a: 'Beli. Amenity qablasdirmasi, salfetler, karton stekanlar ve diger materiallar uzerinde otel loqonuzla ferdi cap mumkundur.' }
+  ],
+  contact: {
+    company: 'MI CLEAN GROUP MMC',
+    voen: '1234567891',
+    address: 'Baki, Azerbaycan',
+    phone: '+994 55 488 22 22',
+    email: 'micleangroupmmc@gmail.com',
+    hours: 'B.e. - Cume \u00b7 09:00 - 18:00',
+    delivery: '5-7 is gunu \u00b7 Baki & region'
+  }
+};
+
+/* ── Multi-language translations store ── */
+var translations = {
+  az: {},
+  en: {
+    hero: { eyebrow: 'Azerbaijan\'s #1 Hotel Supply Partner', h1_line1: 'One Source —', h1_em: 'Complete Solution', description: 'Chemical cleaning, premium amenity, housekeeping tools and technical services — all ISO 9001, HACCP & Safer Choice certified. 40+ hotels trust us. Start with a pilot program.', stat1_num: '538', stat1_label: 'Product types', stat2_num: '7', stat2_label: 'Categories', stat3_num: '5\u2605', stat3_label: 'Standard', cta_text: 'View Catalog' },
+    contact: { company: 'MI CLEAN GROUP LLC', voen: '1234567891', address: 'Baku, Azerbaijan', phone: '+994 55 488 22 22', email: 'micleangroupmmc@gmail.com', hours: 'Mon - Fri \u00b7 09:00 - 18:00', delivery: '5-7 business days \u00b7 Baku & regions' }
+  },
+  ru: {
+    hero: { eyebrow: '\u041f\u0430\u0440\u0442\u043d\u0435\u0440 \u21161 \u043f\u043e \u0441\u043d\u0430\u0431\u0436\u0435\u043d\u0438\u044e \u043e\u0442\u0435\u043b\u0435\u0439 \u0432 \u0410\u0437\u0435\u0440\u0431\u0430\u0439\u0434\u0436\u0430\u043d\u0435', h1_line1: '\u0418\u0437 \u043e\u0434\u043d\u043e\u0433\u043e \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430 \u2014', h1_em: '\u041f\u043e\u043b\u043d\u043e\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u0435', description: '\u0425\u0438\u043c\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0447\u0438\u0441\u0442\u043a\u0430, \u043f\u0440\u0435\u043c\u0438\u0443\u043c \u0430\u043c\u0435\u043d\u0438\u0442\u0438, \u0438\u043d\u0441\u0442\u0440\u0443\u043c\u0435\u043d\u0442\u044b \u0434\u043b\u044f \u0445\u0430\u0443\u0441\u043a\u0438\u043f\u0438\u043d\u0433\u0430 \u0438 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u0443\u0441\u043b\u0443\u0433\u0438 \u2014 \u0432\u0441\u0435 \u0441\u0435\u0440\u0442\u0438\u0444\u0438\u0446\u0438\u0440\u043e\u0432\u0430\u043d\u043e ISO 9001, HACCP \u0438 Safer Choice. 40+ \u043e\u0442\u0435\u043b\u0435\u0439 \u0434\u043e\u0432\u0435\u0440\u044f\u044e\u0442 \u043d\u0430\u043c.', stat1_num: '538', stat1_label: '\u0412\u0438\u0434\u043e\u0432 \u043f\u0440\u043e\u0434\u0443\u043a\u0446\u0438\u0438', stat2_num: '7', stat2_label: '\u041a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0439', stat3_num: '5\u2605', stat3_label: '\u0421\u0442\u0430\u043d\u0434\u0430\u0440\u0442', cta_text: '\u041a\u0430\u0442\u0430\u043b\u043e\u0433' },
+    contact: { company: 'MI CLEAN GROUP OOO', voen: '1234567891', address: '\u0411\u0430\u043a\u0443, \u0410\u0437\u0435\u0440\u0431\u0430\u0439\u0434\u0436\u0430\u043d', phone: '+994 55 488 22 22', email: 'micleangroupmmc@gmail.com', hours: '\u041f\u043d - \u041f\u0442 \u00b7 09:00 - 18:00', delivery: '5-7 \u0440\u0430\u0431\u043e\u0447\u0438\u0445 \u0434\u043d\u0435\u0439 \u00b7 \u0411\u0430\u043a\u0443 \u0438 \u0440\u0435\u0433\u0438\u043e\u043d\u044b' }
+  }
+};
+
+/* ── SEO data ── */
+var seoData = {
+  page_title: 'MI CLEAN GROUP - Otel Temizlik & Amenity',
+  meta_description: 'Azerbaycanin 1 nomreli otel techizat partneri. Kimyevi temizlik, amenity, housekeeping aletleri.',
+  og_title: 'MI CLEAN GROUP MMC',
+  og_description: 'Premium otel temizlik ve amenity helleri',
+  og_image: '',
+  keywords: 'otel temizlik, amenity, housekeeping, kimyevi, MI CLEAN GROUP'
+};
+
+/* ── Theme defaults ── */
+var themeDefaults = { gold: '#C9A96E', muted: 'rgba(245,240,232,.45)', bg: '#07111C', bg2: '#0d1f30', bg3: '#112333' };
+var themeColors = JSON.parse(JSON.stringify(themeDefaults));
+
+/* ── Products data ── */
+var productsData = [];
+
+/* =========================================================================
+   AUTH
+   ========================================================================= */
+function login() {
+  var k = document.getElementById('key-input').value.trim();
+  if (!k) { showErr('Admin acarini daxil edin.'); return; }
+  var btn = document.querySelector('.auth-btn');
+  btn.disabled = true; btn.textContent = 'Yoxlanir...';
+  fetch('/api/quotes', { headers: { 'x-admin-key': k } })
+    .then(function(r) {
+      if (r.status === 401 || r.status === 403) {
+        showErr('Acar yanlisdir.');
+        btn.disabled = false; btn.textContent = 'Daxil ol';
+        return;
+      }
+      adminKey = k;
+      sessionStorage.setItem(KEY_STORE, k);
+      var roleSelect = document.getElementById('role-select');
+      userRole = roleSelect ? roleSelect.value : 'admin';
+      localStorage.setItem(ROLE_STORE, userRole);
+      showMain();
+    })
+    .catch(function(e) {
+      showErr('Server elaqesi yoxdur. Yeniden cehd edin.');
+      btn.disabled = false;
+      btn.textContent = 'Daxil ol';
+    });
+}
+
+function showErr(msg) {
+  document.getElementById('auth-err').textContent = msg;
+}
+
+function logout() {
+  if (typeof autosaveInterval !== 'undefined') clearInterval(autosaveInterval);
+  if (typeof crmPollInterval !== 'undefined') clearInterval(crmPollInterval);
+  sessionStorage.removeItem(KEY_STORE);
+  adminKey = '';
+  document.getElementById('main-screen').style.display = 'none';
+  document.getElementById('auth-screen').style.display = 'flex';
+  document.getElementById('key-input').value = '';
+  document.getElementById('auth-err').textContent = '';
+}
+
+function showMain() {
+  document.getElementById('auth-screen').style.display = 'none';
+  var ms = document.getElementById('main-screen');
+  ms.style.display = 'flex';
+  updateRoleBadge();
+  applyRoleRestrictions();
+  loadSiteDataFromIframe();
+  selectSection('hero', document.querySelector('.sb-item[data-section="hero"]'));
+  checkAutosave();
+  startAutosave();
+  startCrmPolling();
+  requestNotifPermission();
+}
+
+(function() {
+  var stored = sessionStorage.getItem(KEY_STORE);
+  var storedRole = localStorage.getItem(ROLE_STORE);
+  if (storedRole) userRole = storedRole;
+  if (stored) {
+    adminKey = stored;
+    document.getElementById('key-input').value = stored;
+    if (storedRole) document.getElementById('role-select').value = storedRole;
+    login();
+  }
+})();
+
+/* =========================================================================
+   FEATURE 16: USER ROLES
+   ========================================================================= */
+function updateRoleBadge() {
+  var badge = document.getElementById('hdr-role-badge');
+  var labels = { admin: 'Admin', editor: 'Editor', viewer: 'Viewer' };
+  badge.textContent = labels[userRole] || 'Admin';
+  badge.style.background = userRole === 'admin' ? 'rgba(201,169,110,.15)' : userRole === 'editor' ? 'rgba(96,165,250,.15)' : 'rgba(74,222,128,.15)';
+  badge.style.color = userRole === 'admin' ? 'var(--gold)' : userRole === 'editor' ? 'var(--blue)' : 'var(--green)';
+  badge.style.borderColor = userRole === 'admin' ? 'rgba(201,169,110,.25)' : userRole === 'editor' ? 'rgba(96,165,250,.25)' : 'rgba(74,222,128,.25)';
+}
+
+function applyRoleRestrictions() {
+  var deployBtn = document.getElementById('btn-deploy');
+  var saveAllBtn = document.getElementById('btn-save-all');
+  if (userRole === 'viewer') {
+    deployBtn.style.display = 'none';
+    saveAllBtn.style.display = 'none';
+  } else if (userRole === 'editor') {
+    deployBtn.style.display = 'none';
+    saveAllBtn.style.display = '';
+  } else {
+    deployBtn.style.display = '';
+    saveAllBtn.style.display = '';
+  }
+}
+
+function canEdit() { return userRole !== 'viewer'; }
+function canDeploy() { return userRole === 'admin'; }
+
+/* =========================================================================
+   IFRAME & SECTION NAVIGATION
+   ========================================================================= */
+function toggleSidebar() {
+  var sb = document.getElementById('sidebar');
+  sb.classList.toggle('open');
+}
+
+function reloadPreview() {
+  var iframe = document.getElementById('site-iframe');
+  iframe.src = '/?t=' + Date.now();
+}
+
+function scrollIframeTo(sectionId) {
+  try {
+    var iframe = document.getElementById('site-iframe');
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var map = {
+      hero: '.cover',
+      categories: '#overview',
+      products: '#kimyevi',
+      services: '#xidmetler',
+      trust: '#trust',
+      testimonials: '#trust',
+      faq: '#faq',
+      contact: '#contact'
+    };
+    var sel = map[sectionId];
+    if (sel) {
+      var el = doc.querySelector(sel);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  } catch(e) { /* cross-origin may block */ }
+}
+
+function selectSection(sectionId, el) {
+  currentSection = sectionId;
+  var items = document.querySelectorAll('.sb-item');
+  for (var i = 0; i < items.length; i++) items[i].classList.remove('active');
+  if (el) el.classList.add('active');
+  scrollIframeTo(sectionId);
+  openEditPanel(sectionId);
+}
+
+/* =========================================================================
+   FEATURE 7: RESPONSIVE PREVIEW
+   ========================================================================= */
+var currentPreviewSize = 'desktop';
+
+function setPreviewSize(size, btnEl) {
+  currentPreviewSize = size;
+  var iframe = document.getElementById('site-iframe');
+  var label = document.getElementById('viewport-label');
+  var btns = document.querySelectorAll('.preview-responsive-btn');
+  for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  if (btnEl) btnEl.classList.add('active');
+
+  switch(size) {
+    case 'desktop':
+      iframe.style.width = '100%';
+      label.textContent = '100%';
+      break;
+    case 'tablet':
+      iframe.style.width = '768px';
+      label.textContent = '768px';
+      break;
+    case 'mobile':
+      iframe.style.width = '375px';
+      label.textContent = '375px';
+      break;
+  }
+}
+
+function cyclePreviewSize() {
+  var sizes = ['desktop', 'tablet', 'mobile'];
+  var idx = sizes.indexOf(currentPreviewSize);
+  var next = sizes[(idx + 1) % sizes.length];
+  var btns = document.querySelectorAll('.preview-responsive-btn');
+  setPreviewSize(next, btns[(idx + 1) % sizes.length]);
+}
+
+/* =========================================================================
+   LOAD DATA FROM IFRAME
+   ========================================================================= */
+function loadSiteDataFromIframe() {
+  var iframe = document.getElementById('site-iframe');
+  function onIframeReady() {
+    try { loadSiteDataFromIframeContent(); } catch(e) { console.warn('Iframe data load failed:', e); }
+  }
+  iframe.addEventListener('load', onIframeReady);
+  /* Handle already-loaded iframe */
+  if (iframe.contentDocument && iframe.contentDocument.readyState === 'complete') {
+    onIframeReady();
+  }
+}
+
+function loadSiteDataFromIframeContent() {
+  var iframe = document.getElementById('site-iframe');
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+      var eye = doc.querySelector('.cover .eye');
+      if (eye) siteData.hero.eyebrow = eye.textContent.trim();
+      var h1 = doc.querySelector('.cover .h1');
+      if (h1) {
+        var em = h1.querySelector('em');
+        siteData.hero.h1_em = em ? em.textContent.trim() : '';
+        var full = h1.textContent.trim();
+        siteData.hero.h1_line1 = full.replace(siteData.hero.h1_em, '').trim();
+      }
+      var covp = doc.querySelector('.cover .cov-p');
+      if (covp) siteData.hero.description = covp.textContent.trim();
+      var sts = doc.querySelectorAll('.cover .st');
+      if (sts.length >= 3) {
+        siteData.hero.stat1_num = sts[0].querySelector('.st-n').textContent.trim();
+        siteData.hero.stat1_label = sts[0].querySelector('.st-l').textContent.trim();
+        siteData.hero.stat2_num = sts[1].querySelector('.st-n').textContent.trim();
+        siteData.hero.stat2_label = sts[1].querySelector('.st-l').textContent.trim();
+        siteData.hero.stat3_num = sts[2].querySelector('.st-n').textContent.trim();
+        siteData.hero.stat3_label = sts[2].querySelector('.st-l').textContent.trim();
+      }
+      var covImg = doc.querySelector('.cover .cov-img');
+      if (covImg) siteData.hero.image_url = covImg.src;
+      var cats = doc.querySelectorAll('#overview .cc');
+      if (cats.length) {
+        siteData.categories = [];
+        for (var c = 0; c < cats.length; c++) {
+          var ccn = cats[c].querySelector('.cc-n');
+          var ccname = cats[c].querySelector('.cc-name');
+          var ccmeta = cats[c].querySelector('.cc-meta');
+          var ccimg = cats[c].querySelector('.cc-img');
+          siteData.categories.push({
+            num: ccn ? ccn.textContent.trim() : '',
+            name: ccname ? ccname.textContent.trim() : '',
+            meta: ccmeta ? ccmeta.textContent.trim() : '',
+            image: ccimg ? ccimg.src : ''
+          });
+        }
+      }
+      var svcs = doc.querySelectorAll('#xidmetler .svc');
+      if (svcs.length) {
+        siteData.services = [];
+        for (var s = 0; s < svcs.length; s++) {
+          var sico = svcs[s].querySelector('.svc-ico');
+          var sname = svcs[s].querySelector('.svc-name');
+          var sdesc = svcs[s].querySelector('.svc-desc');
+          var stags = svcs[s].querySelectorAll('.svc-tag');
+          var tagArr = [];
+          for (var t = 0; t < stags.length; t++) tagArr.push(stags[t].textContent.trim());
+          siteData.services.push({
+            icon: sico ? sico.textContent.trim() : '',
+            name: sname ? sname.textContent.trim() : '',
+            desc: sdesc ? sdesc.textContent.trim() : '',
+            tags: tagArr.join(', ')
+          });
+        }
+      }
+      var tss = doc.querySelectorAll('#trust .ts');
+      if (tss.length) {
+        siteData.trust = [];
+        for (var ts = 0; ts < tss.length; ts++) {
+          siteData.trust.push({
+            num: tss[ts].querySelector('.ts-n').textContent.trim(),
+            label: tss[ts].querySelector('.ts-l').textContent.trim()
+          });
+        }
+      }
+      var tcards = doc.querySelectorAll('#trust .tcard');
+      if (tcards.length) {
+        siteData.testimonials = [];
+        for (var tc = 0; tc < tcards.length; tc++) {
+          siteData.testimonials.push({
+            text: tcards[tc].querySelector('.tcard-text').textContent.trim(),
+            author: tcards[tc].querySelector('.tcard-author').textContent.trim(),
+            role: tcards[tc].querySelector('.tcard-role').textContent.trim()
+          });
+        }
+      }
+      var faqItems = doc.querySelectorAll('#faq .faq-item');
+      if (faqItems.length) {
+        siteData.faq = [];
+        for (var fi = 0; fi < faqItems.length; fi++) {
+          var fq = faqItems[fi].querySelector('.faq-q span');
+          var fa = faqItems[fi].querySelector('.faq-a p');
+          siteData.faq.push({
+            q: fq ? fq.textContent.trim() : '',
+            a: fa ? fa.textContent.trim() : ''
+          });
+        }
+      }
+      var cis = doc.querySelectorAll('#contact .ci');
+      if (cis.length >= 5) {
+        var v0 = cis[0].querySelector('.ci-val');
+        if (v0) {
+          var strong0 = v0.querySelector('strong');
+          siteData.contact.company = strong0 ? strong0.textContent.trim() : '';
+          var vt = v0.textContent.trim();
+          var voenMatch = vt.match(/VOEN:\s*(\d+)/);
+          if (voenMatch) siteData.contact.voen = voenMatch[1];
+        }
+        var v1 = cis[1].querySelector('.ci-val');
+        if (v1) siteData.contact.phone = v1.textContent.trim();
+        var v2 = cis[2].querySelector('.ci-val');
+        if (v2) siteData.contact.email = v2.textContent.trim();
+        var v3 = cis[3].querySelector('.ci-val');
+        if (v3) siteData.contact.hours = v3.textContent.trim();
+        var v4 = cis[4].querySelector('.ci-val');
+        if (v4) siteData.contact.delivery = v4.textContent.trim();
+      }
+      /* Load products from iframe */
+      loadProductsFromIframe(doc);
+      if (document.getElementById('edit-panel').classList.contains('open')) {
+        openEditPanel(currentSection);
+      }
+    } catch (e) { /* Iframe may not be loaded or cross-origin */ }
+}
+
+function loadProductsFromIframe(doc) {
+  try {
+    var cards = doc.querySelectorAll('.pcard');
+    if (cards.length) {
+      productsData = [];
+      for (var i = 0; i < cards.length; i++) {
+        var pname = cards[i].querySelector('.pcard-name');
+        var pcode = cards[i].querySelector('.pcard-code');
+        var pimg = cards[i].querySelector('.pcard-img');
+        var specs = cards[i].querySelectorAll('.pcard-spec');
+        var specArr = [];
+        for (var s = 0; s < specs.length; s++) specArr.push(specs[s].textContent.trim());
+        productsData.push({
+          name: pname ? pname.textContent.trim() : 'Mehsul ' + (i+1),
+          code: pcode ? pcode.textContent.trim() : '',
+          specs: specArr,
+          image: pimg ? pimg.src : '',
+          packaging: '',
+          delivery: ''
+        });
+      }
+    }
+  } catch(e) {}
+}
+
+/* =========================================================================
+   EDIT PANEL FORMS
+   ========================================================================= */
+function openEditPanel(section) {
+  var panel = document.getElementById('edit-panel');
+  var title = document.getElementById('ep-title');
+  var body = document.getElementById('ep-body');
+  var footer = document.getElementById('ep-footer');
+  var html = '';
+  var showFooter = true;
+
+  switch(section) {
+    case 'hero':
+      title.textContent = 'Hero / Cover Bolmesi';
+      html = buildLangTabs() + buildHeroForm();
+      break;
+    case 'categories':
+      title.textContent = 'Kateqoriyalar';
+      html = buildCategoriesForm();
+      break;
+    case 'products':
+      title.textContent = 'Mehsullar';
+      html = buildProductsForm();
+      break;
+    case 'services':
+      title.textContent = 'Professional Xidmetler';
+      html = buildServicesForm();
+      break;
+    case 'trust':
+      title.textContent = 'Trust / Statistika';
+      html = buildTrustForm();
+      break;
+    case 'testimonials':
+      title.textContent = 'Musteri Reyleri';
+      html = buildTestimonialsForm();
+      break;
+    case 'faq':
+      title.textContent = 'FAQ - Suallar & Cavablar';
+      html = buildFaqForm();
+      break;
+    case 'contact':
+      title.textContent = 'Elaqe Melumatlari';
+      html = buildContactForm();
+      break;
+    case 'seo':
+      title.textContent = 'SEO Parametrleri';
+      html = buildSeoForm();
+      break;
+    case 'analytics':
+      title.textContent = 'Analitika';
+      html = buildAnalyticsPanel();
+      showFooter = false;
+      break;
+    case 'images':
+      title.textContent = 'Sekil Optimallasdirma';
+      html = buildImagesPanel();
+      showFooter = false;
+      break;
+    case 'theme':
+      title.textContent = 'Tema / Reng Secimi';
+      html = buildThemePanel();
+      break;
+    case 'crm':
+      title.textContent = 'CRM - Mesajlar';
+      html = buildCrmPanel();
+      showFooter = false;
+      break;
+    case 'versions':
+      title.textContent = 'Tarixce';
+      html = buildVersionsPanel();
+      showFooter = false;
+      break;
+    case 'activitylog':
+      title.textContent = 'Emeliyyat Jurnali';
+      html = buildActivityLogPanel();
+      showFooter = false;
+      break;
+    case 'aiwriter':
+      title.textContent = 'Sablon Yazici';
+      html = buildAiWriterPanel();
+      showFooter = false;
+      break;
+    case 'backup':
+      title.textContent = 'Backup / Berpa';
+      html = buildBackupPanel();
+      showFooter = false;
+      break;
+    default:
+      html = '<p style="color:var(--muted)">Bu bolme ucun redaktor movcud deyil.</p>';
+      showFooter = false;
+  }
+
+  body.innerHTML = html;
+  footer.style.display = showFooter ? 'flex' : 'none';
+  if (!canEdit() && showFooter) {
+    footer.style.display = 'none';
+  }
+  panel.classList.add('open');
+}
+
+function closePanel() {
+  document.getElementById('edit-panel').classList.remove('open');
+}
+
+/* =========================================================================
+   FEATURE 9: MULTI-LANGUAGE TABS
+   ========================================================================= */
+function buildLangTabs() {
+  return '<div class="lang-tabs">' +
+    '<button class="lang-tab' + (currentLang === 'az' ? ' active' : '') + '" onclick="switchLang(\'az\',this)">AZ</button>' +
+    '<button class="lang-tab' + (currentLang === 'en' ? ' active' : '') + '" onclick="switchLang(\'en\',this)">EN</button>' +
+    '<button class="lang-tab' + (currentLang === 'ru' ? ' active' : '') + '" onclick="switchLang(\'ru\',this)">RU</button>' +
+  '</div>';
+}
+
+function switchLang(lang, btn) {
+  /* Save current form data back to the previous language translation store before switching */
+  if (currentLang !== 'az' && currentSection) {
+    var currentData = collectCurrentSection();
+    if (currentData) {
+      if (!translations[currentLang]) translations[currentLang] = {};
+      translations[currentLang][currentSection] = currentData;
+    }
+  } else if (currentLang === 'az' && currentSection) {
+    /* For AZ, save to siteData directly */
+    var azData = collectCurrentSection();
+    if (azData && siteData[currentSection] !== undefined) {
+      siteData[currentSection] = azData;
+    }
+  }
+  currentLang = lang;
+  /* Load translations for the selected language into the form */
+  if (lang !== 'az' && translations[lang] && translations[lang][currentSection]) {
+    /* Temporarily override siteData for form rendering */
+    var backup = siteData[currentSection] ? JSON.parse(JSON.stringify(siteData[currentSection])) : null;
+    var translated = translations[lang][currentSection];
+    if (backup && typeof backup === 'object' && !Array.isArray(backup)) {
+      /* Merge: use translation where available, fall back to AZ */
+      var merged = JSON.parse(JSON.stringify(backup));
+      Object.keys(translated).forEach(function(k) { merged[k] = translated[k]; });
+      siteData[currentSection] = merged;
+    }
+    openEditPanel(currentSection);
+    /* Restore original AZ data */
+    if (backup) siteData[currentSection] = backup;
+  } else {
+    openEditPanel(currentSection);
+  }
+}
+
+function getLangPlaceholder(field) {
+  if (currentLang === 'az') return '';
+  var label = currentLang === 'en' ? 'English' : 'Russian';
+  return ' (Tercume: ' + label + ')';
+}
+
+/* ── Hero form ── */
+function buildHeroForm() {
+  var d = getDataWithChanges('hero');
+  var ph = getLangPlaceholder();
+  return '' +
+    '<div class="fg-section">Basliq</div>' +
+    '<div class="fg"><label>Eyebrow (alt yazi)</label><input type="text" id="f-hero-eyebrow" value="' + esc(d.eyebrow) + '" placeholder="' + esc(ph) + '"></div>' +
+    '<div class="fg"><label>H1 - Birinci setir</label><input type="text" id="f-hero-h1" value="' + esc(d.h1_line1) + '"></div>' +
+    '<div class="fg"><label>H1 - Vurgulanmis (italic)</label><input type="text" id="f-hero-em" value="' + esc(d.h1_em) + '"></div>' +
+    '<div class="fg"><label>Tesvir paragrafi</label>' +
+      buildRichTextToolbar('hero-desc') +
+      '<div class="rt-editable" id="f-hero-desc" contenteditable="' + (canEdit() ? 'true' : 'false') + '">' + esc(d.description) + '</div>' +
+    '</div>' +
+    '<div class="fg-divider"></div>' +
+    '<div class="fg-section">Statistika</div>' +
+    '<div class="fg-grid">' +
+      '<div class="fg"><label>Rekem 1</label><input type="text" id="f-hero-s1n" value="' + esc(d.stat1_num) + '"></div>' +
+      '<div class="fg"><label>Etiket 1</label><input type="text" id="f-hero-s1l" value="' + esc(d.stat1_label) + '"></div>' +
+    '</div>' +
+    '<div class="fg-grid">' +
+      '<div class="fg"><label>Rekem 2</label><input type="text" id="f-hero-s2n" value="' + esc(d.stat2_num) + '"></div>' +
+      '<div class="fg"><label>Etiket 2</label><input type="text" id="f-hero-s2l" value="' + esc(d.stat2_label) + '"></div>' +
+    '</div>' +
+    '<div class="fg-grid">' +
+      '<div class="fg"><label>Rekem 3</label><input type="text" id="f-hero-s3n" value="' + esc(d.stat3_num) + '"></div>' +
+      '<div class="fg"><label>Etiket 3</label><input type="text" id="f-hero-s3l" value="' + esc(d.stat3_label) + '"></div>' +
+    '</div>' +
+    '<div class="fg-divider"></div>' +
+    '<div class="fg-section">CTA & Sekil</div>' +
+    '<div class="fg"><label>CTA Button metnin</label><input type="text" id="f-hero-cta" value="' + esc(d.cta_text) + '"></div>' +
+    '<div class="fg"><label>Cover sekil URL</label>' +
+      '<div class="img-preview" onclick="openImageModal(\'hero\',\'image_url\')">' +
+        (d.image_url ? '<img src="' + esc(d.image_url) + '" alt="Cover">' : '<span class="img-placeholder">&#128247;</span>') +
+        '<div class="img-overlay"><span>Sekil deyis</span></div>' +
+      '</div>' +
+      '<input type="url" id="f-hero-img" value="' + esc(d.image_url) + '" placeholder="https://...">' +
+    '</div>';
+}
+
+/* ── Categories form ── */
+function buildCategoriesForm() {
+  var cats = getDataWithChanges('categories');
+  var html = '';
+  for (var i = 0; i < cats.length; i++) {
+    html += '<div class="rep-item">' +
+      '<span class="rep-num">#' + (i+1) + '</span>' +
+      '<div class="fg" style="margin-top:8px"><label>Ad</label><input type="text" class="cat-name" data-idx="' + i + '" value="' + esc(cats[i].name) + '"></div>' +
+      '<div class="fg"><label>Meta (mehsul sayi)</label><input type="text" class="cat-meta" data-idx="' + i + '" value="' + esc(cats[i].meta) + '"></div>' +
+      '<div class="fg"><label>Sekil URL</label>' +
+        '<div class="img-preview" onclick="openImageModal(\'categories\',' + i + ')">' +
+          (cats[i].image ? '<img src="' + esc(cats[i].image) + '" alt="' + esc(cats[i].name) + '">' : '<span class="img-placeholder">&#128247;</span>') +
+          '<div class="img-overlay"><span>Sekil deyis</span></div>' +
+        '</div>' +
+        '<input type="url" class="cat-img" data-idx="' + i + '" value="' + esc(cats[i].image) + '" placeholder="https://...">' +
+      '</div>' +
+    '</div>';
+  }
+  return html;
+}
+
+/* =========================================================================
+   FEATURE 4: PRODUCT CRUD
+   ========================================================================= */
+function buildProductsForm() {
+  var html = '<div class="fg-section">Mehsullar (' + productsData.length + ')</div>';
+  if (productsData.length === 0) {
+    html += '<p style="color:var(--muted);font-size:12px;margin-bottom:12px">Mehsullar iframe-den yuklenecek ve ya asagida elave edin.</p>';
+  }
+  for (var i = 0; i < productsData.length; i++) {
+    html += '<div class="product-item" onclick="editProduct(' + i + ')">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center">' +
+        '<div><div class="product-name">' + esc(productsData[i].name) + '</div>' +
+        '<div class="product-code">' + esc(productsData[i].code) + '</div></div>' +
+        '<div style="display:flex;gap:4px">' +
+          (i > 0 ? '<button class="rep-reorder" style="display:inline" onclick="event.stopPropagation();moveProduct(' + i + ',-1)" title="Yuxari">&#9650;</button>' : '') +
+          (i < productsData.length - 1 ? '<button class="rep-reorder" style="display:inline" onclick="event.stopPropagation();moveProduct(' + i + ',1)" title="Asagi">&#9660;</button>' : '') +
+          '<button style="background:none;border:none;color:var(--red);cursor:pointer;font-size:14px;padding:2px 6px" onclick="event.stopPropagation();deleteProduct(' + i + ')" title="Sil">&times;</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+  html += '<button class="rep-add" onclick="addNewProduct()">+ Mehsul elave et</button>';
+  html += '<div id="product-edit-form"></div>';
+  return html;
+}
+
+function addNewProduct() {
+  if (!canEdit()) return;
+  productsData.push({ name: '', code: '', specs: [], image: '', packaging: '', delivery: '' });
+  editProduct(productsData.length - 1);
+  logActivity('products', 'add', '', 'Yeni mehsul elave edildi');
+}
+
+function editProduct(idx) {
+  var p = productsData[idx];
+  var formEl = document.getElementById('product-edit-form');
+  if (!formEl) return;
+  formEl.innerHTML =
+    '<div class="product-form">' +
+      '<div class="fg-section">Mehsul #' + (idx+1) + ' redaktesi</div>' +
+      '<div class="fg"><label>Ad</label><input type="text" id="pe-name" value="' + esc(p.name) + '"></div>' +
+      '<div class="fg"><label>Kod</label><input type="text" id="pe-code" value="' + esc(p.code) + '"></div>' +
+      '<div class="fg"><label>Tesvir setirleri (her setir ayri)</label><textarea id="pe-specs">' + esc(p.specs.join('\n')) + '</textarea></div>' +
+      '<div class="fg"><label>Sekil URL</label><input type="url" id="pe-image" value="' + esc(p.image) + '"></div>' +
+      '<div class="fg"><label>Qablasdirma</label><input type="text" id="pe-pack" value="' + esc(p.packaging) + '"></div>' +
+      '<div class="fg"><label>Catdirilma</label><input type="text" id="pe-delivery" value="' + esc(p.delivery) + '"></div>' +
+      '<button class="ep-save" style="width:100%;margin-top:8px" onclick="saveProduct(' + idx + ')">Mehsulu saxla</button>' +
+    '</div>';
+}
+
+function saveProduct(idx) {
+  var old = JSON.stringify(productsData[idx]);
+  productsData[idx] = {
+    name: val('pe-name'),
+    code: val('pe-code'),
+    specs: val('pe-specs').split('\n').filter(function(s) { return s.trim(); }),
+    image: val('pe-image'),
+    packaging: val('pe-pack'),
+    delivery: val('pe-delivery')
+  };
+  logActivity('products', 'edit', old, JSON.stringify(productsData[idx]));
+  openEditPanel('products');
+  toast('Mehsul saxlandi: ' + productsData[idx].name);
+}
+
+function deleteProduct(idx) {
+  if (!canEdit()) return;
+  if (!confirm('Bu mehsulu silmek isteyirsiniz?\n' + productsData[idx].name)) return;
+  var removed = productsData.splice(idx, 1);
+  logActivity('products', 'delete', removed[0].name, '');
+  openEditPanel('products');
+  toast('Mehsul silindi.');
+}
+
+function moveProduct(idx, dir) {
+  var newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= productsData.length) return;
+  var tmp = productsData[idx];
+  productsData[idx] = productsData[newIdx];
+  productsData[newIdx] = tmp;
+  openEditPanel('products');
+}
+
+/* ── Services form ── */
+function buildServicesForm() {
+  var svcs = getDataWithChanges('services');
+  var html = '';
+  for (var i = 0; i < svcs.length; i++) {
+    html += '<div class="rep-item">' +
+      '<span class="rep-num">#' + (i+1) + '</span>' +
+      '<div class="rep-reorder">' +
+        (i > 0 ? '<button onclick="reorderService(' + i + ',-1)" title="Yuxari">&#9650;</button>' : '') +
+        (i < svcs.length - 1 ? '<button onclick="reorderService(' + i + ',1)" title="Asagi">&#9660;</button>' : '') +
+      '</div>' +
+      '<button class="rep-remove" onclick="removeServiceItem(' + i + ')" title="Sil">&times;</button>' +
+      '<div class="fg" style="margin-top:8px"><label>Icon (emoji)</label><input type="text" class="svc-icon" data-idx="' + i + '" value="' + esc(svcs[i].icon) + '" style="max-width:60px"></div>' +
+      '<div class="fg"><label>Xidmet adi</label><input type="text" class="svc-name" data-idx="' + i + '" value="' + esc(svcs[i].name) + '"></div>' +
+      '<div class="fg"><label>Tesvir</label>' +
+        buildRichTextToolbar('svc-desc-' + i) +
+        '<div class="rt-editable svc-desc" data-idx="' + i + '" contenteditable="' + (canEdit() ? 'true' : 'false') + '">' + esc(svcs[i].desc) + '</div>' +
+      '</div>' +
+      '<div class="fg"><label>Etiketler (vergul ile)</label><input type="text" class="svc-tags" data-idx="' + i + '" value="' + esc(svcs[i].tags) + '"></div>' +
+    '</div>';
+  }
+  html += '<button class="rep-add" onclick="addServiceItem()">+ Xidmet elave et</button>';
+  return html;
+}
+
+function reorderService(idx, dir) {
+  var svcs = getDataWithChanges('services');
+  var newIdx = idx + dir;
+  if (newIdx < 0 || newIdx >= svcs.length) return;
+  var tmp = svcs[idx]; svcs[idx] = svcs[newIdx]; svcs[newIdx] = tmp;
+  siteData.services = svcs;
+  openEditPanel('services');
+}
+
+/* ── Trust form ── */
+function buildTrustForm() {
+  var trust = getDataWithChanges('trust');
+  var html = '<div class="fg-section">Statistika</div>';
+  for (var i = 0; i < trust.length; i++) {
+    html += '<div class="fg-grid">' +
+      '<div class="fg"><label>Rekem #' + (i+1) + '</label><input type="text" class="trust-num" data-idx="' + i + '" value="' + esc(trust[i].num) + '"></div>' +
+      '<div class="fg"><label>Etiket #' + (i+1) + '</label><input type="text" class="trust-label" data-idx="' + i + '" value="' + esc(trust[i].label) + '"></div>' +
+    '</div>';
+  }
+  return html;
+}
+
+/* ── Testimonials form ── */
+function buildTestimonialsForm() {
+  var tms = getDataWithChanges('testimonials');
+  var html = '';
+  for (var i = 0; i < tms.length; i++) {
+    html += '<div class="rep-item">' +
+      '<span class="rep-num">Rey #' + (i+1) + '</span>' +
+      '<button class="rep-remove" onclick="removeTestimonialItem(' + i + ')" title="Sil">&times;</button>' +
+      '<div class="fg" style="margin-top:8px"><label>Rey metni</label><textarea class="tm-text" data-idx="' + i + '">' + esc(tms[i].text) + '</textarea></div>' +
+      '<div class="fg-grid">' +
+        '<div class="fg"><label>Muellif</label><input type="text" class="tm-author" data-idx="' + i + '" value="' + esc(tms[i].author) + '"></div>' +
+        '<div class="fg"><label>Vezife / Otel</label><input type="text" class="tm-role" data-idx="' + i + '" value="' + esc(tms[i].role) + '"></div>' +
+      '</div>' +
+    '</div>';
+  }
+  html += '<button class="rep-add" onclick="addTestimonialItem()">+ Rey elave et</button>';
+  return html;
+}
+
+/* ── FAQ form ── */
+function buildFaqForm() {
+  var faqs = getDataWithChanges('faq');
+  var html = '';
+  for (var i = 0; i < faqs.length; i++) {
+    html += '<div class="rep-item">' +
+      '<span class="rep-num">FAQ #' + (i+1) + '</span>' +
+      '<button class="rep-remove" onclick="removeFaqItem(' + i + ')" title="Sil">&times;</button>' +
+      '<div class="fg" style="margin-top:8px"><label>Sual</label><input type="text" class="faq-q" data-idx="' + i + '" value="' + esc(faqs[i].q) + '"></div>' +
+      '<div class="fg"><label>Cavab</label>' +
+        buildRichTextToolbar('faq-a-' + i) +
+        '<div class="rt-editable faq-a" data-idx="' + i + '" contenteditable="' + (canEdit() ? 'true' : 'false') + '">' + esc(faqs[i].a) + '</div>' +
+      '</div>' +
+    '</div>';
+  }
+  html += '<button class="rep-add" onclick="addFaqItem()">+ Sual elave et</button>';
+  return html;
+}
+
+/* ── Contact form ── */
+function buildContactForm() {
+  var d = getDataWithChanges('contact');
+  return '' +
+    '<div class="fg-section">Sirket</div>' +
+    '<div class="fg"><label>Sirket adi</label><input type="text" id="f-ct-company" value="' + esc(d.company) + '"></div>' +
+    '<div class="fg"><label>VOEN</label><input type="text" id="f-ct-voen" value="' + esc(d.voen) + '"></div>' +
+    '<div class="fg"><label>Unvan</label><input type="text" id="f-ct-address" value="' + esc(d.address) + '"></div>' +
+    '<div class="fg-divider"></div>' +
+    '<div class="fg-section">Elaqe</div>' +
+    '<div class="fg"><label>Telefon</label><input type="tel" id="f-ct-phone" value="' + esc(d.phone) + '"></div>' +
+    '<div class="fg"><label>Email</label><input type="email" id="f-ct-email" value="' + esc(d.email) + '"></div>' +
+    '<div class="fg"><label>Is saati</label><input type="text" id="f-ct-hours" value="' + esc(d.hours) + '"></div>' +
+    '<div class="fg"><label>Catdirilma</label><input type="text" id="f-ct-delivery" value="' + esc(d.delivery) + '"></div>';
+}
+
+/* =========================================================================
+   FEATURE 10: SEO PANEL
+   ========================================================================= */
+function buildSeoForm() {
+  var d = seoData;
+  return '' +
+    '<div class="fg-section">Sehife SEO</div>' +
+    '<div class="fg"><label>Sehife basligi (title)</label><input type="text" id="f-seo-title" value="' + esc(d.page_title) + '" oninput="updateCharCount(this,60,\'seo-title-cc\')">' +
+      '<div class="fg-charcount" id="seo-title-cc">' + d.page_title.length + '/60</div></div>' +
+    '<div class="fg"><label>Meta description</label><textarea id="f-seo-desc" oninput="updateCharCount(this,160,\'seo-desc-cc\')">' + esc(d.meta_description) + '</textarea>' +
+      '<div class="fg-charcount" id="seo-desc-cc">' + d.meta_description.length + '/160</div></div>' +
+    '<div class="fg-divider"></div>' +
+    '<div class="fg-section">Open Graph</div>' +
+    '<div class="fg"><label>OG Title</label><input type="text" id="f-seo-ogtitle" value="' + esc(d.og_title) + '"></div>' +
+    '<div class="fg"><label>OG Description</label><textarea id="f-seo-ogdesc">' + esc(d.og_description) + '</textarea></div>' +
+    '<div class="fg"><label>OG Image URL</label><input type="url" id="f-seo-ogimg" value="' + esc(d.og_image) + '" placeholder="https://..."></div>' +
+    '<div class="fg-divider"></div>' +
+    '<div class="fg"><label>Acar sozler (vergul ile)</label><textarea id="f-seo-keywords" style="min-height:60px">' + esc(d.keywords) + '</textarea></div>';
+}
+
+function updateCharCount(el, max, targetId) {
+  var cc = document.getElementById(targetId);
+  if (!cc) return;
+  var len = el.value ? el.value.length : el.textContent ? el.textContent.length : 0;
+  cc.textContent = len + '/' + max;
+  cc.className = 'fg-charcount' + (len > max ? ' over' : '');
+}
+
+/* =========================================================================
+   FEATURE 11: ANALYTICS DASHBOARD
+   ========================================================================= */
+function buildAnalyticsPanel() {
+  return '' +
+    '<div class="fg-section">Sayt Analitikasi <span style="display:inline-block;background:rgba(251,191,36,.15);color:var(--yellow);font-size:9px;padding:2px 8px;border-radius:10px;margin-left:8px;font-weight:700;letter-spacing:.08em">Tezlikle</span></div>' +
+    '<div class="an-grid">' +
+      '<div class="an-card"><div class="an-card-num">--</div><div class="an-card-label">Ziyaretci</div></div>' +
+      '<div class="an-card"><div class="an-card-num">--</div><div class="an-card-label">Sehife baxisi</div></div>' +
+      '<div class="an-card"><div class="an-card-num">--</div><div class="an-card-label">Orta muddet</div></div>' +
+      '<div class="an-card"><div class="an-card-num">--</div><div class="an-card-label">Bounce rate</div></div>' +
+    '</div>' +
+    '<div class="fg-divider"></div>' +
+    '<div class="fg-section">Son 7 gun</div>' +
+    '<div class="an-grid">' +
+      '<div class="an-card"><div class="an-card-num">--</div><div class="an-card-label">Yeni ziyaretci</div></div>' +
+      '<div class="an-card"><div class="an-card-num">--</div><div class="an-card-label">Sorgu sayı</div></div>' +
+    '</div>' +
+    '<p style="color:var(--muted);font-size:11px;margin-top:16px;padding:12px;background:var(--bg3);border:1px solid var(--border);border-radius:4px;line-height:1.7">' +
+      'Wix Analytics API ile elaqelendirilecek. Bu panel canli melumatlar ucun API konfiqurasiyasi teleb edir.' +
+    '</p>';
+}
+
+/* =========================================================================
+   FEATURE 12: BULK IMAGE OPTIMIZER
+   ========================================================================= */
+function buildImagesPanel() {
+  var images = collectAllImages();
+  var html = '<div class="fg-section">Saytdaki sekiller (' + images.length + ')</div>';
+  html += '<button class="ep-save" style="width:100%;margin-bottom:16px" onclick="optimizeAllImages()">Hamsini optimize et (&fm=webp&q=75)</button>';
+  for (var i = 0; i < images.length; i++) {
+    html += '<div class="img-list-item">' +
+      '<div class="img-list-thumb"><img src="' + esc(images[i].url) + '" alt="" onerror="this.style.display=\'none\'"></div>' +
+      '<div class="img-list-info">' +
+        '<div class="img-list-url">' + esc(images[i].url.substring(0, 60)) + '...</div>' +
+        '<div class="img-list-size">' + esc(images[i].source) + '</div>' +
+      '</div>' +
+    '</div>';
+  }
+  if (images.length === 0) {
+    html += '<p style="color:var(--muted);font-size:12px">Sekil tapilmadi.</p>';
+  }
+  return html;
+}
+
+function collectAllImages() {
+  var imgs = [];
+  if (siteData.hero.image_url) imgs.push({ url: siteData.hero.image_url, source: 'Hero cover' });
+  for (var i = 0; i < siteData.categories.length; i++) {
+    if (siteData.categories[i].image) imgs.push({ url: siteData.categories[i].image, source: 'Kateqoriya: ' + siteData.categories[i].name });
+  }
+  for (var i = 0; i < productsData.length; i++) {
+    if (productsData[i].image) imgs.push({ url: productsData[i].image, source: 'Mehsul: ' + productsData[i].name });
+  }
+  return imgs;
+}
+
+function optimizeAllImages() {
+  var count = 0;
+  if (siteData.hero.image_url && siteData.hero.image_url.indexOf('unsplash.com') !== -1) {
+    siteData.hero.image_url = addWebpParams(siteData.hero.image_url);
+    count++;
+  }
+  for (var i = 0; i < siteData.categories.length; i++) {
+    if (siteData.categories[i].image && siteData.categories[i].image.indexOf('unsplash.com') !== -1) {
+      siteData.categories[i].image = addWebpParams(siteData.categories[i].image);
+      count++;
+    }
+  }
+  toast(count + ' sekil optimize edildi (WebP + q=75)');
+  openEditPanel('images');
+}
+
+function addWebpParams(url) {
+  if (url.indexOf('fm=webp') === -1) {
+    url += (url.indexOf('?') === -1 ? '?' : '&') + 'fm=webp';
+  }
+  if (url.indexOf('q=') === -1) {
+    url += '&q=75';
+  }
+  return url;
+}
+
+/* =========================================================================
+   FEATURE 13: COLOR/THEME PICKER
+   ========================================================================= */
+function buildThemePanel() {
+  var vars = [
+    { key: 'gold', label: 'Gold (Ana reng)', def: '#C9A96E' },
+    { key: 'bg', label: 'Background', def: '#07111C' },
+    { key: 'bg2', label: 'Background 2', def: '#0d1f30' },
+    { key: 'bg3', label: 'Background 3', def: '#112333' }
+  ];
+  var html = '<div class="fg-section">Reng deyiskenleri</div>';
+  for (var i = 0; i < vars.length; i++) {
+    var v = vars[i];
+    var cur = themeColors[v.key] || v.def;
+    html += '<div class="color-row">' +
+      '<label>' + esc(v.label) + '</label>' +
+      '<input type="color" value="' + cur + '" onchange="updateThemeColor(\'' + v.key + '\',this.value)" data-theme-key="' + v.key + '">' +
+      '<input type="text" value="' + cur + '" onchange="updateThemeColor(\'' + v.key + '\',this.value)" data-theme-text="' + v.key + '">' +
+    '</div>';
+  }
+  html += '<div class="fg-divider"></div>';
+  html += '<button class="ep-save" style="width:100%" onclick="resetTheme()">Defolt renglere qayit</button>';
+  return html;
+}
+
+function updateThemeColor(key, newValue) {
+  themeColors[key] = newValue;
+  /* Update paired inputs */
+  var colorInput = document.querySelector('[data-theme-key="' + key + '"]');
+  var textInput = document.querySelector('[data-theme-text="' + key + '"]');
+  if (colorInput) colorInput.value = newValue;
+  if (textInput) textInput.value = newValue;
+  /* Apply to iframe */
+  applyThemeToIframe();
+}
+
+function applyThemeToIframe() {
+  try {
+    var iframe = document.getElementById('site-iframe');
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var root = doc.documentElement;
+    if (themeColors.gold) root.style.setProperty('--gold', themeColors.gold);
+    if (themeColors.bg) root.style.setProperty('--bg', themeColors.bg);
+    if (themeColors.bg2) root.style.setProperty('--bg2', themeColors.bg2);
+    if (themeColors.bg3) root.style.setProperty('--bg3', themeColors.bg3);
+  } catch(e) {}
+}
+
+function resetTheme() {
+  themeColors = JSON.parse(JSON.stringify(themeDefaults));
+  applyThemeToIframe();
+  openEditPanel('theme');
+  toast('Tema defolt renglere qaytarildi.');
+}
+
+/* =========================================================================
+   FEATURE 14: CRM PANEL
+   ========================================================================= */
+function buildCrmPanel() {
+  var html = '<div class="fg-section">Elaqe Mesajlari</div>';
+  html += '<button class="ep-save" style="width:100%;margin-bottom:12px" onclick="loadCrmData()">Melumatlari yenile</button>';
+
+  if (crmContacts.length === 0 && crmQuotes.length === 0) {
+    html += '<p style="color:var(--muted);font-size:12px;margin-bottom:12px">Melumat yuklenmir. "Melumatlari yenile" basın ve ya /api/contact ve /api/quotes endpointleri yoxlayin.</p>';
+  }
+
+  if (crmContacts.length > 0) {
+    html += '<div class="fg-section" style="margin-top:12px">Elaqe formasi (' + crmContacts.length + ')</div>';
+    html += '<table class="crm-table"><tr><th>Tarix</th><th>Ad</th><th>Email</th><th>Status</th></tr>';
+    for (var i = 0; i < crmContacts.length; i++) {
+      var c = crmContacts[i];
+      html += '<tr onclick="showCrmDetail(\'contact\',' + i + ')" style="cursor:pointer">' +
+        '<td>' + esc(formatDate(c.date || c.createdAt)) + '</td>' +
+        '<td>' + esc(c.name || c.fullName || '-') + '</td>' +
+        '<td>' + esc(c.email || '-') + '</td>' +
+        '<td><span class="crm-status crm-status-' + (c.status || 'new') + '">' + esc(c.status || 'Yeni') + '</span></td>' +
+      '</tr>';
+    }
+    html += '</table>';
+  }
+
+  if (crmQuotes.length > 0) {
+    html += '<div class="fg-section" style="margin-top:16px">Qiymet sorqulari (' + crmQuotes.length + ')</div>';
+    html += '<table class="crm-table"><tr><th>Tarix</th><th>Ad</th><th>Otel</th><th>Status</th></tr>';
+    for (var i = 0; i < crmQuotes.length; i++) {
+      var q = crmQuotes[i];
+      html += '<tr onclick="showCrmDetail(\'quote\',' + i + ')" style="cursor:pointer">' +
+        '<td>' + esc(formatDate(q.date || q.createdAt)) + '</td>' +
+        '<td>' + esc(q.name || q.fullName || '-') + '</td>' +
+        '<td>' + esc(q.hotel || q.hotelName || '-') + '</td>' +
+        '<td><span class="crm-status crm-status-' + (q.status || 'new') + '">' + esc(q.status || 'Yeni') + '</span></td>' +
+      '</tr>';
+    }
+    html += '</table>';
+  }
+  return html;
+}
+
+function loadCrmData() {
+  /* NOTE: x-admin-role sent for future server-side role enforcement (backend implementation needed) */
+  var headers = { 'x-admin-key': adminKey, 'x-admin-role': userRole };
+  /* Show loading state in CRM panel */
+  var epBody = document.getElementById('ep-body');
+  if (epBody && currentSection === 'crm') {
+    epBody.innerHTML = '<div class="fg-section">Yuklenir...</div><p style="color:var(--muted);font-size:12px">CRM melumatlari yuklenir...</p>';
+  }
+  Promise.all([
+    fetch('/api/contact', { headers: headers }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
+    fetch('/api/quotes', { headers: headers }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; })
+  ]).then(function(results) {
+    crmContacts = Array.isArray(results[0]) ? results[0] : (results[0].messages || results[0].data || results[0]);
+    crmQuotes = Array.isArray(results[1]) ? results[1] : (results[1].quotes || results[1].data || results[1]);
+    if (!Array.isArray(crmContacts)) crmContacts = [];
+    if (!Array.isArray(crmQuotes)) crmQuotes = [];
+    updateCrmBadge();
+    openEditPanel('crm');
+    toast('CRM melumatlari yuklendi.');
+  });
+}
+
+function showCrmDetail(type, idx) {
+  var items = type === 'contact' ? crmContacts : crmQuotes;
+  var item = items[idx];
+  if (!item) return;
+  var html = '<div style="max-width:500px">';
+  Object.keys(item).forEach(function(key) {
+    if (key === '_id' || key === '__v') return;
+    html += '<div style="padding:8px 0;border-bottom:1px solid var(--border);display:flex;gap:12px">';
+    html += '<span style="color:var(--gold);font-size:10px;text-transform:uppercase;letter-spacing:.1em;min-width:80px;flex-shrink:0">' + esc(key) + '</span>';
+    html += '<span style="color:var(--white);font-size:13px;word-break:break-word">' + esc(String(item[key] || '\u2014')) + '</span>';
+    html += '</div>';
+  });
+  html += '</div>';
+  /* Use existing modal infrastructure */
+  var overlay = document.getElementById('modal-json');
+  overlay.querySelector('.modal-title').textContent = type === 'contact' ? 'Mesaj Detali' : 'Sorgu Detali';
+  document.getElementById('json-output').innerHTML = html;
+  document.getElementById('json-output').style.whiteSpace = 'normal';
+  overlay.classList.add('open');
+}
+
+function updateCrmBadge() {
+  var total = crmContacts.length + crmQuotes.length;
+  var badge = document.getElementById('crm-badge');
+  if (total > 0) {
+    badge.style.display = '';
+    badge.textContent = total;
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+/* =========================================================================
+   FEATURE 5: RICH TEXT EDITOR
+   ========================================================================= */
+function buildRichTextToolbar(id) {
+  return '<div class="rt-toolbar">' +
+    '<button class="rt-btn" onclick="rtCmd(\'bold\')" title="Qalin (Ctrl+B)"><b>B</b></button>' +
+    '<button class="rt-btn" onclick="rtCmd(\'italic\')" title="Italik (Ctrl+I)"><i>I</i></button>' +
+    '<button class="rt-btn" onclick="rtCmdLink()" title="Link">&#128279;</button>' +
+  '</div>';
+}
+
+function rtCmd(cmd) {
+  document.execCommand(cmd, false, null);
+}
+
+function rtCmdLink() {
+  var url = prompt('Link URL daxil edin:', 'https://');
+  if (url && (url.toLowerCase().startsWith('javascript:') || url.toLowerCase().startsWith('data:'))) {
+    alert('Bu URL formati icaze verilmir.'); return;
+  }
+  if (url) document.execCommand('createLink', false, url);
+}
+
+/* =========================================================================
+   FEATURE 8: VERSION HISTORY
+   ========================================================================= */
+function buildVersionsPanel() {
+  var versions = getVersions();
+  var html = '<div class="fg-section">Saxlama tarixcesi (' + versions.length + '/20)</div>';
+  if (versions.length === 0) {
+    html += '<p style="color:var(--muted);font-size:12px">"Saxla" emeliyyati apardiqda versiyalar burada gorsenecek.</p>';
+  }
+  for (var i = versions.length - 1; i >= 0; i--) {
+    var v = versions[i];
+    html += '<div class="version-item">' +
+      '<div style="flex:1">' +
+        '<div class="version-time">' + esc(formatDate(v.timestamp)) + '</div>' +
+        '<div class="version-sections">' + esc((v.sections || []).join(', ')) + '</div>' +
+      '</div>' +
+      '<button class="version-restore-btn" onclick="restoreVersion(' + i + ')">Berpa et</button>' +
+    '</div>';
+  }
+  return html;
+}
+
+function getVersions() {
+  try { return JSON.parse(localStorage.getItem(VERSIONS_KEY)) || []; } catch(e) { return []; }
+}
+
+function saveVersion() {
+  var versions = getVersions();
+  versions.push({
+    timestamp: new Date().toISOString(),
+    sections: Object.keys(changes).length > 0 ? Object.keys(changes) : [currentSection],
+    data: JSON.parse(JSON.stringify(siteData))
+  });
+  if (versions.length > 20) versions = versions.slice(versions.length - 20);
+  localStorage.setItem(VERSIONS_KEY, JSON.stringify(versions));
+}
+
+function restoreVersion(idx) {
+  var versions = getVersions();
+  if (!versions[idx]) return;
+  if (!confirm('Bu versiyani berpa etmek isteyirsiniz? Movcud deyisiklikler itirilecek.')) return;
+  siteData = JSON.parse(JSON.stringify(versions[idx].data));
+  changes = {};
+  updateChangeIndicator();
+  openEditPanel(currentSection);
+  reloadPreview();
+  toast('Versiya berpa edildi: ' + formatDate(versions[idx].timestamp));
+}
+
+/* =========================================================================
+   FEATURE 17: ACTIVITY LOG
+   ========================================================================= */
+function buildActivityLogPanel() {
+  var logs = getActivityLog();
+  var html = '<div class="fg-section">Son emeliyyatlar (' + logs.length + '/100)</div>';
+  html += '<button class="ep-save" style="width:100%;margin-bottom:12px" onclick="exportActivityLog()">CSV olaraq yukle</button>';
+  if (logs.length === 0) {
+    html += '<p style="color:var(--muted);font-size:12px">Heq bir emeliyyat qeyd edilmeyib.</p>';
+  }
+  for (var i = logs.length - 1; i >= 0 && i >= logs.length - 50; i--) {
+    var l = logs[i];
+    html += '<div class="log-entry">' +
+      '<div class="log-time">' + esc(formatDate(l.timestamp)) + '</div>' +
+      '<div class="log-action"><span class="log-field">[' + esc(l.section) + ']</span> ' + esc(l.field) + '</div>' +
+    '</div>';
+  }
+  return html;
+}
+
+function getActivityLog() {
+  try { return JSON.parse(localStorage.getItem(ACTIVITY_KEY)) || []; } catch(e) { return []; }
+}
+
+function logActivity(section, field, oldVal, newVal) {
+  var logs = getActivityLog();
+  logs.push({
+    timestamp: new Date().toISOString(),
+    section: section,
+    field: field,
+    oldValue: typeof oldVal === 'string' ? oldVal.substring(0, 100) : '',
+    newValue: typeof newVal === 'string' ? newVal.substring(0, 100) : ''
+  });
+  if (logs.length > 100) logs = logs.slice(logs.length - 100);
+  localStorage.setItem(ACTIVITY_KEY, JSON.stringify(logs));
+}
+
+function exportActivityLog() {
+  var logs = getActivityLog();
+  var csv = 'Tarix,Bolme,Sahə,Kohne dəyər,Yeni dəyər\n';
+  for (var i = 0; i < logs.length; i++) {
+    var l = logs[i];
+    csv += '"' + l.timestamp + '","' + l.section + '","' + l.field + '","' + (l.oldValue || '').replace(/"/g, '""') + '","' + (l.newValue || '').replace(/"/g, '""') + '"\n';
+  }
+  var blob = new Blob([csv], { type: 'text/csv' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'mcg-activity-log-' + new Date().toISOString().slice(0,10) + '.csv';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast('Jurnal CSV olaraq yuklendi!');
+}
+
+/* =========================================================================
+   FEATURE 19: AI CONTENT GENERATOR
+   ========================================================================= */
+function buildAiWriterPanel() {
+  return '' +
+    '<div class="fg-section">Sablon Mezmun Yaradici</div>' +
+    '<div class="fg"><label>Movzu / Prompt</label><textarea id="ai-topic" placeholder="Mehsul adi, kateqoriya ve ya movzu yazin..."></textarea></div>' +
+    '<div style="margin-bottom:12px">' +
+      '<button class="ai-btn" onclick="aiGenerate(\'product\')">Mehsul tesviri</button>' +
+      '<button class="ai-btn" onclick="aiGenerate(\'faq\')">FAQ yarat</button>' +
+      '<button class="ai-btn" onclick="aiGenerate(\'blog\')">Blog yazisi</button>' +
+      '<button class="ai-btn" onclick="aiGenerate(\'social\')">Sosial media postu</button>' +
+    '</div>' +
+    '<div class="ai-output" id="ai-output" style="display:none"></div>' +
+    '<button class="ep-save" id="ai-copy-btn" style="width:100%;margin-top:8px;display:none" onclick="copyAiOutput()">Netice kopyala</button>';
+}
+
+function aiGenerate(type) {
+  var topic = val('ai-topic') || 'MI CLEAN GROUP mehsulu';
+  var output = '';
+  switch(type) {
+    case 'product':
+      output = generateProductDesc(topic);
+      break;
+    case 'faq':
+      output = generateFaq(topic);
+      break;
+    case 'blog':
+      output = generateBlog(topic);
+      break;
+    case 'social':
+      output = generateSocial(topic);
+      break;
+  }
+  var el = document.getElementById('ai-output');
+  el.textContent = output;
+  el.style.display = 'block';
+  document.getElementById('ai-copy-btn').style.display = '';
+}
+
+function generateProductDesc(topic) {
+  return 'MEHSUL: ' + topic + '\n\n' +
+    'TESVIR:\n' + topic + ' - MI CLEAN GROUP MMC-nin premium kateqoriya mehsuludur. ' +
+    'ISO 9001 ve HACCP standartlarina uygun olaraq istehsal edilmis bu mehsul, 5 ulduzlu otellerin ' +
+    'gundelik ehtiyaclarini qarsilayir. Yuksek konsentrasiyali formulu sayesinde az dozaj ile maksimum netice alinir.\n\n' +
+    'XUSUSIYYETLER:\n' +
+    '- Nonion surfaktant bazali, sef sethli\n' +
+    '- pH optimal: 7-8 arasi\n' +
+    '- Ekoloji uygunluq sertifikati\n' +
+    '- Safer Choice onaylanmis\n\n' +
+    'ISTIFADE:\n' +
+    'Seyreltme nisbeti: 1:50 (standart), 1:25 (agir cirk). Dozaj sistemi ile avtomatik dozajlanma mumkundur.\n\n' +
+    'QABLASDIRMA: 1 / 5 / 10 / 20 kg\n' +
+    'CATDIRILMA: 5-7 is gunu (Baki & region)';
+}
+
+function generateFaq(topic) {
+  return 'FAQ - ' + topic + '\n\n' +
+    'S: ' + topic + ' nedir ve ne ucun istifade olunur?\n' +
+    'C: ' + topic + ' otel ve hospitality sektoru ucun nezerde tutulmus professional vasitedir. Gundelik temizlik, dezinfeksiya ve ya xususi meqsedler ucun istifade olunur.\n\n' +
+    'S: Minimum sifaris miqdari ne qederdir?\n' +
+    'C: Standart MOQ kateqoriyaya gore deyisir. Pilot proqram cercivesinde MOQ telebi yoxdur.\n\n' +
+    'S: Sertifikatlari var mi?\n' +
+    'C: Beli - ISO 9001, HACCP uygunluq, SDS (Safety Data Sheet) ve Safer Choice ekoloji sertifikati movcuddur.\n\n' +
+    'S: Catdirilma muddeti ne qederdir?\n' +
+    'C: Baki daxili 24-48 saat, region sifarisleri 5-7 is gunu.';
+}
+
+function generateBlog(topic) {
+  return 'BLOG YAZISI: ' + topic + '\n' +
+    '==================================\n\n' +
+    'Giris:\n' +
+    'Muasir otel sektorunda ' + topic + ' meslesinin ehemiyyeti ile tanisin. ' +
+    'Bu meqalede ' + topic + ' haqqinda bilmeniz lazim olan her seyi paylasiriq.\n\n' +
+    'Esas hisse:\n' +
+    '1. ' + topic + ' niye vacibdir?\n' +
+    '   Otel qonaqlarin birinci teassuratini yaradan temizlik ve keyfiyyet standartlari ' +
+    topic + ' sayesinde temin olunur.\n\n' +
+    '2. Dogru secim nece edilir?\n' +
+    '   Sertifikatlara (ISO 9001, HACCP) diqqet edin. SDS senedlerini mutleq yoxlayin.\n\n' +
+    '3. MI CLEAN GROUP uezvu nece meselenin hellinden kecir?\n' +
+    '   Texniki konsultasiya, pilot proqram ve SLA zemaneti ile tam destek.\n\n' +
+    'Netice:\n' +
+    topic + ' ucun dogru partner secimi otelinizin ugurunun acaridir. ' +
+    'MI CLEAN GROUP ile pilot proqrama baslayin.';
+}
+
+function generateSocial(topic) {
+  return 'SOSIAL MEDIA POSTU:\n\n' +
+    '------- LinkedIn -------\n' +
+    'Otel sektorunda ' + topic + ' - niye vacibdir?\n\n' +
+    'MI CLEAN GROUP olaraq 40+ otele xidmet tecrubemizle ' + topic + ' sahasinda yen helleri teqdim edirik.\n\n' +
+    '#MICleanGroup #OtelTemizlik #' + topic.replace(/\s+/g, '') + ' #Hospitality #Azerbaycan\n\n' +
+    '------- Instagram -------\n' +
+    topic + ' ile otelinizi bir addim ireli aparın!\n\n' +
+    'MI CLEAN GROUP - Azerbaycanin #1 otel techizat partneri\n' +
+    'Elaqe: +994 55 488 22 22\n\n' +
+    '#cleaning #hotel #baku #azerbaijan #premium';
+}
+
+function copyAiOutput() {
+  var text = document.getElementById('ai-output').textContent;
+  navigator.clipboard.writeText(text).then(function() { toast('Netice kopyalandi!'); });
+}
+
+/* =========================================================================
+   FEATURE 20: BACKUP/RESTORE
+   ========================================================================= */
+function buildBackupPanel() {
+  var backups = getBackupHistory();
+  var html = '<div class="fg-section">Backup idare et</div>' +
+    '<button class="ep-save" style="width:100%;margin-bottom:8px" onclick="createBackup()">Backup yarat (JSON yukle)</button>' +
+    '<div style="margin-bottom:16px">' +
+      '<label class="rep-add" style="display:block;text-align:center;cursor:pointer">' +
+        '&#128194; Restore (JSON yukle)' +
+        '<input type="file" accept=".json" style="display:none" onchange="restoreFromBackup(this)">' +
+      '</label>' +
+    '</div>';
+  html += '<div class="fg-section">Backup tarixcesi</div>';
+  if (backups.length === 0) {
+    html += '<p style="color:var(--muted);font-size:12px">Heq bir backup movcud deyil.</p>';
+  }
+  for (var i = backups.length - 1; i >= 0; i--) {
+    html += '<div class="backup-item">' +
+      '<div class="backup-date">' + esc(formatDate(backups[i].date)) + '</div>' +
+      '<div class="backup-size">' + esc(backups[i].size) + '</div>' +
+    '</div>';
+  }
+  return html;
+}
+
+function getBackupHistory() {
+  try { return JSON.parse(localStorage.getItem(BACKUP_HISTORY_KEY)) || []; } catch(e) { return []; }
+}
+
+function createBackup() {
+  var backup = {
+    _meta: { type: 'mcg_backup', date: new Date().toISOString(), version: '2.0' },
+    siteData: siteData,
+    seoData: seoData,
+    themeColors: themeColors,
+    productsData: productsData,
+    translations: translations,
+    versions: getVersions(),
+    activityLog: getActivityLog()
+  };
+  var json = JSON.stringify(backup, null, 2);
+  var blob = new Blob([json], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url; a.download = 'mcg-backup-' + new Date().toISOString().slice(0,10) + '.json';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  /* Save to history */
+  var history = getBackupHistory();
+  history.push({ date: new Date().toISOString(), size: (json.length / 1024).toFixed(1) + ' KB' });
+  if (history.length > 10) history = history.slice(history.length - 10);
+  localStorage.setItem(BACKUP_HISTORY_KEY, JSON.stringify(history));
+  toast('Backup yaradildi ve yuklendi!');
+  openEditPanel('backup');
+}
+
+function restoreFromBackup(input) {
+  if (!input.files || !input.files[0]) return;
+  var reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      var backup = JSON.parse(e.target.result);
+      if (!backup._meta || backup._meta.type !== 'mcg_backup') {
+        toast('Xeta: Bu fayl etibarsiz backup faylidir.', true);
+        return;
+      }
+      if (!confirm('Backup berpa edilsin? Movcud melumatlar evezelecek.')) return;
+      if (backup.siteData) siteData = backup.siteData;
+      if (backup.seoData) seoData = backup.seoData;
+      if (backup.themeColors) themeColors = backup.themeColors;
+      if (backup.productsData) productsData = backup.productsData;
+      if (backup.translations) translations = backup.translations;
+      if (backup.versions) localStorage.setItem(VERSIONS_KEY, JSON.stringify(backup.versions));
+      if (backup.activityLog) localStorage.setItem(ACTIVITY_KEY, JSON.stringify(backup.activityLog));
+      changes = {};
+      updateChangeIndicator();
+      reloadPreview();
+      openEditPanel('backup');
+      toast('Backup ugurla berpa edildi!');
+      logActivity('backup', 'restore', '', backup._meta.date);
+    } catch(err) {
+      toast('Xeta: JSON parse xetasi - ' + err.message, true);
+    }
+  };
+  reader.readAsText(input.files[0]);
+}
+
+/* =========================================================================
+   COLLECT FORM DATA
+   ========================================================================= */
+function collectCurrentSection() {
+  var data = null;
+  switch(currentSection) {
+    case 'hero':
+      var descEl = document.getElementById('f-hero-desc');
+      data = {
+        eyebrow: val('f-hero-eyebrow'),
+        h1_line1: val('f-hero-h1'),
+        h1_em: val('f-hero-em'),
+        description: descEl ? descEl.textContent : '',
+        stat1_num: val('f-hero-s1n'), stat1_label: val('f-hero-s1l'),
+        stat2_num: val('f-hero-s2n'), stat2_label: val('f-hero-s2l'),
+        stat3_num: val('f-hero-s3n'), stat3_label: val('f-hero-s3l'),
+        cta_text: val('f-hero-cta'),
+        image_url: val('f-hero-img')
+      };
+      break;
+    case 'categories':
+      data = collectRepeater('cat-name', 'cat-meta', 'cat-img');
+      break;
+    case 'services':
+      data = collectServicesData();
+      break;
+    case 'trust':
+      data = collectTrustData();
+      break;
+    case 'testimonials':
+      data = collectTestimonialsData();
+      break;
+    case 'faq':
+      data = collectFaqData();
+      break;
+    case 'contact':
+      data = {
+        company: val('f-ct-company'),
+        voen: val('f-ct-voen'),
+        address: val('f-ct-address'),
+        phone: val('f-ct-phone'),
+        email: val('f-ct-email'),
+        hours: val('f-ct-hours'),
+        delivery: val('f-ct-delivery')
+      };
+      break;
+    case 'seo':
+      seoData = {
+        page_title: val('f-seo-title'),
+        meta_description: val('f-seo-desc'),
+        og_title: val('f-seo-ogtitle'),
+        og_description: val('f-seo-ogdesc'),
+        og_image: val('f-seo-ogimg'),
+        keywords: val('f-seo-keywords')
+      };
+      data = seoData;
+      break;
+    case 'theme':
+      data = themeColors;
+      break;
+  }
+  return data;
+}
+
+function collectRepeater() {
+  var names = document.querySelectorAll('.cat-name');
+  var metas = document.querySelectorAll('.cat-meta');
+  var imgs = document.querySelectorAll('.cat-img');
+  var arr = [];
+  for (var i = 0; i < names.length; i++) {
+    arr.push({
+      num: siteData.categories[i] ? siteData.categories[i].num : '',
+      name: names[i].value,
+      meta: metas[i] ? metas[i].value : '',
+      image: imgs[i] ? imgs[i].value : ''
+    });
+  }
+  return arr;
+}
+
+function collectServicesData() {
+  var icons = document.querySelectorAll('.svc-icon');
+  var names = document.querySelectorAll('.svc-name');
+  var descs = document.querySelectorAll('.svc-desc');
+  var tags = document.querySelectorAll('.svc-tags');
+  var arr = [];
+  for (var i = 0; i < names.length; i++) {
+    arr.push({
+      icon: icons[i] ? icons[i].value : '',
+      name: names[i].value,
+      desc: descs[i] ? descs[i].textContent : '',
+      tags: tags[i] ? tags[i].value : ''
+    });
+  }
+  return arr;
+}
+
+function collectTrustData() {
+  var nums = document.querySelectorAll('.trust-num');
+  var labels = document.querySelectorAll('.trust-label');
+  var arr = [];
+  for (var i = 0; i < nums.length; i++) {
+    arr.push({ num: nums[i].value, label: labels[i] ? labels[i].value : '' });
+  }
+  return arr;
+}
+
+function collectTestimonialsData() {
+  var texts = document.querySelectorAll('.tm-text');
+  var authors = document.querySelectorAll('.tm-author');
+  var roles = document.querySelectorAll('.tm-role');
+  var arr = [];
+  for (var i = 0; i < texts.length; i++) {
+    arr.push({
+      text: texts[i].value,
+      author: authors[i] ? authors[i].value : '',
+      role: roles[i] ? roles[i].value : ''
+    });
+  }
+  return arr;
+}
+
+function collectFaqData() {
+  var qs = document.querySelectorAll('.faq-q');
+  var as = document.querySelectorAll('.faq-a');
+  var arr = [];
+  for (var i = 0; i < qs.length; i++) {
+    arr.push({ q: qs[i].value, a: as[i] ? as[i].textContent : '' });
+  }
+  return arr;
+}
+
+/* =========================================================================
+   SAVE / EXPORT
+   ========================================================================= */
+function saveCurrentSection() {
+  if (!canEdit()) { toast('Viewer rolunda deyisiklik edile bilmez.', true); return; }
+  var data = collectCurrentSection();
+  if (!data) { toast('Bu bolmede deyisiklik yoxdur.'); return; }
+  /* Disable save button and show loading state */
+  var saveBtn = document.querySelector('.ep-save');
+  var saveBtnOrigText = '';
+  if (saveBtn) {
+    saveBtnOrigText = saveBtn.textContent;
+    saveBtn.textContent = 'Saxlanir...';
+    saveBtn.disabled = true;
+    saveBtn.style.opacity = '0.6';
+  }
+  /* Push undo state before save */
+  pushUndo();
+  /* Log activity */
+  logActivity(currentSection, 'save', '', 'Bolme saxlandi');
+  changes[currentSection] = data;
+  if (siteData[currentSection] !== undefined) {
+    siteData[currentSection] = data;
+  }
+  updateChangeIndicator();
+  applyChangesToIframe(currentSection, data);
+  /* Save version */
+  saveVersion();
+  toast('Bolme saxlandi: ' + currentSection);
+  /* Re-enable save button after short delay */
+  setTimeout(function() {
+    if (saveBtn) {
+      saveBtn.textContent = saveBtnOrigText || 'Saxla';
+      saveBtn.disabled = false;
+      saveBtn.style.opacity = '';
+    }
+  }, 600);
+}
+
+function saveAllChanges() {
+  if (!canEdit()) { toast('Viewer rolunda deyisiklik edile bilmez.', true); return; }
+  pushUndo();
+  var data = collectCurrentSection();
+  if (data) {
+    changes[currentSection] = data;
+    if (siteData[currentSection] !== undefined) siteData[currentSection] = data;
+  }
+  if (Object.keys(changes).length === 0) {
+    toast('Heq bir deyisiklik yoxdur.');
+    return;
+  }
+  logActivity('all', 'saveAll', '', Object.keys(changes).join(', '));
+  saveVersion();
+
+  fetch('/api/editor/save', {
+    method: 'POST',
+    /* NOTE: x-admin-role sent for future server-side role enforcement (backend implementation needed) */
+    headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey, 'x-admin-role': userRole },
+    body: JSON.stringify({ changes: changes, timestamp: new Date().toISOString() })
+  })
+  .then(function(r) {
+    if (r.ok) {
+      toast('Butun deyisiklikler saxlandi!');
+      changes = {};
+      updateChangeIndicator();
+    } else {
+      toast('Server endpoint movcud deyil. JSON olaraq export edilir...', true);
+      exportJSON();
+    }
+  })
+  .catch(function() {
+    toast('Server endpoint movcud deyil. JSON olaraq export edilir...', true);
+    exportJSON();
+  });
+}
+
+function exportJSON() {
+  var data = collectCurrentSection();
+  if (data) {
+    changes[currentSection] = data;
+  }
+  var output = {
+    _meta: {
+      exported: new Date().toISOString(),
+      site: 'MI CLEAN GROUP - micleangroup.com',
+      sections: Object.keys(changes).length
+    },
+    changes: changes
+  };
+  document.getElementById('json-output').textContent = JSON.stringify(output, null, 2);
+  openModal('modal-json');
+}
+
+function copyJSON() {
+  var text = document.getElementById('json-output').textContent;
+  navigator.clipboard.writeText(text).then(function() {
+    toast('JSON kopyalandi!');
+  }).catch(function() {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    toast('JSON kopyalandi!');
+  });
+}
+
+function downloadJSON() {
+  var text = document.getElementById('json-output').textContent;
+  var blob = new Blob([text], { type: 'application/json' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'miclean-content-' + new Date().toISOString().slice(0,10) + '.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast('JSON yuklendi!');
+}
+
+/* =========================================================================
+   FEATURE 6: ONE-CLICK WIX DEPLOY
+   ========================================================================= */
+function deployToWix() {
+  if (!canDeploy()) { toast('Deploy yalniz Admin rolu ile mumkundur.', true); return; }
+  if (!confirm('Deyisiklikleri Wix-e deploy etmek isteyirsiniz?')) return;
+
+  var progressEl = document.getElementById('deploy-progress');
+  var barEl = document.getElementById('deploy-progress-bar');
+  var deployBtn = document.getElementById('btn-deploy');
+  progressEl.classList.add('active');
+  barEl.style.width = '0%';
+  /* Disable deploy button during operation */
+  deployBtn.disabled = true;
+  deployBtn.style.opacity = '0.5';
+  deployBtn.style.pointerEvents = 'none';
+
+  var steps = [
+    { pct: 25, msg: 'Embeds sinxronlasdirılır...' },
+    { pct: 50, msg: 'Deyisiklikler yuklenilir...' },
+    { pct: 75, msg: 'Sayt publish edilir...' }
+  ];
+
+  var stepIdx = 0;
+  var stepTimer = null;
+  function animateSteps() {
+    if (stepIdx >= steps.length) return;
+    barEl.style.width = steps[stepIdx].pct + '%';
+    toast(steps[stepIdx].msg);
+    stepIdx++;
+    stepTimer = setTimeout(animateSteps, 1200);
+  }
+  animateSteps();
+
+  /* Actual deploy endpoint - NOTE: /api/editor/deploy endpoint needs to be configured on the server.
+     This is a Beta feature. The endpoint should accept siteData and publish changes to Wix. */
+  fetch('/api/editor/deploy', {
+    method: 'POST',
+    /* NOTE: x-admin-role sent for future server-side role enforcement (backend implementation needed) */
+    headers: { 'Content-Type': 'application/json', 'x-admin-key': adminKey, 'x-admin-role': userRole },
+    body: JSON.stringify({ siteData: siteData, timestamp: new Date().toISOString() })
+  })
+  .then(function(r) {
+    if (stepTimer) clearTimeout(stepTimer);
+    if (r.ok) {
+      barEl.style.width = '100%';
+      toast('Deploy tamamlandi!');
+      logActivity('deploy', 'deploy', '', 'Wix deploy tamamlandi');
+      setTimeout(function() { progressEl.classList.remove('active'); }, 2000);
+    } else {
+      barEl.style.width = stepIdx > 0 ? steps[stepIdx - 1].pct + '%' : '0%';
+      toast('Deploy xetasi: server ' + r.status + ' cavab verdi.', true);
+      setTimeout(function() { progressEl.classList.remove('active'); }, 3000);
+    }
+    deployBtn.disabled = false;
+    deployBtn.style.opacity = '';
+    deployBtn.style.pointerEvents = '';
+  })
+  .catch(function() {
+    if (stepTimer) clearTimeout(stepTimer);
+    barEl.style.width = stepIdx > 0 ? steps[stepIdx - 1].pct + '%' : '0%';
+    toast('Deploy xetasi: server elaqesi yoxdur.', true);
+    setTimeout(function() { progressEl.classList.remove('active'); }, 3000);
+    deployBtn.disabled = false;
+    deployBtn.style.opacity = '';
+    deployBtn.style.pointerEvents = '';
+  });
+}
+
+/* =========================================================================
+   APPLY CHANGES TO IFRAME (live preview)
+   ========================================================================= */
+function applyChangesToIframe(section, data) {
+  try {
+    var iframe = document.getElementById('site-iframe');
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+
+    if (section === 'hero') {
+      var eye = doc.querySelector('.cover .eye');
+      if (eye) eye.textContent = data.eyebrow;
+      var h1 = doc.querySelector('.cover .h1');
+      if (h1) h1.innerHTML = esc(data.h1_line1) + '<br><em>' + esc(data.h1_em) + '</em>';
+      var covp = doc.querySelector('.cover .cov-p');
+      if (covp) covp.textContent = data.description;
+      var sts = doc.querySelectorAll('.cover .st');
+      if (sts.length >= 3) {
+        sts[0].querySelector('.st-n').textContent = data.stat1_num;
+        sts[0].querySelector('.st-l').textContent = data.stat1_label;
+        sts[1].querySelector('.st-n').textContent = data.stat2_num;
+        sts[1].querySelector('.st-l').textContent = data.stat2_label;
+        sts[2].querySelector('.st-n').textContent = data.stat3_num;
+        sts[2].querySelector('.st-l').textContent = data.stat3_label;
+      }
+      var covLink = doc.querySelector('.cover .cov-link');
+      if (covLink) covLink.innerHTML = esc(data.cta_text) + ' &rarr;';
+      var covImg = doc.querySelector('.cover .cov-img');
+      if (covImg && data.image_url) covImg.src = data.image_url;
+    }
+
+    if (section === 'categories') {
+      var cats = doc.querySelectorAll('#overview .cc');
+      for (var i = 0; i < cats.length && i < data.length; i++) {
+        var n = cats[i].querySelector('.cc-name');
+        if (n) n.textContent = data[i].name;
+        var m = cats[i].querySelector('.cc-meta');
+        if (m) m.textContent = data[i].meta;
+        var img = cats[i].querySelector('.cc-img');
+        if (img && data[i].image) img.src = data[i].image;
+      }
+    }
+
+    if (section === 'services') {
+      var svcs = doc.querySelectorAll('#xidmetler .svc');
+      for (var i = 0; i < svcs.length && i < data.length; i++) {
+        var ico = svcs[i].querySelector('.svc-ico');
+        if (ico) ico.textContent = data[i].icon;
+        var sn = svcs[i].querySelector('.svc-name');
+        if (sn) sn.textContent = data[i].name;
+        var sd = svcs[i].querySelector('.svc-desc');
+        if (sd) sd.textContent = data[i].desc;
+      }
+    }
+
+    if (section === 'trust') {
+      var tss = doc.querySelectorAll('#trust .ts');
+      for (var i = 0; i < tss.length && i < data.length; i++) {
+        tss[i].querySelector('.ts-n').textContent = data[i].num;
+        tss[i].querySelector('.ts-l').textContent = data[i].label;
+      }
+    }
+
+    if (section === 'testimonials') {
+      var tcards = doc.querySelectorAll('#trust .tcard');
+      for (var i = 0; i < tcards.length && i < data.length; i++) {
+        tcards[i].querySelector('.tcard-text').textContent = data[i].text;
+        tcards[i].querySelector('.tcard-author').textContent = data[i].author;
+        tcards[i].querySelector('.tcard-role').textContent = data[i].role;
+      }
+    }
+
+    if (section === 'faq') {
+      var fis = doc.querySelectorAll('#faq .faq-item');
+      for (var i = 0; i < fis.length && i < data.length; i++) {
+        var fq = fis[i].querySelector('.faq-q span');
+        if (fq) fq.textContent = data[i].q;
+        var fa = fis[i].querySelector('.faq-a p');
+        if (fa) fa.textContent = data[i].a;
+      }
+    }
+
+    if (section === 'contact') {
+      var cis = doc.querySelectorAll('#contact .ci');
+      if (cis.length >= 5) {
+        var v0 = cis[0].querySelector('.ci-val');
+        if (v0) v0.innerHTML = '<strong>' + esc(data.company) + '</strong><br>VOEN: ' + esc(data.voen) + '<br>' + esc(data.address);
+        var v1 = cis[1].querySelector('.ci-val');
+        if (v1) v1.innerHTML = '<a href="tel:' + esc(data.phone.replace(/\s/g,'')) + '" style="color:var(--white);text-decoration:none"><strong>' + esc(data.phone) + '</strong></a>';
+        var v2 = cis[2].querySelector('.ci-val');
+        if (v2) v2.innerHTML = '<a href="mailto:' + esc(data.email) + '" style="color:var(--gold)">' + esc(data.email) + '</a>';
+        var v3 = cis[3].querySelector('.ci-val');
+        if (v3) v3.innerHTML = '<strong>' + esc(data.hours.split('\u00b7')[0] || data.hours) + '</strong>' + (data.hours.includes('\u00b7') ? ' \u00b7 ' + data.hours.split('\u00b7')[1] : '');
+        var v4 = cis[4].querySelector('.ci-val');
+        if (v4) v4.innerHTML = '<strong>' + esc(data.delivery.split('\u00b7')[0] || data.delivery) + '</strong>' + (data.delivery.includes('\u00b7') ? ' \u00b7 ' + data.delivery.split('\u00b7')[1] : '');
+      }
+    }
+  } catch(e) {
+    /* cross-origin may block */
+  }
+}
+
+/* =========================================================================
+   ADD / REMOVE REPEATER ITEMS
+   ========================================================================= */
+function addServiceItem() {
+  if (!canEdit()) return;
+  var svcs = getDataWithChanges('services');
+  svcs.push({ icon: '', name: '', desc: '', tags: '' });
+  siteData.services = svcs;
+  logActivity('services', 'add', '', 'Yeni xidmet elave edildi');
+  openEditPanel('services');
+}
+
+function removeServiceItem(idx) {
+  if (!canEdit()) return;
+  var svcs = getDataWithChanges('services');
+  var removed = svcs.splice(idx, 1);
+  siteData.services = svcs;
+  logActivity('services', 'remove', removed[0].name, '');
+  openEditPanel('services');
+}
+
+function addTestimonialItem() {
+  if (!canEdit()) return;
+  var tms = getDataWithChanges('testimonials');
+  tms.push({ text: '', author: '', role: '' });
+  siteData.testimonials = tms;
+  openEditPanel('testimonials');
+}
+
+function removeTestimonialItem(idx) {
+  if (!canEdit()) return;
+  var tms = getDataWithChanges('testimonials');
+  tms.splice(idx, 1);
+  siteData.testimonials = tms;
+  openEditPanel('testimonials');
+}
+
+function addFaqItem() {
+  if (!canEdit()) return;
+  var faqs = getDataWithChanges('faq');
+  faqs.push({ q: '', a: '' });
+  siteData.faq = faqs;
+  openEditPanel('faq');
+}
+
+function removeFaqItem(idx) {
+  if (!canEdit()) return;
+  var faqs = getDataWithChanges('faq');
+  faqs.splice(idx, 1);
+  siteData.faq = faqs;
+  openEditPanel('faq');
+}
+
+/* =========================================================================
+   FEATURE 1: DRAG & DROP IMAGE UPLOAD
+   ========================================================================= */
+(function setupDragDrop() {
+  document.addEventListener('DOMContentLoaded', function() {
+    var zone = document.getElementById('upload-zone');
+    if (!zone) return;
+
+    zone.addEventListener('dragenter', function(e) { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragover', function(e) { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', function(e) { zone.classList.remove('dragover'); });
+    zone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      var files = e.dataTransfer.files;
+      if (files.length > 0) handleDroppedFile(files[0]);
+    });
+  });
+})();
+
+function handleDroppedFile(file) {
+  var validTypes = ['image/png', 'image/jpeg', 'image/webp'];
+  if (validTypes.indexOf(file.type) === -1) {
+    toast('Yalniz PNG, JPG, WebP qebul olunur.', true);
+    return;
+  }
+  if (file.size > 5 * 1024 * 1024) {
+    toast('Fayl 5MB-dan boyukdur!', true);
+    return;
+  }
+  var progressWrap = document.getElementById('upload-progress');
+  var progressBar = document.getElementById('upload-progress-bar');
+  progressWrap.classList.add('active');
+  progressBar.style.width = '0%';
+
+  var reader = new FileReader();
+  reader.onprogress = function(e) {
+    if (e.lengthComputable) {
+      var pct = Math.round((e.loaded / e.total) * 100);
+      progressBar.style.width = pct + '%';
+    }
+  };
+  reader.onload = function(e) {
+    progressBar.style.width = '100%';
+    var preview = document.getElementById('img-modal-preview');
+    preview.innerHTML = '<img src="' + e.target.result + '" alt="Preview">';
+    document.getElementById('img-url-input').value = e.target.result;
+    setTimeout(function() { progressWrap.classList.remove('active'); }, 500);
+  };
+  reader.readAsDataURL(file);
+}
+
+/* =========================================================================
+   IMAGE MODAL
+   ========================================================================= */
+function openImageModal(section, field) {
+  currentImageTarget = { section: section, field: field };
+  var preview = document.getElementById('img-modal-preview');
+  var input = document.getElementById('img-url-input');
+  var currentUrl = '';
+
+  if (section === 'hero') {
+    currentUrl = siteData.hero.image_url || '';
+  } else if (section === 'categories' && typeof field === 'number') {
+    currentUrl = siteData.categories[field] ? siteData.categories[field].image : '';
+  }
+
+  input.value = currentUrl;
+  if (currentUrl) {
+    preview.innerHTML = '<img src="' + esc(currentUrl) + '" alt="Preview">';
+  } else {
+    preview.innerHTML = '<span class="img-placeholder">&#128247;</span>';
+  }
+  openModal('modal-image');
+}
+
+function previewImageUrl(url) {
+  var preview = document.getElementById('img-modal-preview');
+  if (url && url.match(/^https?:\/\/.+/)) {
+    preview.innerHTML = '<img src="' + esc(url) + '" alt="Preview" onerror="this.parentElement.innerHTML=\'<span class=img-placeholder>&#128247;</span>\'">';
+  } else if (url && url.indexOf('data:image') === 0) {
+    preview.innerHTML = '<img src="' + url + '" alt="Preview">';
+  } else {
+    preview.innerHTML = '<span class="img-placeholder">&#128247;</span>';
+  }
+}
+
+function handleFileUpload(input) {
+  if (!input.files || !input.files[0]) return;
+  handleDroppedFile(input.files[0]);
+}
+
+function applyImageChange() {
+  if (!currentImageTarget) return;
+  var url = document.getElementById('img-url-input').value.trim();
+  if (!url) { toast('Sekil URL daxil edin.', true); return; }
+
+  var sec = currentImageTarget.section;
+  var field = currentImageTarget.field;
+
+  if (sec === 'hero') {
+    siteData.hero.image_url = url;
+    var fInput = document.getElementById('f-hero-img');
+    if (fInput) fInput.value = url;
+    openEditPanel('hero');
+    applyChangesToIframe('hero', siteData.hero);
+  } else if (sec === 'categories' && typeof field === 'number') {
+    siteData.categories[field].image = url;
+    var catImgs = document.querySelectorAll('.cat-img');
+    if (catImgs[field]) catImgs[field].value = url;
+    openEditPanel('categories');
+  }
+
+  closeModal('modal-image');
+  toast('Sekil deyisdirildi.');
+}
+
+/* =========================================================================
+   FEATURE 2: UNDO / REDO
+   ========================================================================= */
+function pushUndo() {
+  undoStack.push(JSON.stringify(siteData));
+  if (undoStack.length > MAX_UNDO) undoStack.shift();
+  redoStack = [];
+  updateUndoRedoButtons();
+}
+
+function doUndo() {
+  if (undoStack.length === 0) return;
+  redoStack.push(JSON.stringify(siteData));
+  var state = undoStack.pop();
+  siteData = JSON.parse(state);
+  changes = {};
+  updateChangeIndicator();
+  openEditPanel(currentSection);
+  updateUndoRedoButtons();
+  toast('Geri alindi.');
+}
+
+function doRedo() {
+  if (redoStack.length === 0) return;
+  undoStack.push(JSON.stringify(siteData));
+  var state = redoStack.pop();
+  siteData = JSON.parse(state);
+  changes = {};
+  updateChangeIndicator();
+  openEditPanel(currentSection);
+  updateUndoRedoButtons();
+  toast('Ireli alindi.');
+}
+
+function updateUndoRedoButtons() {
+  document.getElementById('btn-undo').disabled = undoStack.length === 0;
+  document.getElementById('btn-redo').disabled = redoStack.length === 0;
+}
+
+/* =========================================================================
+   FEATURE 3: AUTOSAVE
+   ========================================================================= */
+var autosaveInterval = null;
+
+function startAutosave() {
+  if (autosaveInterval) clearInterval(autosaveInterval);
+  autosaveInterval = setInterval(function() {
+    try {
+      var saveObj = {
+        siteData: siteData,
+        changes: changes,
+        seoData: seoData,
+        themeColors: themeColors,
+        productsData: productsData,
+        timestamp: new Date().toISOString()
+      };
+      localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(saveObj));
+      var label = document.getElementById('hdr-autosave');
+      if (label) {
+        var now = new Date();
+        label.textContent = 'Avtosaxlandi: ' + padZ(now.getHours()) + ':' + padZ(now.getMinutes());
+      }
+    } catch(e) {}
+  }, 30000);
+}
+
+function checkAutosave() {
+  try {
+    var raw = localStorage.getItem(AUTOSAVE_KEY);
+    if (!raw) return;
+    var saved = JSON.parse(raw);
+    if (saved && saved.timestamp) {
+      document.getElementById('autosave-time').textContent = 'Son saxlama: ' + formatDate(saved.timestamp);
+      openModal('modal-autosave');
+    }
+  } catch(e) {}
+}
+
+function restoreAutosave() {
+  try {
+    var raw = localStorage.getItem(AUTOSAVE_KEY);
+    if (!raw) return;
+    var saved = JSON.parse(raw);
+    if (saved.siteData) siteData = saved.siteData;
+    if (saved.changes) changes = saved.changes;
+    if (saved.seoData) seoData = saved.seoData;
+    if (saved.themeColors) themeColors = saved.themeColors;
+    if (saved.productsData) productsData = saved.productsData;
+    updateChangeIndicator();
+    openEditPanel(currentSection);
+    toast('Avtosaxlama berpa edildi!');
+  } catch(e) {}
+  closeModal('modal-autosave');
+}
+
+function discardAutosave() {
+  localStorage.removeItem(AUTOSAVE_KEY);
+  closeModal('modal-autosave');
+}
+
+/* =========================================================================
+   FEATURE 15: NOTIFICATION SYSTEM
+   ========================================================================= */
+var crmPollInterval = null;
+
+function startCrmPolling() {
+  if (crmPollInterval) clearInterval(crmPollInterval);
+  crmPollInterval = setInterval(function() {
+    /* NOTE: x-admin-role sent for future server-side role enforcement (backend implementation needed) */
+    var headers = { 'x-admin-key': adminKey, 'x-admin-role': userRole };
+    Promise.all([
+      fetch('/api/contact', { headers: headers }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; }),
+      fetch('/api/quotes', { headers: headers }).then(function(r) { return r.ok ? r.json() : []; }).catch(function() { return []; })
+    ]).then(function(results) {
+      var contacts = Array.isArray(results[0]) ? results[0] : (results[0].messages || results[0].data || results[0]);
+      var quotes = Array.isArray(results[1]) ? results[1] : (results[1].quotes || results[1].data || results[1]);
+      if (!Array.isArray(contacts)) contacts = [];
+      if (!Array.isArray(quotes)) quotes = [];
+      var newTotal = contacts.length + quotes.length;
+      if (newTotal > lastCrmCount && lastCrmCount > 0) {
+        var diff = newTotal - lastCrmCount;
+        showNotifToast('Yeni mesaj!', diff + ' yeni mesaj geldi');
+        showBrowserNotif('MI CLEAN GROUP', diff + ' yeni mesaj');
+      }
+      crmContacts = contacts;
+      crmQuotes = quotes;
+      lastCrmCount = newTotal;
+      updateCrmBadge();
+    });
+  }, 60000);
+}
+
+function showNotifToast(title, body) {
+  var el = document.getElementById('notif-toast');
+  document.getElementById('notif-toast-title').textContent = title;
+  document.getElementById('notif-toast-body').textContent = body;
+  el.classList.add('show');
+  setTimeout(function() { el.classList.remove('show'); }, 5000);
+}
+
+function requestNotifPermission() {
+  if ('Notification' in window && Notification.permission === 'default') {
+    Notification.requestPermission();
+  }
+}
+
+function showBrowserNotif(title, body) {
+  if ('Notification' in window && Notification.permission === 'granted') {
+    new Notification(title, { body: body, icon: '/logo.png' });
+  }
+}
+
+/* =========================================================================
+   HELPERS
+   ========================================================================= */
+function getDataWithChanges(section) {
+  if (changes[section]) {
+    return JSON.parse(JSON.stringify(changes[section]));
+  }
+  return JSON.parse(JSON.stringify(siteData[section]));
+}
+
+function val(id) {
+  var el = document.getElementById(id);
+  if (!el) return '';
+  if (el.tagName === 'DIV' || el.getAttribute('contenteditable')) return el.textContent;
+  return el.value;
+}
+
+function esc(s) {
+  if (!s) return '';
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(String(s)));
+  return div.innerHTML;
+}
+
+function updateChangeIndicator() {
+  var indicator = document.getElementById('change-indicator');
+  if (Object.keys(changes).length > 0) {
+    indicator.classList.add('has-changes');
+    indicator.textContent = Object.keys(changes).length + ' bolme deyisdi';
+  } else {
+    indicator.classList.remove('has-changes');
+  }
+}
+
+function formatDate(isoStr) {
+  if (!isoStr) return '--';
+  try {
+    var d = new Date(isoStr);
+    return padZ(d.getDate()) + '.' + padZ(d.getMonth()+1) + '.' + d.getFullYear() + ' ' + padZ(d.getHours()) + ':' + padZ(d.getMinutes());
+  } catch(e) { return isoStr; }
+}
+
+function padZ(n) { return n < 10 ? '0' + n : '' + n; }
+
+/* ── Modal helpers ── */
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+
+/* ── Toast ── */
+function toast(msg, isError) {
+  var el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'show' + (isError ? ' error' : '');
+  clearTimeout(el._t);
+  el._t = setTimeout(function() { el.className = ''; }, 3000);
+}
+
+/* =========================================================================
+   FEATURE 18: KEYBOARD SHORTCUTS
+   ========================================================================= */
+document.addEventListener('keydown', function(e) {
+  /* Escape: close everything */
+  if (e.key === 'Escape') {
+    closePanel();
+    closeModal('modal-json');
+    closeModal('modal-image');
+    closeModal('modal-autosave');
+    closeModal('modal-shortcuts');
+  }
+  /* Ctrl+S: Save */
+  if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+    e.preventDefault();
+    saveCurrentSection();
+  }
+  /* Ctrl+Z: Undo */
+  if ((e.ctrlKey || e.metaKey) && e.key === 'z' && !e.shiftKey) {
+    /* Only override if not in contenteditable or input */
+    var tag = document.activeElement.tagName;
+    if (tag !== 'INPUT' && tag !== 'TEXTAREA' && !document.activeElement.getAttribute('contenteditable')) {
+      e.preventDefault();
+      doUndo();
+    }
+  }
+  /* Ctrl+Y: Redo */
+  if ((e.ctrlKey || e.metaKey) && e.key === 'y') {
+    var tag2 = document.activeElement.tagName;
+    if (tag2 !== 'INPUT' && tag2 !== 'TEXTAREA' && !document.activeElement.getAttribute('contenteditable')) {
+      e.preventDefault();
+      doRedo();
+    }
+  }
+  /* Ctrl+P: Toggle preview size */
+  if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+    e.preventDefault();
+    cyclePreviewSize();
+  }
+  /* Ctrl+/: Show shortcuts help */
+  if ((e.ctrlKey || e.metaKey) && e.key === '/') {
+    e.preventDefault();
+    openModal('modal-shortcuts');
+  }
+});
+
+/* =========================================================================
+   BEFOREUNLOAD WARNING — warn if unsaved changes exist
+   ========================================================================= */
+window.addEventListener('beforeunload', function(e) {
+  if (Object.keys(changes).length > 0) {
+    e.preventDefault();
+    e.returnValue = 'Saxlanmamis deyisiklikler var. Cixmaq isteyirsiniz?';
+  }
+});
+</script>
+</body>
+</html>

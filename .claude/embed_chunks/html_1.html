@@ -1,0 +1,111 @@
+
+<div id="scroll-progress"></div>
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Yuxarıya qayıt">↑</button>
+<a href="#overview" class="skip-link" style="position:absolute;top:-40px;left:0;background:var(--gold);color:var(--bg);padding:8px 16px;z-index:10000;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border-radius:0 0 4px 0;transition:top .2s" onfocus="this.style.top='0'" onblur="this.style.top='-40px'">Əsas məzmuna keç</a>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="n-brand">
+    <div class="n-mark">
+      <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+        <circle cx="11" cy="7" r="4" stroke="#D4AF37" stroke-width="1.5"/>
+        <path d="M4 19c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div><div class="n-name">MI CLEAN GROUP</div><div class="n-sub">MMC · Bakı, Azərbaycan</div></div>
+  </div>
+  <ul class="n-links" id="n-links">
+    <li><a href="#overview">Kateqoriyalar</a></li>
+    <li><a href="#kimyevi">Kimyəvi</a></li>
+    <li><a href="#amenity">Amenity</a></li>
+    <li><a href="#istehlak">İstehlak</a></li>
+    <li><a href="#xidmetler">Xidmətlər</a></li>
+  </ul>
+  <a href="#contact" class="n-cta n-cta-desk" onclick="openM('quote');return false;">Sifariş Ver</a>
+  <button class="n-hamburger" id="n-hamburger" aria-label="Menyu aç/bağla" aria-expanded="false" onclick="toggleNav()"><span></span><span></span><span></span></button>
+</nav>
+<div id="sbar">
+  <label for="sinput" class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap">Məhsul axtar</label><input id="sinput" type="text" placeholder="Məhsul axtar... (məs: dezenfektan, xlor, mop)" autocomplete="off" aria-label="Məhsul axtar" aria-haspopup="listbox" aria-autocomplete="list" role="combobox" aria-expanded="false" aria-controls="sres">
+  <button class="fbtn active" onclick="setF('all',this)">Hamısı</button>
+  <button class="fbtn" onclick="setF('kimyevi',this)">Kimyəvi</button>
+  <button class="fbtn" onclick="setF('camasirxana',this)">Camaşırxana</button>
+  <button class="fbtn" onclick="setF('metbex',this)">Mətbəx</button>
+  <button class="fbtn" onclick="setF('amenity',this)">Amenity</button>
+  <button class="fbtn" onclick="setF('istehlak',this)">İstehlak</button>
+  <select id="ssort" aria-label="Sıralama">
+    <option value="">Sırala</option>
+    <option value="az">A → Z</option>
+    <option value="haccp">HACCP əvvəl</option>
+    <option value="eco">ECO əvvəl</option>
+  </select>
+  <button id="print-btn" onclick="printCatalog()" title="Kataloqu çap et / PDF kimi saxla">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Çap / PDF
+  </button>
+  <div id="sres" role="listbox" aria-label="Axtarış nəticələri"></div>
+</div>
+<div id="sub-pills"></div>
+
+<!-- COVER -->
+<section class="cover">
+  <div class="cov-l">
+    <div class="eye">5 Ulduzlu Otel Sektoru · 2026</div>
+    <h1 class="h1">Məhsul &amp;<br><em>Xidmət</em><br>Kataloqu</h1>
+    <p class="cov-p">5 ulduzlu otellərin hər zonası üçün sertifikatlı kimyəvi məhsullar, premium amenity xətti və professional texniki xidmətlər. Bir mənbədən — tam həll.</p>
+    <div class="stats">
+      <div class="st"><div class="st-n">538</div><div class="st-l">Məhsul növü</div></div>
+      <div class="st"><div class="st-n">7</div><div class="st-l">Kateqoriya</div></div>
+      <div class="st"><div class="st-n">5★</div><div class="st-l">Standart</div></div>
+    </div>
+    <a href="#overview" class="cov-link">Kataloqa bax →</a>
+  </div>
+  <div class="cov-r">
+    <img class="cov-img" src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=1200&q=80" alt="Lüks otel otağı" onerror="this.style.display='none'">
+    <div class="cov-badge"><b>15</b><span>Xidmət<br>növü</span></div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section class="sec sec-cream" id="overview">
+  <div class="sec-top rv">
+    <div>
+      <div class="eyebrow" style="color:var(--gold)">Məhsul xəritəsi</div>
+      <h2 class="h2" style="color:var(--white)">7 Kateqoriya,<br><b>109 Alt Bölmə</b></h2>
+    </div>
+    <p class="sec-desc-dark">Kimyəvi təmizlikdən premium amenity xəttinə qədər otelin hər bir ehtiyacı üçün sertifikatlı məhsullar.</p>
+  </div>
+  <div class="cat-grid rv">
+    <div class="cc" onclick="goId('kimyevi')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1585421514738-01798e348b17?w=600&q=75" alt="Kimyəvi Təmizlik Vasitələri" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">01 / 07</div><div class="cc-name">Kimyəvi Təmizlik Vasitələri</div><div class="cc-meta">127 məhsul · 25 alt bölmə</div></div>
+      <div class="cc-bar"></div></div>
+    <div class="cc" onclick="goId('camasirxana')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1626806819282-2c1dc01a5e0c?w=600&q=75" alt="Camaşırxana Məhsulları" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">02 / 07</div><div class="cc-name">Camaşırxana Məhsulları</div><div class="cc-meta">58 məhsul · 9 alt bölmə</div></div>
+      <div class="cc-bar"></div></div>
+    <div class="cc" onclick="goId('metbex')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=600&q=75" alt="Mətbəx Gigiyena Məhsulları" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">03 / 07</div><div class="cc-name">Mətbəx Gigiyena Məhsulları</div><div class="cc-meta">36 məhsul · 5 alt bölmə</div></div>
+      <div class="cc-bar"></div></div>
+    <div class="cc" onclick="goId('amenity')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1596178060671-7a80dc8059ea?w=600&q=75" alt="Otel Amenity Məhsulları" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">04 / 07</div><div class="cc-name">Otel Amenity</div><div class="cc-meta">62 məhsul · 14 alt bölmə</div></div>
+      <div class="cc-bar"></div></div>
+    <div class="cc" onclick="goId('istehlak')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?w=600&q=75" alt="İstehlak Materialları" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">05 / 07</div><div class="cc-name">İstehlak Materialları</div><div class="cc-meta">234 məhsul · 48 alt bölmə</div></div>
+      <div class="cc-bar"></div></div>
+    <div class="cc" onclick="goId('housekeeping')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&q=75" alt="Housekeeping Alətləri" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">06 / 07</div><div class="cc-name">Housekeeping Alətləri</div><div class="cc-meta">13 məhsul · 7 alt bölmə</div></div>
+      <div class="cc-bar"></div></div>
+    <div class="cc" onclick="goId('hovuz')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=600&q=75" alt="Hovuz &amp; SPA Kimyəvi" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">07 / 07</div><div class="cc-name">Hovuz &amp; SPA Kimyəvi</div><div class="cc-meta">8 məhsul · 1 alt bölmə</div></div>
+      <div class="cc-bar"></div></div>
+    <div class="cc" onclick="goId('xidmetler')">
+      <img class="cc-img" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&q=75" alt="Professional Xidmətlər" loading="lazy" onerror="this.style.opacity='0'">
+      <div class="cc-body"><div class="cc-n">+ Xidmətlər</div><div class="cc-name">Professional Xidmətlər</div><div class="cc-meta">15 xidmət növü</div></div>
+      <div class="cc-bar"></div></div>
+  </div>
+</section>
