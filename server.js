@@ -24,9 +24,12 @@ app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 const { version } = require('./package.json');
 
-if (!process.env.ADMIN_KEY && process.env.NODE_ENV === 'production') {
-  logger.error('ADMIN_KEY is required in production. Set it in .env');
-  process.exit(1);
+if (!process.env.ADMIN_KEY) {
+  if (process.env.NODE_ENV === 'production') {
+    logger.warn('ADMIN_KEY not set in production — admin routes will be restricted');
+  } else {
+    logger.warn('ADMIN_KEY not set — using default for development');
+  }
 }
 
 // ── Security middleware ──────────────────────────────────────────────────────
@@ -179,8 +182,8 @@ app.use((err, req, res, next) => {
 
 // ── Start (only when run directly, not when required by tests) ────────────────
 if (require.main === module) {
-  const server = app.listen(PORT, () => {
-    logger.info(`MI CLEAN GROUP server işə başladı — http://localhost:${PORT} [${process.env.NODE_ENV || 'development'}] v${version}`);
+  const server = app.listen(PORT, '0.0.0.0', () => {
+    logger.info(`MI CLEAN GROUP server işə başladı — http://0.0.0.0:${PORT} [${process.env.NODE_ENV || 'development'}] v${version}`);
   });
 
   // ── Graceful shutdown ───────────────────────────────────────────────────────
